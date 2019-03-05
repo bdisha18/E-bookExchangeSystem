@@ -1,7 +1,7 @@
 <aside class="admin-sidebar">
     <div class="admin-sidebar-brand">
         <!-- begin sidebar branding-->
-        <img class="admin-brand-logo" src="image/download.jpeg" width="40" alt="Logo">
+        <img class="admin-brand-logo" src="/image/download.jpeg" width="30" height="30" alt="Logo">
         <span class="admin-brand-content font-secondary"><a href='/default/'> Admin</a>
         </span>
 
