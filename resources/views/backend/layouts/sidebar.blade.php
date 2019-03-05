@@ -25,6 +25,17 @@
                     </span>
                 </a>
             </li>
+            <li class="menu-item active ">
+                <a href="{{route('user.index')}}" class="open-dropdown menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Users</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-account-outline "></i>
+                    </span>
+                </a>
+            </li>
+            
         </ul>
     </div>
 </aside>

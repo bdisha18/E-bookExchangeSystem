@@ -12,7 +12,7 @@
 
                             </div>
                         </div>
-                        <h1>Analytics Overview</h1>
+                        <h1>Dashboard</h1>
                     </div>
 
                 </div>
@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="text-center">
                                     <h1 class="fw-600 p-t-20">21.32k</h1>
-                                    <p class="text-muted fw-600">Total Followers</p>
+                                    <p class="text-muted fw-600">Total users</p>
                                     <div class="text-success h5 fw-600">
                                         <i class="mdi mdi-arrow-up"></i> 112.6%
                                     </div>
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="text-center">
                                     <h1 class="fw-600 p-t-20">300</h1>
-                                    <p class="text-muted fw-600">New Likes</p>
+                                    <p class="text-muted fw-600">Total Posts</p>
                                     <div class="text-danger h5 fw-600">
                                         <i class="mdi mdi-arrow-up"></i> 112.6%
                                     </div>
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="text-center">
                                     <h1 class="fw-600 p-t-20">750</h1>
-                                    <p class="text-muted fw-600">Reach</p>
+                                    <p class="text-muted fw-600">Total Images</p>
                                     <div class="text-info h5 fw-600">
                                         <i class="mdi mdi-arrow-up"></i> 35.69%
                                     </div>
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="text-center">
                                     <h1 class="fw-600 p-t-20">16.56%</h1>
-                                    <p class="text-muted fw-600">Engagement Rate</p>
+                                    <p class="text-muted fw-600">Total Videos</p>
                                     <div class="text-dark h5 fw-600">
                                         <i class="mdi mdi-arrow-down"></i> 12%
                                     </div>
@@ -100,6 +100,7 @@
                         </div>
                     </div>
                 </div>
+               
 
             </div>
         </div>

@@ -24,9 +24,12 @@ class CreateMembersTable extends Migration
             $table->text('bio')->nullable();
             $table->string('image')->nullable();
             $table->string('gender');
+            $table->string('city');
+            $table->string('country');
             $table->date('birth_date');
             $table->string('gmail_link');
             $table->string('status');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
