@@ -17,14 +17,8 @@
 
 </head>
 
-<<<<<<< HEAD
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{$errors->has('email') ? ' is-invalid' : '' }}" 
-                                       name="email" value="{{ old('email') }}" required autofocus>
-=======
->>>>>>> 02007deab989ced8fa828349605aa16354225ee8
 
-<body>
+                      
 <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 
 <body>
