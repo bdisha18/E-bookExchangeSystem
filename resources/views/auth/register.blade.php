@@ -1,25 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-    <title>Registration</title>
-    <!-- Meta-Tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-  
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-   
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link href="//fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
-    
-
-</head>
-
-<body>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
