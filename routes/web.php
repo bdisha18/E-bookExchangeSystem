@@ -15,13 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify'=> true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Backend' ], function() {
-    Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/dashboard', 'AdminController@index')
+            ->name('admin.dashboard')
+    ;
 
 });
 
