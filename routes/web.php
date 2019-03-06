@@ -34,9 +34,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
     Route::post('/status/{id}', 'UserController@status')
     ->name('user.status');
    	Route::get('/store', 'UserController@store')->name('user.store');
-    Route::get('/view', 'UserController@view')->name('user.view');
-    // Route::get('/edit', 'UserController@edit')->name('user.edit');
-    // Route::get('/update', 'UserController@update')->name('user.update');
+    Route::get('/view/{id}', 'UserController@view')->name('user.view');
+    Route::get('/edit', 'UserController@edit')->name('user.edit');
+    Route::get('/update', 'UserController@update')->name('user.update');
     // Route::get('/delete', 'UserController@delete')->name('user.delete');
     
 });

@@ -18,6 +18,7 @@
     
     <!--Bootstrap +  Admin CSS-->
     <link rel='stylesheet' type='text/css' href='https://d33wubrfki0l68.cloudfront.net/css/ed18bd005cf8b05f329fad0688d122e0515499ff/default/assets/css/atmos.min.css'/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/css.css')}}">
 </head>
 <body class="sidebar-pinned ">
     

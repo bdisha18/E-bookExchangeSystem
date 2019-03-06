@@ -38,32 +38,32 @@ class UserController extends Controller
     }
 
    
-    public function show($id)
+    public function view($id)
     {
         $user = $this->userRepository->find($id);
         return view('backend.user.view', compact('user'));
     }
 
     
-    // public function edit($id)
-    // {
-    //     $users = User::all();
-    //     $user = $this->userRepository->find($id);
-    //     return view('backend.user.edit', compact('user', 'users'));
-    // }
+    public function edit($id)
+    {
+        $users = Member::all();
+        $user = $this->userRepository->find($id);
+        return view('backend.user.edit', compact('user', 'users'));
+    }
 
    
-    // public function update(Request $request, $id)
-    // {
-    //     //  $this->validate($request, [
-    //     //     'username' => 'required',
-    //     //     'email' => 'required',
-    //     //     'password'=>'confirmed',
-    //     //     'password_confirmation'=>'sometimes|required_with:password'
-    //     // ]);
-    //     $this->userRepository->update_data($request, $id);
-    //     return redirect()->route('user.index')->with('status', 'Updated Successfully.');
-    // }
+    public function update(Request $request, $id)
+    {
+        //  $this->validate($request, [
+        //     'username' => 'required',
+        //     'email' => 'required',
+        //     'password'=>'confirmed',
+        //     'password_confirmation'=>'sometimes|required_with:password'
+        // ]);
+        $this->userRepository->update_data($request, $id);
+        return redirect()->route('user.index')->with('status', 'Updated Successfully.');
+    }
 
 
 }

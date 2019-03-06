@@ -10,7 +10,7 @@ class Member extends Authenticatable
     use Notifiable;
 
     protected $table = 'members';
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     protected $fillable = [

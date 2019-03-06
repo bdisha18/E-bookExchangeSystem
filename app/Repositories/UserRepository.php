@@ -36,7 +36,7 @@ class UserRepository extends BaseRepository {
         if(isset($input['password'])) {
             $input['password'] = bcrypt($input['password']);
         }
-        User::create($input);
+        Member::create($input);
         return true;
     }
 
