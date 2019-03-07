@@ -40,6 +40,20 @@ class UserRepository extends BaseRepository {
     }
 
 
+    public function update_data($request, $id) {
+    
+        $user = Member::findOrFail($id);
+        $data = $request->all();
+         if (empty($request->get('password'))){
+            $user->update($request->except('password'));
+        }else{
+            $data['password'] = bcrypt($request->password);
+            $user->update($data);
+        }
+        return $data;
+    }
+
+
 
 
 
