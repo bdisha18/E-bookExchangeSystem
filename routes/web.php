@@ -17,14 +17,14 @@ Route::get('/', function () {
 
 Auth::routes(['verify'=> true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
 
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Backend' ], function() {
     Route::get('/dashboard', 'AdminController@index')
-            ->name('admin.dashboard')
-    ;
+            ->name('admin.dashboard');
 
 });
 

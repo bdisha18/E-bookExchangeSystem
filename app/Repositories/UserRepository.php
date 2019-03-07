@@ -18,7 +18,7 @@ class UserRepository extends BaseRepository {
         return "App\Model\Member";
     }
 
-     public function index($request) {
+    public function index($request) {
         
         if($request->search){
             $user = Member::where([ 
@@ -28,7 +28,6 @@ class UserRepository extends BaseRepository {
             $user = Member::orderBy('id', 'desc')->paginate(10);
         }
             return $user;
-
     }
 
     public function store($request) {
@@ -39,6 +38,7 @@ class UserRepository extends BaseRepository {
         Member::create($input);
         return true;
     }
+
 
     public function update_data($request, $id) {
     
@@ -52,6 +52,7 @@ class UserRepository extends BaseRepository {
         }
         return $data;
     }
+
 
 
 
