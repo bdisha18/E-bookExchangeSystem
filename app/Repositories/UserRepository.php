@@ -18,7 +18,7 @@ class UserRepository extends BaseRepository {
         return "App\Model\Member";
     }
 
-     public function index($request) {
+    public function index($request) {
         
         if($request->search){
             $user = Member::where([ 
@@ -28,7 +28,6 @@ class UserRepository extends BaseRepository {
             $user = Member::orderBy('id', 'desc')->paginate(10);
         }
             return $user;
-
     }
 
     public function store($request) {
@@ -40,18 +39,6 @@ class UserRepository extends BaseRepository {
         return true;
     }
 
-    // public function update_data($request, $id) {
-    
-    //     $user = User::findOrFail($id);
-    //     $data = $request->all();
-    //      if (empty($request->get('password'))){
-    //         $user->update($request->except('password'));
-    //     }else{
-    //         $data['password'] = bcrypt($request->password);
-    //         $user->update($data);
-    //     }
-    //     return $data;
-    // }
 
 
 
