@@ -32,17 +32,17 @@
                                 <div class="form-group col-md-4">
                                     <label>First Name</label>
                                     <input type="text" class="form-control" value="{{$user->fname}}" placeholder="Email">
-                                    <div class="text-danger">{{ $errors->first('name') }}</div>
+                                    <div class="text-danger">{{ $errors->first('fname') }}</div>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>Last Name</label>
                                     <input type="text" class="form-control" value="{{$user->lname}}" placeholder="Last Name">
-                                    <div class="text-danger">{{ $errors->first('name') }}</div>
+                                    <div class="text-danger">{{ $errors->first('lname') }}</div>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>Username</label>
                                     <input type="text" class="form-control" value="{{$user->lname}}" placeholder="Last Name">
-                                    <div class="text-danger">{{ $errors->first('name') }}</div>
+                                    <div class="text-danger">{{ $errors->first('username') }}</div>
                                 </div>
                               </div>
                               <div class="form-row">
@@ -57,26 +57,32 @@
                                     <div class="text-danger">{{ $errors->first('contactno') }}</div>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control" value="{{$user->lname}}" placeholder="Last Name">
-                                    <div class="text-danger">{{ $errors->first('name') }}</div>
+                                    <label>City</label>
+                                    <select multiple class="form-control js-select2">
+                                    <option>city</option>
+                                </select>
                                 </div>
                               </div>
                               <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label>First Name</label>
-                                    <input type="text" class="form-control" value="{{$user->fname}}" placeholder="Email">
-                                    <div class="text-danger">{{ $errors->first('name') }}</div>
+                                    <label>Country</label>
+                                    <select multiple class="form-control js-select2">
+                                    <option>country</option>
+                                </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label>Last Name</label>
-                                    <input type="text" class="form-control" value="{{$user->lname}}" placeholder="Last Name">
-                                    <div class="text-danger">{{ $errors->first('name') }}</div>
+                                    <label>Birth Date</label>
+                                    <input type="text" class="js-datepicker form-control" placeholder="Select a Date">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control" value="{{$user->lname}}" placeholder="Last Name">
-                                    <div class="text-danger">{{ $errors->first('name') }}</div>
+                                  <label>Status</label>
+                                   <p> <label class="radio-inline">Activate
+                                    </label>
+                                      <input type="radio" name="status" checked><label
+        label
+                                    <label class="radio-inline">Deactivate</label>
+                                      <input type="radio" name="status">
+                                </div>
                                 </div>
                               </div>
                                 
