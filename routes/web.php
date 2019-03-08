@@ -23,8 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Backend' ], function() {
-    Route::get('/dashboard', 'AdminController@index')
-            ->name('admin.dashboard');
+    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+
 
 });
 
@@ -37,7 +37,18 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
     Route::get('/view/{id}', 'UserController@view')->name('user.view');
     Route::get('/edit/{id}', 'UserController@edit')->name('user.edit');
     Route::post('/update/{id}', 'UserController@update')->name('user.update');
+    Route::get('/status', 'UserController@status')->name('user.status');
     // Route::get('/delete', 'UserController@delete')->name('user.delete');
+});
+
+// for Admin
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
+    Route::get('/index', 'AdminController@index')->name('admin.index');
+    Route::post('/status/{id}', 'AdminController@status')
+    ->name('admin.status');
+    Route::get('/edit/{id}', 'AdminController@edit')->name('admin.edit');
+    Route::post('/update/{id}', 'AdminController@update')->name('admin.update');
+    Route::delete('/delete/{id}', 'AdminController@delete')->name('admin.delete');
     
 });
 

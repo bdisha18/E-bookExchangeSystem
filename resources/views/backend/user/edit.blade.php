@@ -11,8 +11,6 @@
                         <h4 class=""> <span class="btn btn-white-translucent">
                                 <i class="mdi mdi-table "></i></span> User Details
                         </h4>
-
-
                     </div>
                 </div>
             </div>
@@ -25,40 +23,40 @@
                     <!--widget card begin-->
                     <form role="form" action="{{ route('user.update',$user->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
+                    
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label>First Name</label>
-                                    <input type="text" class="form-control" value="{{$user->fname}}" placeholder="Email">
+                                    <input type="text" name="fname" class="form-control" value="{{$user->fname}}" placeholder="Email">
                                     <div class="text-danger">{{ $errors->first('fname') }}</div>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>Last Name</label>
-                                    <input type="text" class="form-control" value="{{$user->lname}}" placeholder="Last Name">
+                                    <input type="text" name="lname" class="form-control" value="{{$user->lname}}" placeholder="Last Name">
                                     <div class="text-danger">{{ $errors->first('lname') }}</div>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>Username</label>
-                                    <input type="text" class="form-control" value="{{$user->lname}}" placeholder="Last Name">
+                                    <input type="text" class="form-control" name="username" value="{{$user->lname}}" placeholder="Last Name">
                                     <div class="text-danger">{{ $errors->first('username') }}</div>
                                 </div>
                               </div>
                               <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" value="{{$user->email}}" placeholder="Email">
+                                    <input type="text" class="form-control" name="email" value="{{$user->email}}" placeholder="Email">
                                     <div class="text-danger">{{ $errors->first('email') }}</div>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>Contact No</label>
-                                    <input type="text" class="form-control" value="{{$user->contactno}}" placeholder="COntact No">
+                                    <input type="text" name="contactno" class="form-control" value="{{$user->contactno}}" placeholder="Contact No">
                                     <div class="text-danger">{{ $errors->first('contactno') }}</div>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>City</label>
-                                    <select multiple class="form-control js-select2">
+                                    <select class="form-control js-select2">
                                     <option>city</option>
                                 </select>
                                 </div>
@@ -66,33 +64,65 @@
                               <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label>Country</label>
-                                    <select multiple class="form-control js-select2">
+                                    <select class="form-control js-select2">
                                     <option>country</option>
                                 </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>Birth Date</label>
-                                    <input type="text" class="js-datepicker form-control" placeholder="Select a Date">
+                                    <input type="text" name="birth_date" class="js-datepicker form-control" value="{{$user->birth_date}}" placeholder="Select a Date">
                                 </div>
                                 <div class="form-group col-md-4">
-                                  <label>Status</label>
-                                   <p> <label class="radio-inline">Activate
-                                    </label>
-                                      <input type="radio" name="status" checked><label
-        label
-                                    <label class="radio-inline">Deactivate</label>
-                                      <input type="radio" name="status">
-                                </div>
+                                  <label>Status</label><br>
+                                    <label class="radio-inline">Activate
+                                      </label>
+                                      <input class="col-md-2" type="radio" name="status" value="active" {{($user->status == 'activate')? 'checked' : ''}}>
+                                      <label class="radio-inline">Deactivate</label>
+                                      <input class="col-md-2" type="radio" name="status" value="active" {{($user->status == 'deactivate')? 'checked' : ''}}>
                                 </div>
                               </div>
-                                
-                        </div>
-                    </div>
-                            <div class="form-group">
-                                <button class="btn btn-primary">Submit</button>
+                              <div class="form-row">
+                                <div class="form-group col-md-4">
+                                  <label>Gender</label><br>
+                                    <label class="radio-inline">Male
+                                      </label>
+                                      <input class="col-md-2" type="radio" name="gender" value="active" {{($user->status == 'male')? 'checked' : ''}}>
+                                      <label class="radio-inline">Female</label>
+                                      <input class="col-md-2" type="radio" name="gender" value="active" {{($user->status == 'female')? 'checked' : ''}}>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>New Password</label>
+                                    <input type="password" name="password" class="form-control" placeholder="New Password">
+                                    <div class="text-danger">{{ $errors->first('password') }}</div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Confirm Password</label>
+                                    <input type="password" name="confirm-password" class="form-control" placeholder="Confirm Password">
+                                    <div class="text-danger">{{ $errors->first('confirm-password') }}</div>
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="form-group col-md-4">
+                                      <label>Select Image</label>
+                                      <input type="file" name="image" class="form-control" placeholder="Image" value="{{$user->image}}">
+                                      <div class="text-danger">{{ $errors->first('image') }}</div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Bio</label>
+                                    <textarea type="text" name="bio" class="form-control" value="{{$user->bio}}" placeholder="Bio" cols="40"></textarea>
+                                    <div class="text-danger">{{ $errors->first('bio') }}</div>
+                                </div>
+                              </div>
                             </div>
-                          </form>
+                          </div>
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href="{{route('user.index')}}" class="button
+                            btn btn-danger">Back</a>
                         </div>
+                        </form>
+                        
                       </div>
                     </div>
+                  </div>
 @endsection

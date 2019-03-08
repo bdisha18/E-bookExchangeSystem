@@ -113,7 +113,7 @@
                 </div>
         </div>
     </div>
-    <button type="button" class="btn m-b-15 ml-2 mr-2 btn-danger"><a href="{{route('user.index')}}"> Back</a></button>
+    <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
 </div>
 </section>
 @endsection

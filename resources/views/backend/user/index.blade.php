@@ -56,17 +56,21 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                     @php $i=($users->perPage() * ($users->currentPage() - 1))+1; @endphp
-                @foreach($users as $user)
-                <tr>
-                  <td>{{$i++}}</td>
-                  <td>{{ucwords($user->fname)}} {{ucwords($user->lname)}}
-                  </td>
-                  <td>{{$user->email}}</td>
-                  <td>{{$user->image}}</td>
+                                      @php $i=($users->perPage() * ($users->currentPage() - 1))+1; @endphp
+                                      @foreach($users as $user)
+                                      <tr>
+                                        <td>{{$i++}}</td>
+                                        <td>{{ucwords($user->fname)}} {{ucwords($user->lname)}}
+                                        </td>
+                                        <td>{{$user->email}}</td>
+                                        @if(file_exists(public_path().'/'.env('USER_IMAGE_PATH').$user->image) && $user->image)
+                                        <td><img src="{{ asset(env('USER_IMAGE_PATH').$user->image)}}" alt="profile pic" class="userImage"></td>
+                                        @else
+                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="userImage"></td>
+                                        @endif 
                   <td>{{date('d M Y', strtotime($user->created_at))}}</td>     
                   <td><label class="switch">
-                      <input type="checkbox" class="update-status"  data-id="{{$user->id}}" data-url="{{ route('user.status', $user->id) }}" {{($user->status == 'active')? 'checked' : ''}}>
+                      <input type="checkbox" name="status" class="update-status"  data-id="{{$user->id}}" data-url="{{ route('user.status', $user->id) }}" {{($user->status == 'activate')? 'checked' : ''}}>
                       <span class="slider round"></span></label>
                   </td>
 

@@ -3,11 +3,11 @@
 namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
-use App\Model\Member;
+use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 
-class UserRepository extends BaseRepository {
+class AdminRepository extends BaseRepository {
 
     /**
      * Specify Model class name
@@ -15,71 +15,56 @@ class UserRepository extends BaseRepository {
      * @return string
      */
    public function model() {
-        return "App\Model\Member";
+        return "App\User";
     }
 
-    public function index($request) {
-        
-        if($request->search){
-            $user = Member::where([ 
-                ['fname', 'LIKE', '%' . $request->search . '%'],
-                ])->orderBy('id', 'desc')->paginate(10);
-        }else{
-            $user = Member::orderBy('id', 'desc')->paginate(10);
-        }
-            return $user;
+     public function index() {
+        $user = User::orderBy('id', 'desc')->get();
+        return $user;
     }
+
 
     public function store($request) {
         $input= array_filter(Input::all());
 
         if($request->image){
-        $image = Common::uploadImage($request->image,env('USER_IMAGE_PATH'));
+        $image = Common::uploadImage($request->image,env('ADMIN_IMAGE_PATH'));
         $input['image'] = $image;
   }
         if(isset($input['password'])) {
             $input['password'] = bcrypt($input['password']);
         }
-        Member::create($input);
+        User::create($input);
         return true;
     }
 
 
     public function update($request, $id) {
     
-        $user = Member::findOrFail($id);
+        $admin = User::findOrFail($id);
         $input= array_filter(Input::all());
-        $input['birth_date'] = date('Y-m-d', strtotime($request->birth_date));
 
         if(Input::hasFile('image'))
         {
-        $image = public_path().'/'.env('USER_IMAGE_PATH').$user->image;
+        $image = public_path().'/'.env('ADMIN_IMAGE_PATH').$admin->image;
         if (file_exists($image)) { 
             unlink($image);
         }
-        $image = Common::uploadImage($input['image'],env('USER_IMAGE_PATH'));
+        $image = Common::uploadImage($input['image'],env('ADMIN_IMAGE_PATH'));
         $input['image'] = $image;
    
         }
         if (empty($request->get('password'))){
 
-            $user->update($input, $request->except('password'));
+            $admin->update($input, $request->except('password'));
         }else{
             
             $input['password'] = bcrypt($request->password);
 
-            $user->update($input);
+            $admin->update($input);
 
         }
         return $input;
     }
-
-
-
-
-
-  
-
- 
 
 }

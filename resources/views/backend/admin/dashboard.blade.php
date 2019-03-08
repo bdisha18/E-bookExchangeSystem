@@ -100,6 +100,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6 m-b-30">
+                    <div class="card card-hover">
+                        <div class="card-body">
+                            <div class="text-center p-t-20">
+                                <div class="avatar-lg avatar">
+                                    <div class="avatar-title rounded-circle badge-soft-primary"><i
+                                                class="mdi mdi-account h1 m-0"></i></div>
+
+                                </div>
+                                <div class="text-center">
+                                    <h1 class="fw-600 p-t-20">16.56%</h1>
+                                    <p class="text-muted fw-600">Active Users</p>
+                                    <div class="text-primary h5 fw-600">
+                                        <i class="mdi mdi-arrow-down"></i> 12%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                
 
             </div>

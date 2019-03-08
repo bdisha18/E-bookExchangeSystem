@@ -61,9 +61,13 @@ class UserController extends Controller
         //     'password'=>'confirmed',
         //     'password_confirmation'=>'sometimes|required_with:password'
         // ]);
-        $this->userRepository->update_data($request, $id);
+        $this->userRepository->update($request, $id);
         return redirect()->route('user.index')->with('status', 'Updated Successfully.');
     }
 
+     public function changeStatus() {
+        $request = Input::all();
+        $this->userRepository->update($request, $request['id']);
+    }
 
 }
