@@ -52,5 +52,18 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
     
 });
 
+// for Followers
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/follower'], function() {
+    Route::get('/index', 'FollowerController@index')->name('follower.index');
+    Route::post('/status/{id}', 'FollowerController@status')
+    ->name('follower.status');
+    Route::get('/view/{id}', 'FollowerController@view')->name('follower.view');
+    Route::get('/edit/{id}', 'FollowerController@edit')->name('follower.edit');
+    Route::post('/update/{id}', 'FollowerController@update')->name('follower.update');
+    Route::delete('/delete/{id}', 'FollowerController@delete')->name('follower.delete');
+    
+});
+
+
 
 
