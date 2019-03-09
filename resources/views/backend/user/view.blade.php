@@ -32,5 +32,11 @@ use App\Model\User;
                 </form>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+    </div>
+    <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
+</div>
+>>>>>>> 57e72bd33cf73170bfe6a90746ca6f70d45dbd08
 </section>
 @endsection

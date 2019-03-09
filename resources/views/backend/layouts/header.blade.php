@@ -12,7 +12,6 @@
                     </div>
                     </a>
                     <div class="dropdown-menu  dropdown-menu-right"   >
-                        <a class="dropdown-item" href="#">  Add Account</a>
                         <a class="dropdown-item" href="#">  Reset Password</a>
                         <a class="dropdown-item" href="#"> Logout</a>
                     </div>

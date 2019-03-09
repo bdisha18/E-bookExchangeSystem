@@ -35,6 +35,17 @@
                     </span>
                 </a>
             </li>
+
+             <li class="treeview menu-item <?= ($requestRoute == 'admin.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('admin.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Admin</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-account-outline "></i>
+                    </span>
+                </a>
+            </li>
             
         </ul>
     </div>
