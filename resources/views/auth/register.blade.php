@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Register</title>
+    <title>Login</title>
     <!-- Meta-Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
                         <a href="{{route('login')}}" class="">Login</a>
                     </li>
                     <li class="">
-                        <a href="{{route('register')}}" class="">Register</a>
+                        <a href="" class="">Register</a>
                     </li>
                 </ul>
             </div>
@@ -78,7 +78,7 @@
                     <div class="field-group">
                         <span class="fa fa-lock" aria-hidden="true"></span>
                         <div class="wthree-field">
-                            <input name="password" id="password" type="Password" class="form-control {{$errors->has('password') ? 'is-invalid' : ''}}" placeholder="Password">
+                            <input name="password" id="myInput" type="Password" class="form-control {{$errors->has('password   ') ? 'is-invalid' : ''}}" placeholder="Password">
 
                             @if($errors->has('password'))
                             <span class="invalid-feedback" role="alert">
@@ -90,7 +90,7 @@
                     <div class="field-group">
                         <span class="fa fa-lock" aria-hidden="true"></span>
                         <div class="wthree-field">
-                            <input name="password-confirm" id="password" type="password" class="form-control {{$errors->has('password-confirm') ? 'is-invalid' : ''}}" 
+                            <input name="password-confirm" id="password-confirm" type="password" class="form-control {{$errors->has('password-confirmation ') ? 'is-invalid' : ''}}" 
                                    placeholder="Confirm Password">
 
                                                    </div>

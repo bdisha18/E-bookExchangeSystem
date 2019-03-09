@@ -11,7 +11,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Users
+                                <i class="mdi mdi-table "></i></span> Tables
                         </h4>
 
 
@@ -26,6 +26,9 @@
                 <div class="col-md-12">
                     <div class="card m-b-30">
                         <div class="card-header">
+                            <h5 class="m-b-0">
+                                <i class="mdi mdi-checkbox-intermediate"></i> Users
+                            </h5>
                         @if (session('status'))
                   <p style="color: green;">{{session('status')}}</p>
                 @endif
@@ -64,7 +67,7 @@
                   </td>
                   <td>{{$user->email}}</td>
                   <td>{{$user->image}}</td>
-                  <td>{{date('d M Y', strtotime($user->created_at))}}</td>     
+                  <td>{{$user->created_at}}</td>     
                   <td><label class="switch">
                       <input type="checkbox" class="update-status"  data-id="{{$user->id}}" data-url="{{ route('user.status', $user->id) }}" {{($user->status == 'active')? 'checked' : ''}}>
                       <span class="slider round"></span></label>
@@ -72,9 +75,9 @@
 
                   <td> 
   
-                        <a href="{{ route('user.view',$user->id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                        <a href="{{ route('user.view',$user->id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></a> 
                                                 
-                         <a href="{{ route('user.edit',$user->id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
+                         {{--<a href="{{ route('user.edit',$user->id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span></button></a>--}}
 
                         
                   </td>
