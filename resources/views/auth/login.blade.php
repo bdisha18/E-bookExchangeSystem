@@ -46,7 +46,7 @@
         </div>
         <div class="content-w3ls">
             <div class="text-center icon">
-                <img src="image/images.png" height="100px" width="100px" />
+                <img src="image/logo.jpeg" height="100px" width="100px" />
             </div>
             <!---728x90--->
 
