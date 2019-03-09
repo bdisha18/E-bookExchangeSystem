@@ -90,7 +90,7 @@
                     <div class="field-group">
                         <span class="fa fa-lock" aria-hidden="true"></span>
                         <div class="wthree-field">
-                            <input name="password_confirm" id="password-confirm" type="password" class="form-control {{$errors->has('password-confirmation ') ? 'is-invalid' : ''}}" 
+                            <input name="password_confirmation" id="password-confirm" type="password" class="form-control {{$errors->has('password-confirmation ') ? 'is-invalid' : ''}}" 
                                    placeholder="Confirm Password">
 
                                                    </div>
