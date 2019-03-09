@@ -14,9 +14,11 @@
         </div>
     </div>
     <div class="admin-sidebar-wrapper js-scrollbar">
-        <ul class="menu">
-            <li class="menu-item active ">
-                <a href="{{route('admin.dashboard')}}" class="open-dropdown menu-link">
+        <ul class="menu" data-widget="tree">
+            <?php $requestRoute = \Request::route()->getName(); ?>
+            
+            <li class="treeview menu-item <?= ($requestRoute == 'admin.dashboard') ? 'active' : '' ?>">
+                <a href="{{route('admin.dashboard')}}" class="menu-link">
                     <span class="menu-label">
                         <span class="menu-name">Dashboard</span>
                     </span>
@@ -25,8 +27,8 @@
                     </span>
                 </a>
             </li>
-            <li class="menu-item active ">
-                <a href="{{route('user.index')}}" class="open-dropdown menu-link">
+            <li class="treeview menu-item <?= ($requestRoute == 'user.index') ? 'active' : '' ?>">
+                <a href="{{route('user.index')}}" class="menu-link">
                     <span class="menu-label">
                         <span class="menu-name">Users</span>
                     </span>

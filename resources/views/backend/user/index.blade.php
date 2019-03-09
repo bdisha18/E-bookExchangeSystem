@@ -59,17 +59,6 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-<<<<<<< HEAD
-                                     @php $i=($users->perPage() * ($users->currentPage() - 1))+1; @endphp
-                @foreach($users as $user)
-                <tr>
-                  <td>{{$i++}}</td>
-                  <td>{{ucwords($user->fname)}} {{ucwords($user->lname)}}
-                  </td>
-                  <td>{{$user->email}}</td>
-                  <td>{{$user->image}}</td>
-                  <td>{{$user->created_at}}</td>     
-=======
                                       @php $i=($users->perPage() * ($users->currentPage() - 1))+1; @endphp
                                       @foreach($users as $user)
                                       <tr>
@@ -83,7 +72,7 @@
                                         <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="userImage"></td>
                                         @endif 
                   <td>{{date('d M Y', strtotime($user->created_at))}}</td>     
->>>>>>> 57e72bd33cf73170bfe6a90746ca6f70d45dbd08
+
                   <td><label class="switch">
                       <input type="checkbox" name="status" class="update-status"  data-id="{{$user->id}}" data-url="{{ route('user.status', $user->id) }}" {{($user->status == 'activate')? 'checked' : ''}}>
                       <span class="slider round"></span></label>
