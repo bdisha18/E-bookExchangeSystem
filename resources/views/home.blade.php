@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in!<a href="{{route('admin.dashboard')}}" style="text-decoration: none">   Head to Profile</a>
                 </div>
             </div>
         </div>
