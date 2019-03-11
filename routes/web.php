@@ -55,6 +55,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
 // for Followers
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin/follower'], function() {
     Route::get('/index', 'FollowerController@index')->name('follower.index');
+    Route::get('/index1/{id}', 'FollowerController@index1')->name('follower.index1');
     Route::post('/status/{id}', 'FollowerController@status')
     ->name('follower.status');
     Route::get('/view/{id}', 'FollowerController@view')->name('follower.view');

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use App\Model\Member;
+use App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 

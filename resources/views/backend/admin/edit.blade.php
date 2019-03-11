@@ -43,9 +43,9 @@
                                   <label>Status</label><br>
                                     <label class="radio-inline">Activate
                                       </label>
-                                      <input class="col-md-2" type="radio" name="status" value="active" {{($admin->status == 'activate')? 'checked' : ''}}>
+                                      <input class="col-md-2" type="radio" name="status" value="active" {{($admin->status == 'active')? 'checked' : ''}}>
                                       <label class="radio-inline">Deactivate</label>
-                                      <input class="col-md-2" type="radio" name="status" value="active" {{($admin->status == 'deactivate')? 'checked' : ''}}>
+                                      <input class="col-md-2" type="radio" name="status" value="inactive" {{($admin->status == 'inactive')? 'checked' : ''}}>
                                 </div>
                               </div>
 

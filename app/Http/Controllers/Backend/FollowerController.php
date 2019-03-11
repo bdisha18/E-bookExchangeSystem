@@ -17,11 +17,11 @@ class FollowerController extends Controller
     }
  
   
-    public function index(Request $request)
+    public function index1()
     {   
 
-      $followers = $this->followerRepository->index($request);
-        return view('backend.follower.index', compact('followers'));
+
+        return view('backend.follower.index1');
     }
 
     public function store(Request $request)

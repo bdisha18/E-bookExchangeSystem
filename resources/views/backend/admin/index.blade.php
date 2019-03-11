@@ -57,13 +57,13 @@
                                         </td>
                                         <td>{{$admin->email}}</td>
                                         @if(file_exists(public_path().'/'.env('ADMIN_IMAGE_PATH').$admin->image) && $admin->image)
-                                        <td><img src="{{ asset(env('ADMIN_IMAGE_PATH').$admin->image)}}" alt="profile pic" class="adminImage"></td>
+                                        <td><img src="{{ asset(env('ADMIN_IMAGE_PATH').$admin->image)}}" alt="profile pic" class="adminImage" height="50px" width="60"></td>
                                         @else
-                                        <td><img src="{{ asset(env('ADMIN_IMAGE_PATH').env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="adminImage"></td>
+                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="adminImage" height="60px"></td>
                                         @endif 
                                         <td>{{date('d M Y', strtotime($admin->created_at))}}</td>     
                                         <td><label class="switch">
-                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$admin->id}}" data-url="{{ route('admin.status', $admin->id) }}" {{($admin->status == 'activate')? 'checked' : ''}}>
+                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$admin->id}}" data-url="{{ route('admin.status', $admin->id) }}" {{($admin->status == 'active')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
 
