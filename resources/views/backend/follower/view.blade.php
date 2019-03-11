@@ -10,7 +10,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> User Details
+                                <i class="mdi mdi-table "></i></span> Follower Details
                         </h4>
 
 
@@ -31,35 +31,35 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">User Id :</label>
-                                    <p>{{$user->id}}</p>
+                                    <p>{{$follower->id}}</p>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Name :</label>
-                                    <p>{{$user->fname}} {{$user->lname}}</p>
+                                    <p>{{$follower->fname}} {{$follower->lname}}</p>
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Email :</label>
-                                    <p>{{$user->email}}</p> 
+                                    <p>{{$follower->email}}</p> 
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Username :</label>
-                                    <p>{{$user->username}}</p> 
+                                    <p>{{$follower->username}}</p> 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Contact No :</label>
-                                    <p>{{$user->contactno}}</p> 
+                                    <p>{{$follower->contactno}}</p> 
                                 </div>
                             </div>
 
@@ -67,42 +67,42 @@
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Bio :</label>
-                                    <p>{{$user->bio}}</p> 
+                                    <p>{{$follower->bio}}</p> 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Gender :</label>
-                                    <p>{{$user->gender}}</p> 
+                                    <p>{{$follower->gender}}</p> 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">City :</label>
-                                    <p>{{$user->city}}</p> 
+                                    <p>{{$follower->city}}</p> 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Country :</label>
-                                    <p>{{$user->country}}</p> 
+                                    <p>{{$follower->country}}</p> 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Birth Date :</label>
-                                    <p>{{$user->birth_date}}</p> 
+                                    <p>{{$follower->birth_date}}</p> 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Gmail Link :</label>
-                                    <p>{{$user->gmail_link}}</p> 
+                                    <p>{{$follower->gmail_link}}</p> 
                                 </div>
                             </div>
 
@@ -113,7 +113,7 @@
                 </div>
         </div>
     </div>
-    <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
+    <a href="{{route('follower.index')}}" class="button btn btn-danger">Back</a>
 </div>
 </section>
 @endsection

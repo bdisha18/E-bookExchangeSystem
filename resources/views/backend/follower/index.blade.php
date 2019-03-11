@@ -11,7 +11,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Users
+                                <i class="mdi mdi-table "></i></span> Followers
                         </h4>
 
 
@@ -30,7 +30,7 @@
                   <p style="color: green;">{{session('status')}}</p>
                 @endif
               <div class="box-tools">
-                 <form  action="{{route('user.index')}}">
+                 <form  action="{{route('follower.index')}}">
                 <div class="input-group input-group-sm" style="width: 150px;">
                   <input type="text" name="search" class="form-control pull-right" placeholder="Search">
                   <div class="input-group-btn">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                @if(count($users))
+                                @if(count($followers))
                                 <table class="table table-hover ">
                                     <thead>
                                     <tr>
@@ -56,41 +56,43 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                      @php $i=($users->perPage() * ($users->currentPage() - 1))+1; @endphp
-                                      @foreach($users as $user)
+                                      @php $i=($followers->perPage() * ($followers->currentPage() - 1))+1; @endphp
+                                      @foreach($followers as $follower)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($user->fname)}} {{ucwords($user->lname)}}
+                                        <td>{{ucwords($follower->fname)}} {{ucwords($follower->lname)}}
                                         </td>
-                                        <td>{{$user->email}}</td>
-                                        @if(file_exists(public_path().'/'.env('USER_IMAGE_PATH').$user->image) && $user->image)
-                                        <td><img src="{{ asset(env('USER_IMAGE_PATH').$user->image)}}" alt="profile pic" class="userImage"></td>
+                                        <td>{{$follower->email}}</td>
+                                        @if(file_exists(public_path().'/'.env('USER_IMAGE_PATH').$follower->image) && $follower->image)
+                                        <td><img src="{{ asset(env('USER_IMAGE_PATH').$follower->image)}}" alt="profile pic" class="userImage"></td>
                                         @else
                                         <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="userImage"></td>
                                         @endif 
-                                        <td>{{date('d M Y', strtotime($user->created_at))}}</td>     
+                                        <td>{{date('d M Y', strtotime($follower->created_at))}}</td>     
 
                                         <td><label class="switch">
-                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$user->id}}" data-url="{{ route('user.status', $user->id) }}" {{($user->status == 'activate')? 'checked' : ''}}>
+                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$follower->id}}" data-url="{{ route('follower.status', $follower->id) }}" {{($follower->status == 'active')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
 
                   <td> 
+                         {!! Form::open(['method'=>'DELETE', 'route'=>['follower.delete', $follower->id]]) !!}
   
-                        <a href="{{ route('user.view',$user->id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                        <a href="{{ route('follower.view',$follower->id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                 
-                        <a href="{{ route('user.edit',$user->id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
+                        <a href="{{ route('follower.edit',$follower->id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
 
-                        <a href="{{ route('follower.index',$user->id) }}"><button type="button" title="Followers" class="btn btn-info btn-xs"><span class="mdi mdi-launch"></span>Followers</button></a>
+                        <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>
 
-                        
+                        {!! Form::close() !!}
+
                   </td>
                 </tr>
                 @endforeach
               </table>
-              {{$users->links()}}
+              {{$followers->links()}}
                @else
-              <div><h2>No Users Found.</h2></div>
+              <div><h2>No Followers Found.</h2></div>
              @endif
             </div>
 
@@ -98,6 +100,9 @@
           </div>
           <!-- /.box -->
         </div>
+        <div class="form-group"> 
+            <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
+          </div>
       </div>
       </section>
       @endsection

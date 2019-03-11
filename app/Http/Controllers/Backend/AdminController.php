@@ -48,8 +48,7 @@ class AdminController extends Controller
     }
 
    
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
         //  $this->validate($request, [
         //     'username' => 'required',
         //     'email' => 'required',
@@ -60,10 +59,14 @@ class AdminController extends Controller
         return redirect()->route('admin.index')->with('status', 'Updated Successfully.');
     }
 
-    public function delete($id)
-    {
+    public function delete($id) {
         $this->adminRepository->delete($id);
         return back()->with('status', 'Deleted Successfuly.');
+    }
+
+     public function status() {
+        $request = Input::all();
+        $this->adminRepository->update($request, $request['id']);
     }
  
 }

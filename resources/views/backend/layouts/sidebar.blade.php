@@ -1,14 +1,12 @@
 <aside class="admin-sidebar">
     <div class="admin-sidebar-brand">
         <!-- begin sidebar branding-->
-        <img class="admin-brand-logo" src="/image/download.jpeg" width="30" height="30" alt="Logo">
+        <img class="admin-brand-logo" src="{{asset('/image/admin/download.jpeg')}}" width="30" height="30">
         <span class="admin-brand-content font-secondary"><a href='/default/'> Admin</a>
         </span>
 
         <!-- end sidebar branding-->
         <div class="ml-auto">
-            <!-- sidebar pin-->
-            <a href="#" class="admin-pin-sidebar btn-ghost btn btn-rounded-circle"></a>
             <!-- sidebar close for mobile device-->
             <a href="#" class="admin-close-sidebar"></a>
         </div>
