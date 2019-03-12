@@ -3,12 +3,13 @@ namespace App\Model;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Model\Member;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Member extends Authenticatable
 {
     use Notifiable;
-
+    protected $guard = 'member';
     protected $table = 'members';
     protected $primaryKey = 'id';
     public $timestamps = false;
