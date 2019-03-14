@@ -21,13 +21,15 @@ class CreateMembersTable extends Migration
             $table->string('password');
             $table->string('email')->unique();
             $table->integer('contactno');
-            $table->text('bio')->nullable();
-            $table->string('image')->nullable();
+           $table->string('image')->nullable();
+           $table->string('category');
             $table->string('gender');
             $table->string('city');
+            $table->string('state');
             $table->string('country');
-            $table->date('birth_date');
+           
             $table->string('gmail_link');
+            $table->string('fb_link');
             $table->string('status');
             $table->rememberToken();
             $table->timestamps();

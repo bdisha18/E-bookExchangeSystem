@@ -31,7 +31,7 @@
                         <span class="menu-name">Users</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="icon-placeholder mdi mdi-account-outline "></i>
+                        <i class="icon-placeholder mdi mdi-account-multiple "></i>
                     </span>
                 </a>
             </li>
@@ -43,6 +43,36 @@
                     </span>
                     <span class="menu-icon">
                         <i class="icon-placeholder mdi mdi-account-outline "></i>
+                    </span>
+                </a>
+            </li>
+             <li class="treeview menu-item <?= ($requestRoute == 'admin.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('admin.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Publishers</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-account-outline "></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'admin.index') ? 'active' : '' ?>">
+                <a class="menu-link">
+                    <span class="menu-label">
+                        <span class="menu-name">Documents</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-account-outline "></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'admin.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('admin.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Books</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
                     </span>
                 </a>
             </li>
