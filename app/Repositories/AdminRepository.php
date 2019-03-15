@@ -19,7 +19,7 @@ class AdminRepository extends BaseRepository {
     }
 
      public function index() {
-        $user = User::orderBy('id', 'desc')->get();
+        $user = User::orderBy('admin_id', 'desc')->get();
         return $user;
     }
 
