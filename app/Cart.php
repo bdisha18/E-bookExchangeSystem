@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rating extends Model
+class Cart extends Model
 {
     protected $fillable = [
-       'user_id','rating'  
+        'book_id','user_id','book_name','amount','status','total_amount'
     ];
 }
