@@ -16,11 +16,14 @@ class CreateEmailsTable extends Migration
         Schema::create('emails', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->string('email_id');
+            $table->string('email_name');
             $table->string('fname');
             $table->string('lname');
             $table->string('subject');
             $table->text('message');
+            $table->integer('order_id');
+            $table->integer('transaction_id');
+            $table->enum('status',['send','declined']);
             $table->timestamps();
         });
     }

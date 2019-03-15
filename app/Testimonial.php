@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EmailTemplate extends Model
+class Testimonial extends Model
 {
     protected $primaryKey = 'id';
     protected $fillable = [
-        'email_name','subject','message','modified_at','created_at','updated_at'
+      'image','author_name','description','created_at','updated_at'  
     ];
-            
 }

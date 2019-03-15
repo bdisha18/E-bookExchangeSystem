@@ -14,10 +14,10 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('order_id');
+            $table->bigIncrements('order_id');
+          
             $table->integer('transaction_id');
-            $table->string('status');
+            $table->enum('status',['confirmed','pending','declined']);
             $table->integer('book_id');
             $table->timestamps();
         });

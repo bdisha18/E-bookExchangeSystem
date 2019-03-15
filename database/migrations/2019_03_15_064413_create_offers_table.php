@@ -14,7 +14,7 @@ class CreateOffersTable extends Migration
     public function up()
     {
         Schema::create('offers', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('offer_id');
             $table->integer('category_id');
             $table->integer('book_id');
             $table->string('offer_title');
@@ -23,7 +23,9 @@ class CreateOffersTable extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('discount_amount');
-            
+            $table->enum('status',['active','inactive']);
+            $table->timestamps();
+
         });
     }
 

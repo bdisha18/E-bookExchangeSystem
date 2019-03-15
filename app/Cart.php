@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
+    protected $primaryKey = 'cart_id';
     protected $fillable = [
-        'book_id','user_id','book_name','amount','status','total_amount'
+        'book_id','user_id','book_name','total_amount','created_at','updated_at'
     ];
 }

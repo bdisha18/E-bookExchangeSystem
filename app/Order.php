@@ -11,5 +11,7 @@ class Order extends Model
         'transaction_id',
         'book_id',
         'status',
+        'created_at',
+        'updated_at'
     ];
 }

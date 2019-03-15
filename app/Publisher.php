@@ -6,17 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Publisher extends Model
 {
-        protected $primaryKey = 'id';
+        protected $primaryKey = 'publisher_id';
 
     protected $fillable = [
-        'id',
+     
         'user_id',
         'publisher_name',
         'books_published',
-        'pub_bookname',
-        'book_name',
-        'writer_name',
+        'publish_bookname',
         'book_category',
-        'cover_image',
+        'book_id',
+        'status',
+        
+        'created_at',
+        'updated_at'
     ];
 }

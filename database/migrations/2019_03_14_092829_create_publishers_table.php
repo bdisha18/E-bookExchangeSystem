@@ -14,16 +14,16 @@ class CreatePublishersTable extends Migration
     public function up()
     {
         Schema::create('publishers', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('publisher_id');
             $table->integer('user_id');
             $table->string('publisher_name');
-            $table->string('books_published');
-            $table->string('pub_bookname');
+            $table->string('books_published')->nullable();
+            $table->string('publish_bookname')->nullable();
            $table->integer('book_id');
-            $table->string('writer_name');
+           $table->enum('status',['active','inactive']);
            
             $table->string('book_category');
-            $table->string('cover_image')->nullable();
+            
             $table->timestamps();
         });
     }
