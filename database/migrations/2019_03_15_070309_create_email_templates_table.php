@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInterestsTable extends Migration
+class CreateEmailTemplatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateInterestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('interests', function (Blueprint $table) {
-            $table->bigIncrements('interest_id');
-            $table->integer('user_id');
-            $table->string('name');
+        Schema::create('email_templates', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('email_id');
+            $table->string('subject');
+            $table->text('message');
+            $table->date('modifed_at');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateInterestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('interests');
+        Schema::dropIfExists('email_templates');
     }
 }

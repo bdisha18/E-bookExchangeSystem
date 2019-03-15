@@ -14,24 +14,21 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('user_id');
             $table->string('fname');
             $table->string('lname');
             $table->string('username');
             $table->string('password');
             $table->string('email')->unique();
-            $table->integer('contactno');
+            $table->integer('contactno')->nullable();
            $table->string('image')->nullable();
            $table->string('category');
             $table->string('gender');
-            $table->string('city');
-            $table->string('state');
-            $table->string('country');
+           $table->date('dob');
+            $table->string('gmail_link')->nullable();
+            $table->string('fb_link')->nullable();
+            $table->enum('status',['active','inactive']);
            
-            $table->string('gmail_link');
-            $table->string('fb_link');
-            $table->string('status');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
