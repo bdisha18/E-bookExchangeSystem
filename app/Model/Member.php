@@ -10,12 +10,13 @@ class Member extends Authenticatable
     use Notifiable;
 
     protected $table = 'members';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'user_id';
     public $timestamps = false;
 
     protected $fillable = [
-        'id', 'username', 'fname', 'lname','state', 'city', 'country','password',
-        'email', 'image', 'status', 'contactno', 'gender','gmail_link','fb_link','created_at', 'updated_at',
+        'user_id', 'username', 'fname', 'lname','password',
+        'email', 'image', 'status', 'contactno','category','dob', 'gender','gmail_link','fb_link',
+        'created_at', 'updated_at',
     ];
 
     /**

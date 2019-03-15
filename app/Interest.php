@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Interest extends Model
 {
     protected $fillable = [
-        'user_id','name'
+       'interest_id', 'user_id','name','created_at','updated_at'
     ];
 }
