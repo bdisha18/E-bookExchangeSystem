@@ -3,17 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Auth/ResetPasswordController.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/resources/views/auth/passwords/reset.blade.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/config/auth.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/config/mail.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/layouts/sidebar.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/database/migrations/2019_03_14_105433_create_transactions_table.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/app/Model/Member.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/routes/web.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/config/app.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/HomeController.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Api/UserController.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Controller.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Backend/UserController.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/database/migrations/2019_03_01_104510_create_members_table.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/database/migrations/2019_03_14_092829_create_publishers_table.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/admin/dashboard.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/app/Transaction.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/database/migrations/2019_03_14_111713_create_ratings_table.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/app/Publisher.php</file>
         </group>
     </open-files>
 </project-private>

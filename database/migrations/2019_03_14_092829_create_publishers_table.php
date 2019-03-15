@@ -19,7 +19,7 @@ class CreatePublishersTable extends Migration
             $table->string('publisher_name');
             $table->string('books_published');
             $table->string('pub_bookname');
-           $table->string('book_name');
+           $table->integer('book_id');
             $table->string('writer_name');
            
             $table->string('book_category');

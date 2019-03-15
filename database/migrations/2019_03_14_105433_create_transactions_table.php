@@ -15,12 +15,18 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
             $table->integer('amount');
             $table->integer('reference_id');
             $table->string('payment_method');
             $table->integer('card_no');
-            $table->integer('order_id');
+            $table->string('status');
+             $table->integer('order_id');
+             $table->string('bank_name');
             $table->integer('total_cashback');
+            $table->string('card_holder_name');
+            $table->date('expire_date');
+            $table->integer('discount');
             $table->timestamps();
         });
     }
