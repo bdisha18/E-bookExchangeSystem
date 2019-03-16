@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="text-center">
                                     <h1 class="fw-600 p-t-20">21.32k</h1>
-                                    <p class="text-muted fw-600">Total users</p>
+                                    <p class="text-muted fw-600">Users</p>
                                     <div class="text-success h5 fw-600">
                                         <i class="mdi mdi-arrow-up"></i> 112.6%
                                     </div>
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="text-center">
                                     <h1 class="fw-600 p-t-20">300</h1>
-                                    <p class="text-muted fw-600">Total Publishers</p>
+                                    <p class="text-muted fw-600">Publishers</p>
                                     <div class="text-danger h5 fw-600">
                                         <i class="mdi mdi-arrow-up"></i> 112.6%
                                     </div>
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="text-center">
                                     <h1 class="fw-600 p-t-20">750</h1>
-                                    <p class="text-muted fw-600">Total Selling Books</p>
+                                    <p class="text-muted fw-600">Sold Books</p>
                                     <div class="text-info h5 fw-600">
                                         <i class="mdi mdi-arrow-up"></i> 35.69%
                                     </div>
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="text-center">
                                     <h1 class="fw-600 p-t-20">50</h1>
-                                    <p class="text-muted fw-600">Top rated Books</p>
+                                    <p class="text-muted fw-600">Top Rated Books</p>
                                     <div class="text-dark h5 fw-600">
                                         <i class="mdi mdi-arrow-down"></i> 12%
                                     </div>

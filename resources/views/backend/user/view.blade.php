@@ -63,35 +63,6 @@
                                 </div>
                             </div>
 
-
-                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Bio :</label>
-                                    <p>{{$user->bio}}</p> 
-                                </div>
-                            </div>
-
-                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Gender :</label>
-                                    <p>{{$user->gender}}</p> 
-                                </div>
-                            </div>
-
-                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">City :</label>
-                                    <p>{{$user->city}}</p> 
-                                </div>
-                            </div>
-
-                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Country :</label>
-                                    <p>{{$user->country}}</p> 
-                                </div>
-                            </div>
-
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Birth Date :</label>
@@ -99,10 +70,26 @@
                                 </div>
                             </div>
 
-                             <div class="col-md-4">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Gmail Link :</label>
                                     <p>{{$user->gmail_link}}</p> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Facebook Link :</label>
+                                    <p>{{$user->facebook_link}}</p> 
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Interests :</label>
+                                    <ul>
+                                        <li>{{Interest::where('user_id', $user->user_id)->value('name')}}</li>
+                                    </ul> 
                                 </div>
                             </div>
 

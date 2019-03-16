@@ -55,41 +55,19 @@
                                     <div class="text-danger">{{ $errors->first('contactno') }}</div>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label>City</label>
-                                    <select class="form-control js-select2">
-                                    <option>city</option>
-                                </select>
-                                </div>
-                              </div>
-                              <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label>Country</label>
-                                    <select class="form-control js-select2">
-                                    <option>country</option>
-                                </select>
-                                </div>
-                                <div class="form-group col-md-4">
                                     <label>Birth Date</label>
-                                    <input type="text" name="birth_date" class="js-datepicker form-control" value="{{$user->birth_date}}" placeholder="Select a Date">
+                                    <input type="text" name="dob" class="js-datepicker form-control" value="{{$user->dob}}" placeholder="Select a Date">
                                 </div>
                                 <div class="form-group col-md-4">
                                   <label>Status</label><br>
-                                    <label class="radio-inline">Activate
+                                    <label class="radio-inline">Active
                                       </label>
-                                      <input class="col-md-2" type="radio" name="status" value="active" {{($user->status == 'activate')? 'checked' : ''}}>
+                                      <input class="col-md-2" type="radio" name="status" value="active" {{($user->status == 'active')? 'checked' : ''}}>
                                       <label class="radio-inline">Deactivate</label>
-                                      <input class="col-md-2" type="radio" name="status" value="active" {{($user->status == 'deactivate')? 'checked' : ''}}>
+                                      <input class="col-md-2" type="radio" name="status" value="inactive" {{($user->status == 'inactive')? 'checked' : ''}}>
                                 </div>
                               </div>
                               <div class="form-row">
-                                <div class="form-group col-md-4">
-                                  <label>Gender</label><br>
-                                    <label class="radio-inline">Male
-                                      </label>
-                                      <input class="col-md-2" type="radio" name="gender" value="active" {{($user->status == 'male')? 'checked' : ''}}>
-                                      <label class="radio-inline">Female</label>
-                                      <input class="col-md-2" type="radio" name="gender" value="active" {{($user->status == 'female')? 'checked' : ''}}>
-                                </div>
                                 <div class="form-group col-md-4">
                                     <label>New Password</label>
                                     <input type="password" name="password" class="form-control" placeholder="New Password">
@@ -107,11 +85,7 @@
                                       <input type="file" name="image" class="form-control" placeholder="Image" value="{{$user->image}}">
                                       <div class="text-danger">{{ $errors->first('image') }}</div>
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label>Bio</label>
-                                    <textarea type="text" name="bio" class="form-control" value="{{$user->bio}}" placeholder="Bio" cols="40"></textarea>
-                                    <div class="text-danger">{{ $errors->first('bio') }}</div>
-                                </div>
+                              
                               </div>
                             </div>
                           </div>

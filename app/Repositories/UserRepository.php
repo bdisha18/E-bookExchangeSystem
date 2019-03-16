@@ -24,9 +24,9 @@ class UserRepository extends BaseRepository {
         if($request->search){
             $user = Member::where([ 
                 ['fname', 'LIKE', '%' . $request->search . '%'],
-                ])->orderBy('id', 'desc')->paginate(10);
+                ])->orderBy('user_id', 'desc')->paginate(10);
         }else{
-            $user = Member::orderBy('id', 'desc')->paginate(10);
+            $user = Member::orderBy('user_id', 'desc')->paginate(10);
         }
             return $user;
     }
