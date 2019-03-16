@@ -1,11 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
-
-class PublishController extends Controller
+use App\User;
+use App\Http\Controllers\Controller;
+use App\Repositories\PublisherRepository;
+class PublisherController extends Controller
 {
+    protected $publisherRepository;
+    public function __construct(PublisherRepository $publisherRepository) {
+        $this->publisherRepository = $publisherRepository;
+    }
+
+
+ 	  
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,8 @@ class PublishController extends Controller
      */
     public function index()
     {
-        //
+        $publishers = $this->publisherRepository->index();
+        return view('backend.publisher.index', compact('publishers'));   
     }
 
     /**

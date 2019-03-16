@@ -65,6 +65,12 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/follower'], function(
     
 });
 
+//for Publisher
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/publisher'], function() {
+    Route::get('/index', 'PublisherController@index')->name('publisher.index');
+});
+   
+
 
 
 
