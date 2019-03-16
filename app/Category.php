@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rating extends Model
+class Category extends Model
 {
     protected $primaryKey = 'id';
     protected $fillable = [
-       'book_id','rating','created_at','updated_at'
+        'parent_id','category_name','created_at','updated_at'
     ];
 }

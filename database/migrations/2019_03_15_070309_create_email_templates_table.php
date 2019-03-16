@@ -14,11 +14,11 @@ class CreateEmailTemplatesTable extends Migration
     public function up()
     {
         Schema::create('email_templates', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('template_id');
             $table->string('email_name');
             $table->string('subject');
             $table->text('message');
-            $table->date('modifed_at');
+           
             $table->timestamps();
         });
     }

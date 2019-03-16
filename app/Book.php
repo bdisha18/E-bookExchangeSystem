@@ -13,7 +13,6 @@ class Book extends Model
         'book_image',
         'author_name',
         'book_rating',
-        'publisher_name',
         'book_price',
         'description',
         'pages',

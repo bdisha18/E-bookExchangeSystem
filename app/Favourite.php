@@ -8,6 +8,6 @@ class Favourite extends Model
 {
     protected $primaryKey = 'favourite_id';
     protected $fillable = [
-        'user_id','book_id','added'
+        'user_id','book_id','created_at','updated_at'
     ];
 }
