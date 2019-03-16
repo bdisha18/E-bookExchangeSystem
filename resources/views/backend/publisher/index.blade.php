@@ -11,7 +11,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Admin
+                                <i class="mdi mdi-table "></i></span> Publisher
                         </h4>
 
 
@@ -33,7 +33,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                {{--@if(count($admins))--}}
+                                @if(count($publishers))
                                 <table class="table table-hover ">
                                     <thead>
                                       <tr>
@@ -58,10 +58,10 @@
                                         </td>
                                         <td>{{$publisher->book_name}}</td>
                                         <td>{{$publisher->author_name}}</td>
-                                        @if(file_exists(public_path().'/'.env('ADMIN_IMAGE_PATH').$publisher->book_image) && $publisher->book_image)
-                                        <td><img src="{{ asset(env('ADMIN_IMAGE_PATH').$publisher->book_image)}}" alt="profile pic" class="book_image" height="50px" width="60"></td>
+                                        @if(file_exists(public_path().'/'.env('PUBLISHER_IMAGE_PATH').$publisher->image) && $publisher->image)
+                                        <td><img src="{{ asset(env('PUBLISHER_IMAGE_PATH').$publisher->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
                                         @else
-                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="book_image" height="60px"></td>
+                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="image" height="60px"></td>
                                         @endif 
                                         
                                         <td><label class="switch">
@@ -74,6 +74,7 @@
                                         <td> 
                                               {!! Form::open(['method'=>'DELETE', 'route'=>['publisher.delete',
                                                       $publisher->admin_id]]) !!}
+                                              <a href="{{ route('publisher.view',$publisher->publisher_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                                       
                                                <a href="{{ route('publisher.edit',$publisher->publisher_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
 
@@ -84,9 +85,9 @@
                                       </tr>
                                       @endforeach
                                     </table>
-                                     {{--@else
-                                    <div><h2>No Admin Found.</h2></div>
-                                     @endif--}}
+                                     @else
+                                    <div><h2>No Publisher Found.</h2></div>
+                                     @endif
                                   </div>
 
                             <!-- /.box-body -->

@@ -50,26 +50,15 @@ class PublisherRepository extends BaseRepository {
 
         if(Input::hasFile('image'))
         {
-        $image = public_path().'/'.env('PUBLISHER_IMAGE_PATH').$publisher->image;
-        if (file_exists($image)) { 
-            unlink($image);
-        }
-        $image = Common::uploadImage($input['image'],env('Publisher_IMAGE_PATH'));
-        $input['image'] = $image;
+            $image = public_path().'/'.env('PUBLISHER_IMAGE_PATH').$publisher->image;
+                if (file_exists($image)) { 
+                    unlink($image);
+                }
+            $image = Common::uploadImage($input['image'],env('Publisher_IMAGE_PATH'));
+            $input['image'] = $image;
    
         }
         $publisher->update($input);
-
-        }
-        return $input;
+         return $input;
     }
-
-
-
-
-
-  
-
- 
-
 }

@@ -19,9 +19,9 @@ class CreatePublishersTable extends Migration
             $table->string('publisher_name');
             $table->string('books_published')->nullable();
             $table->string('publish_bookname')->nullable();
-           $table->integer('book_id');
-           $table->enum('status',['active','inactive']);
-           
+            $table->integer('book_id');
+            $table->enum('status',['active','inactive']);
+            $table->string('image');
             $table->string('book_category');
             
             $table->timestamps();

@@ -3,92 +3,65 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Model\Publisher;
 use App\Http\Controllers\Controller;
 use App\Repositories\PublisherRepository;
+
 class PublisherController extends Controller
 {
+    
     protected $publisherRepository;
+
     public function __construct(PublisherRepository $publisherRepository) {
         $this->publisherRepository = $publisherRepository;
     }
 
+  
+    public function index(Request $request) {   
 
- 	  
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $publishers = $this->publisherRepository->index();
-        return view('backend.publisher.index', compact('publishers'));   
+      $publishers = $this->publisherRepository->index($request);
+        return view('backend.publisher.index', compact('publishers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function store(Request $request) {
+        // $this->validate($request, [
+        //     'username' => 'required',
+        //     'email' => 'required',
+        //     'password' => 'required',
+        //     'fname' => 'required|max:20',
+        // ]);
+                
+        $this->publisherRepository->store($request);
+        return redirect()->route('publisher.index')->with('status', 'Publisher Created Successfully.');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    
+    public function edit($id) {
+        $publishers = Publisher::all();
+        $publisher = $this->publisherRepository->find($id);
+        return view('backend.publisher.edit', compact('publisher', 'publishers'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+   
+    public function update(Request $request, $id){
+        //  $this->validate($request, [
+        //     'username' => 'required',
+        //     'email' => 'required',
+        //     'password'=>'confirmed',
+        //     'password_confirmation'=>'sometimes|required_with:password'
+        // ]);
+        $this->publisherRepository->update($request, $id);
+        return redirect()->route('publisher.index')->with('status', 'Updated Successfully.');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function delete($id) {
+        $this->publisherRepository->delete($id);
+        return back()->with('status', 'Deleted Successfuly.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+     public function status() {
+        $request = Input::all();
+        $this->publisherRepository->update($request, $request['id']);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+ 
 }

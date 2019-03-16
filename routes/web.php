@@ -52,24 +52,41 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
     
 });
 
-// for Followers
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/follower'], function() {
-    Route::get('/index', 'FollowerController@index')->name('follower.index');
-    Route::get('/index1/{id}', 'FollowerController@index1')->name('follower.index1');
-    Route::post('/status/{id}', 'FollowerController@status')
-    ->name('follower.status');
-    Route::get('/view/{id}', 'FollowerController@view')->name('follower.view');
-    Route::get('/edit/{id}', 'FollowerController@edit')->name('follower.edit');
-    Route::post('/update/{id}', 'FollowerController@update')->name('follower.update');
-    Route::delete('/delete/{id}', 'FollowerController@delete')->name('follower.delete');
+// // for Books
+// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/books'], function() {
+//     Route::get('/index', 'BookController@index')->name('Book.index');
+//     Route::post('/status/{id}', 'BookController@status')
+//     ->name('Book.status');
+//     Route::get('/view/{id}', 'BookController@view')->name('Book.view');
+//     Route::get('/edit/{id}', 'BookController@edit')->name('Book.edit');
+//     Route::post('/update/{id}', 'BookController@update')->name('Book.update');
+//     Route::delete('/delete/{id}', 'BookController@delete')->name('Book.delete');
     
-});
+// });
 
 //for Publisher
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/publisher'], function() {
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/publisher'],
+function() {
     Route::get('/index', 'PublisherController@index')->name('publisher.index');
+    Route::post('/status/{id}', 'PublisherController@status')
+    ->name('publisher.status');
+    Route::get('/view/{id}', 'PublisherController@view')->name('publisher.view');
+    Route::get('/edit/{id}', 'PublisherController@edit')->name('publisher.edit');
+    Route::post('/update/{id}', 'PublisherController@update')->name('publisher.update');
+    Route::delete('/delete/{id}', 'PublisherController@delete')->name('publisher.delete');
 });
    
+// //for transaction
+// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/transaction'],
+// function() {
+//     Route::get('/index', 'TransactionController@index')->name('transaction.index');
+//     Route::post('/status/{id}', 'TransactionController@status')
+//     ->name('transaction.status');
+//     Route::get('/view/{id}', 'TransactionController@view')->name('transaction.view');
+//     Route::get('/edit/{id}', 'TransactionController@edit')->name('transaction.edit');
+//     Route::post('/update/{id}', 'TransactionController@update')->name('transaction.update');
+//     Route::delete('/delete/{id}', 'TransactionController@delete')->name('transaction.delete');
+// });
 
 
 

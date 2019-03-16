@@ -1,15 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Publisher extends Model
 {
-        protected $primaryKey = 'publisher_id';
+    protected $table = 'publishers';
+    protected $primaryKey = 'publisher_id';
+    public $timestamps = false;
 
     protected $fillable = [
-     
+        'publisher_id',
         'user_id',
         'publisher_name',
         'books_published',
@@ -17,7 +19,6 @@ class Publisher extends Model
         'book_category',
         'book_id',
         'status',
-        
         'created_at',
         'updated_at'
     ];

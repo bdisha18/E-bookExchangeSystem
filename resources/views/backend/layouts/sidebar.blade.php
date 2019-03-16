@@ -46,8 +46,8 @@
                     </span>
                 </a>
             </li>
-             <li class="treeview menu-item <?= ($requestRoute == 'admin.index') ? 'active' : '' ?>">
-                <a class="menu-link" href="{{route('admin.index')}}">
+             <li class="treeview menu-item <?= ($requestRoute == 'publisher.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('publisher.index')}}">
                     <span class="menu-label">
                         <span class="menu-name">Publishers</span>
                     </span>
