@@ -9,7 +9,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> User Details
+                                <i class="mdi mdi-table "></i></span> Edit Users
                         </h4>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                 <div class="col-lg-12">
 
                     <!--widget card begin-->
-                    <form role="form" action="{{ route('user.update',$user->id) }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('user.update',$user->user_id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="card m-b-30">

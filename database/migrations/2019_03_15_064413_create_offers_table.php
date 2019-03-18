@@ -24,7 +24,8 @@ class CreateOffersTable extends Migration
             $table->date('end_date');
             $table->integer('discount_amount');
             $table->enum('status',['active','inactive']);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
 
         });
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +9,7 @@ class Transaction extends Model
    
 
     protected $primaryKey = 'transaction_id';
+    protected $table = 'transactions';
             
     protected $fillable = [
         'user_id','amount','reference_id','payment_method','card_no','status',

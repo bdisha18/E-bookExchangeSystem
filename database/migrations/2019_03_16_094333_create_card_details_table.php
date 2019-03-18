@@ -20,7 +20,8 @@ class CreateCardDetailsTable extends Migration
             $table->date('expire_date');
             $table->string('cardholder_name');
             $table->integer('user_id');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

@@ -18,7 +18,8 @@ class CreateCartsTable extends Migration
             $table->integer('book_id');
             $table->integer('user_id');
             $table->integer('total_amount');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

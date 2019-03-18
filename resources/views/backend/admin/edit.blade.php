@@ -21,7 +21,7 @@
                 <div class="col-lg-12">
 
                     <!--widget card begin-->
-                    <form role="form" action="{{ route('admin.update',$admin->id) }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('admin.update',$admin->admin_id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="card m-b-30">

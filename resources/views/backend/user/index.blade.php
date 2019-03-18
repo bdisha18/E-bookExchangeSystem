@@ -27,18 +27,12 @@
                     <div class="card m-b-30">
                         <div class="card-header">
                         @if (session('status'))
-                  <p style="color: green;">{{session('status')}}</p>
-                @endif
-              <div class="box-tools">
-                 <form  action="{{route('user.index')}}">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="search" class="form-control pull-right" placeholder="Search">
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
-              </form>
-              </div>
+                          <p style="color: green;">{{session('status')}}</p>
+                        @endif
+                        <form action="{{route('user.index')}}" method="get">
+                            <input name="search" type="text" placeholder="Search.." >                   
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                          </form>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -71,17 +65,16 @@
                                         <td>{{date('d M Y', strtotime($user->created_at))}}</td>     
 
                                         <td><label class="switch">
-                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$user->id}}" data-url="{{ route('user.status', $user->id) }}" {{($user->status == 'active')? 'checked' : ''}}>
+                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$user->user_id}}" data-url="{{ route('user.status', $user->id) }}" {{($user->status == 'active')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
 
                   <td> 
   
-                        <a href="{{ route('user.view',$user->id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                        <a href="{{ route('user.view',$user->user_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                 
-                        <a href="{{ route('user.edit',$user->id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
+                        <a href="{{ route('user.edit',$user->user_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
 
-                        <a href="{{ route('follower.index1',$user->id) }}"><button type="button" title="Followers" class="btn btn-info btn-xs"><span class="mdi mdi-launch"></span>Followers</button></a>
 
                         
                   </td>

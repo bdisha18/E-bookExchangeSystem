@@ -17,7 +17,8 @@ class CreateRatingsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('book_id');
             $table->integer('rating');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

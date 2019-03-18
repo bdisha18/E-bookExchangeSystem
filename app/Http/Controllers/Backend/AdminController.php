@@ -66,7 +66,7 @@ class AdminController extends Controller
 
      public function status() {
         $request = Input::all();
-        $this->adminRepository->update($request, $request['id']);
+        $this->adminRepository->update($request, $request['admin_id']);
     }
  
 }

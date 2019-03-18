@@ -15,7 +15,7 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('book_id');
-            $table->string('category');
+            $table->string('category_name');
             $table->string('book_name');
             $table->string('book_image');
             $table->string('author_name');
@@ -26,7 +26,8 @@ class CreateBooksTable extends Migration
             $table->integer('book_available');
              $table->string('file');
             $table->enum('status',['available','soldout']);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

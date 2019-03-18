@@ -24,7 +24,8 @@ class CreateTransactionsTable extends Migration
              $table->integer('order_id');
              $table->integer('total_cashback')->nullable();
             $table->integer('discount')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

@@ -65,9 +65,9 @@ class UserController extends Controller
         return redirect()->route('user.index')->with('status', 'Updated Successfully.');
     }
 
-     public function changeStatus() {
+     public function status() {
         $request = Input::all();
-        $this->userRepository->update($request, $request['id']);
+        $this->userRepository->update($request, $request['user_id']);
     }
 
 }

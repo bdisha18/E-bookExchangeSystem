@@ -24,7 +24,8 @@ class CreateEmailsTable extends Migration
             $table->integer('order_id');
             $table->integer('transaction_id');
             $table->enum('status',['send','declined']);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

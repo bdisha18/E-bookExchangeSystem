@@ -1,7 +1,9 @@
 
 @extends('backend.layouts.master')
 @section('content')
-<!-- /.row -->
+@php
+use App\Model\Member;
+@endphp
 
 <!--site header ends -->    
 <section class="admin-content">
@@ -11,7 +13,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Publisher
+                                <i class="mdi mdi-table "></i></span> Transactions
                         </h4>
 
 
@@ -26,10 +28,10 @@
                 <div class="col-md-12">
                     <div class="card m-b-30">
                         <div class="card-header">
-                          <a href="{{route('publisher.create')}}">
-                            <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Publisher</button>
-                          </a>
-                          <form action="{{route('publisher.index')}}" method="get">
+                          @if (session('status'))
+                          <p style="color: green;">{{session('status')}}</p>
+                          @endif
+                          <form action="{{route('transaction.index')}}" method="get">
                             <input name="search" type="text" placeholder="Search.." >                   
                             <button type="submit"><i class="fa fa-search"></i></button>
                           </form>
@@ -37,19 +39,17 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                @if(count($publishers))
+                                @if(count($transactions))
                                 <table class="table table-hover ">
                                     <thead>
                                       <tr>
                                         <th>Sr.No.</th>
-                                          <th>Publisher Name</th>
-
-                                          <th>Book Name</th>
-                                          <th>Author Name</th>
-                                          <th>Cover Image</th>
+                                          <th>Username</th>
+                                          <th>Reference Id</th>
+                                          <th>Payment Method</th>
+                                          <th>Amount</th>
                                           <th>Status</th>
-                                          <th>Released Date</th>
-
+                                          <th>Transaction Date</th>
                                           <th>Actions</th>
                                       </tr>
                                     </thead>
@@ -57,30 +57,29 @@
                                       @php
                                       $i =1;
                                       @endphp
-                                      @foreach($publishers as $publisher)
+                                      @foreach($transactions as $transaction)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($publisher->publisher_name)}}
+                                        <td>{{Member::where('user_id', $transaction->user_id)->value('username')}}
                                         </td>
-                                        </td>
-                                        <td>{{$publisher->created_at}}</td>
+                                        <td>{{$transaction->reference_id}}</td>
+                                        <td>{{$transaction->payment_method}}</td>
+                                        <td>{{$transaction->amount}}</td>
+                                        <td>{{$transaction->status}}</td>
+                                        <td>{{$transaction->created_at}}</td>
 
                                         <td> 
-                                              {!! Form::open(['method'=>'DELETE', 'route'=>['publisher.delete',
-                                                      $publisher->admin_id]]) !!}
-                                              <a href="{{ route('publisher.view',$publisher->publisher_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                                              <a href="{{ route('transaction.view',$transaction->transaction_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                                       
-                                               <a href="{{ route('publisher.edit',$publisher->publisher_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
+                                              <a href="{{ route('transaction.edit',$transaction->transaction_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
 
-                                               <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>
-                                               {!! Form::close() !!}
                                         </td>
                                         
                                       </tr>
                                       @endforeach
                                     </table>
                                      @else
-                                    <div><h2>No Publisher Found.</h2></div>
+                                    <div><h2>No Transaction Found.</h2></div>
                                      @endif
                                   </div>
 

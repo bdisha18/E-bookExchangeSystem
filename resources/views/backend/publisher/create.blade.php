@@ -1,8 +1,5 @@
 @extends('backend.layouts.master')
 @section('content')
-@php
-use App\Model\Book;
-@endphp
 
 <!--site header ends -->    
 <section class="admin-content">
@@ -12,7 +9,7 @@ use App\Model\Book;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Publisher Details
+                                <i class="mdi mdi-table "></i></span> Create Publisher
                         </h4>
                     </div>
                 </div>
@@ -24,7 +21,7 @@ use App\Model\Book;
                 <div class="col-lg-12">
 
                     <!--widget card begin-->
-                    <form role="form" action="{{ route('publisher.update',$publisher->publisher_id) }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('publisher.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="card m-b-30">
@@ -32,9 +29,10 @@ use App\Model\Book;
                               <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label>Publisher Name</label>
-                                    <input type="text" name="publisher_name" class="form-control" value="{{$publisher->publisher_name}}" placeholder="Publisher Name">
+                                    <input type="text" name="publisher_name" class="form-control" placeholder="Publisher Name">
                                     <div class="text-danger">{{ $errors->first('publisher_name') }}</div>
                                 </div>
+      
                             </div>
                           </div>
                       </div>

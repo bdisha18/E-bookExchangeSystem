@@ -19,7 +19,8 @@ class CreateEmailTemplatesTable extends Migration
             $table->string('subject');
             $table->text('message');
            
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

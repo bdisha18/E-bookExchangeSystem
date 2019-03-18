@@ -56,6 +56,16 @@
                     </span>
                 </a>
             </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'transaction.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('transaction.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Transactions</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-account-outline "></i>
+                    </span>
+                </a>
+            </li>
             <li class="treeview menu-item <?= ($requestRoute == 'admin.index') ? 'active' : '' ?>">
                 <a class="menu-link">
                     <span class="menu-label">

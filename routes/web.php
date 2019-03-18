@@ -33,7 +33,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
     Route::get('/index', 'UserController@index')->name('user.index');
     Route::post('/status/{id}', 'UserController@status')
     ->name('user.status');
-   	Route::get('/store', 'UserController@store')->name('user.store');
     Route::get('/view/{id}', 'UserController@view')->name('user.view');
     Route::get('/edit/{id}', 'UserController@edit')->name('user.edit');
     Route::post('/update/{id}', 'UserController@update')->name('user.update');
@@ -68,25 +67,25 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin/publisher'],
 function() {
     Route::get('/index', 'PublisherController@index')->name('publisher.index');
-    Route::post('/status/{id}', 'PublisherController@status')
-    ->name('publisher.status');
+    Route::get('/create', 'PublisherController@create')->name('publisher.create');
+    Route::post('/store', 'PublisherController@store')->name('publisher.store');
     Route::get('/view/{id}', 'PublisherController@view')->name('publisher.view');
     Route::get('/edit/{id}', 'PublisherController@edit')->name('publisher.edit');
     Route::post('/update/{id}', 'PublisherController@update')->name('publisher.update');
     Route::delete('/delete/{id}', 'PublisherController@delete')->name('publisher.delete');
 });
    
-// //for transaction
-// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/transaction'],
-// function() {
-//     Route::get('/index', 'TransactionController@index')->name('transaction.index');
-//     Route::post('/status/{id}', 'TransactionController@status')
-//     ->name('transaction.status');
-//     Route::get('/view/{id}', 'TransactionController@view')->name('transaction.view');
-//     Route::get('/edit/{id}', 'TransactionController@edit')->name('transaction.edit');
-//     Route::post('/update/{id}', 'TransactionController@update')->name('transaction.update');
-//     Route::delete('/delete/{id}', 'TransactionController@delete')->name('transaction.delete');
-// });
+//for transaction
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/transaction'],
+function() {
+    Route::get('/index', 'TransactionController@index')->name('transaction.index');
+    Route::post('/status/{id}', 'TransactionController@status')
+    ->name('transaction.status');
+    Route::get('/view/{id}', 'TransactionController@view')->name('transaction.view');
+    Route::get('/edit/{id}', 'TransactionController@edit')->name('transaction.edit');
+    Route::post('/update/{id}', 'TransactionController@update')->name('transaction.update');
+    Route::delete('/delete/{id}', 'TransactionController@delete')->name('transaction.delete');
+});
 
 
 
