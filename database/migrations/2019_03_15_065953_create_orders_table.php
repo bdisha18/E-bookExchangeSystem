@@ -19,7 +19,8 @@ class CreateOrdersTable extends Migration
             $table->integer('transaction_id');
             $table->enum('status',['confirmed','pending','declined']);
             $table->integer('book_id');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

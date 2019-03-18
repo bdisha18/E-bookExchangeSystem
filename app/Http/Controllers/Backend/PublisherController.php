@@ -23,6 +23,10 @@ class PublisherController extends Controller
         return view('backend.publisher.index', compact('publishers'));
     }
 
+    public function create() {
+        return view('backend.publisher.create');
+    }
+
     public function store(Request $request) {
         // $this->validate($request, [
         //     'username' => 'required',
@@ -35,6 +39,11 @@ class PublisherController extends Controller
         return redirect()->route('publisher.index')->with('status', 'Publisher Created Successfully.');
     }
 
+    public function view($id)
+    {
+        $publisher = $this->publisherRepository->find($id);
+        return view('backend.publisher.view', compact('publisher'));
+    }
     
     public function edit($id) {
         $publishers = Publisher::all();
@@ -61,7 +70,7 @@ class PublisherController extends Controller
 
      public function status() {
         $request = Input::all();
-        $this->publisherRepository->update($request, $request['id']);
+        $this->publisherRepository->update($request, $request['publisher_id']);
     }
  
 }

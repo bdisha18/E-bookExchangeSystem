@@ -18,7 +18,8 @@ class CreateTestimonialsTable extends Migration
             $table->string('image');
             $table->string('author_name');
             $table->text('description');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

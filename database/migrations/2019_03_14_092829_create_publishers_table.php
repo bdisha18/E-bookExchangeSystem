@@ -17,14 +17,9 @@ class CreatePublishersTable extends Migration
             $table->bigIncrements('publisher_id');
             $table->integer('user_id');
             $table->string('publisher_name');
-            $table->string('books_published')->nullable();
-            $table->string('publish_bookname')->nullable();
-            $table->integer('book_id');
-            $table->enum('status',['active','inactive']);
-            $table->string('image');
-            $table->string('book_category');
-            
-            $table->timestamps();
+            $table->integer('book_id')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

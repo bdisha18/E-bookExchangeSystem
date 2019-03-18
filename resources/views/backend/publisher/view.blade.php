@@ -10,7 +10,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> User Details
+                                <i class="mdi mdi-table "></i></span> Publisher Details
                         </h4>
 
 
@@ -31,76 +31,30 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">User Id :</label>
-                                    <p>{{$user->id}}</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Name :</label>
-                                    <p>{{$user->fname}} {{$user->lname}}</p>
+                                    <p>{{$publisher->user_id}}</p>
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Email :</label>
-                                    <p>{{$user->email}}</p> 
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Username :</label>
-                                    <p>{{$user->username}}</p> 
+                                    <label class="label">Publisher Name :</label>
+                                    <p>{{$publisher->publisher_name}}</p> 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Contact No :</label>
-                                    <p>{{$user->contactno}}</p> 
+                                    <label class="label">Book Id :</label>
+                                    <p>{{$publisher->book_id}}</p> 
                                 </div>
                             </div>
-
-                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Birth Date :</label>
-                                    <p>{{$user->birth_date}}</p> 
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Gmail Link :</label>
-                                    <p>{{$user->gmail_link}}</p> 
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Facebook Link :</label>
-                                    <p>{{$user->facebook_link}}</p> 
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Interests :</label>
-                                    <ul>
-                                        <li>{{Interest::where('user_id', $user->user_id)->value('name')}}</li>
-                                    </ul> 
-                                </div>
-                            </div>
-
-                            
                         </div>
                     </form>
                   </div>
                 </div>
         </div>
     </div>
-    <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
+    <a href="{{route('publisher.index')}}" class="button btn btn-danger">Back</a>
 </div>
 </section>
 @endsection

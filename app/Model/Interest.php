@@ -1,13 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Interest extends Model
 {
+	protected $table = 'interests';
     protected $primaryKey = 'interest_id';
+    public $timestamps = false;
+    
     protected $fillable = [
-       'user_id','name','created_at','updated_at'
+      'interest_id', 'user_id','name','created_at','updated_at'
     ];
 }

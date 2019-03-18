@@ -23,13 +23,14 @@ class CreateMembersTable extends Migration
             $table->integer('contactno')->nullable();
            $table->string('image')->nullable();
            $table->string('category');
-            $table->string('gender');
+            $table->enum('gender', ['male', 'female']);
            $table->date('dob');
             $table->string('gmail_link')->nullable();
             $table->string('fb_link')->nullable();
             $table->enum('status',['active','inactive']);
            
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

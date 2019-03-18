@@ -63,7 +63,7 @@
                                         @endif 
                                         <td>{{date('d M Y', strtotime($admin->created_at))}}</td>     
                                         <td><label class="switch">
-                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$admin->admin_id}}" data-url="{{ route('admin.status', $admin->id) }}" {{($admin->status == 'active')? 'checked' : ''}}>
+                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$admin->admin_id}}" data-url="{{ route('admin.status', $admin->admin_id) }}" {{($admin->status == 'active')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
 

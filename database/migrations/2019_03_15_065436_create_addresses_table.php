@@ -21,7 +21,8 @@ class CreateAddressesTable extends Migration
             $table->string('state');
             $table->string('city');
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
