@@ -11,7 +11,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Publisher
+                                <i class="mdi mdi-table "></i></span> Books
                         </h4>
 
 
@@ -33,16 +33,19 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                @if(count($publishers))
+                                @if(count($books))
                                 <table class="table table-hover ">
                                     <thead>
                                       <tr>
                                         <th>Sr.No.</th>
-                                          <th>Publisher Name</th>
                                           <th>Book Name</th>
-                                          <th>Author Name</th>
                                           <th>Cover Image</th>
-                                          <th>Status</th>
+                                           <th>Price</th>
+                                          <th>Author Name</th>
+                                          <th>Publisher Name</th>
+                                          <th>Rating</th>
+                                         <th>Status</th>
+                                         <th>Type</th>
                                           <th>Released Date</th>
                                           <th>Actions</th>
                                       </tr>
@@ -51,32 +54,34 @@
                                       @php
                                       $i =1;
                                       @endphp
-                                      @foreach($publishers as $publisher)
+                                      @foreach($books as $book)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($publisher->publisher_name)}}
-                                        </td>
-                                        <td>{{$publisher->book_name}}</td>
-                                        <td>{{$publisher->author_name}}</td>
-                                        @if(file_exists(public_path().'/'.env('PUBLISHER_IMAGE_PATH').$publisher->image) && $publisher->image)
-                                        <td><img src="{{ asset(env('PUBLISHER_IMAGE_PATH').$publisher->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
+                                        <td>{{ucwords($book->book_name)}}</td>
+                                        @if(file_exists(public_path().'/'.env('BOOK_IMAGE_PATH').$book->image) && $book->image)
+                                        <td><img src="{{ asset(env('BOOK_IMAGE_PATH').$publisher->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
                                         @else
                                         <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="image" height="60px"></td>
                                         @endif 
                                         
+                                        <td>{{$book->book_price}}</td>
+                                        <td>{$book->author_name}}</td>
+                                        <td>{{$book->publisher_name}}</td>
+                                        <td>{{$book->rating}}</td>
                                         <td><label class="switch">
-                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$publisher->publisher_id}}" 
-                                                   data-url="{{ route('publisher.status', $publisher->publisher_id) }}" {{($publisher->status == 'active')? 'checked' : ''}}>
+                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$book->book_id}}" 
+                                                   data-url="{{ route('book.status', $book->book_id) }}" {{($book->status == 'active')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
-                                        <td>{{$publisher->created_at}}</td>
+                                        <td>{{$book->category}}</td>
+                                        <td>{{$book->created_at}}</td>
 
                                         <td> 
-                                              {!! Form::open(['method'=>'DELETE', 'route'=>['publisher.delete',
-                                                      $publisher->admin_id]]) !!}
-                                              <a href="{{ route('publisher.view',$publisher->publisher_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                                              {!! Form::open(['method'=>'DELETE', 'route'=>['book.delete',
+                                                      $book->book_id]]) !!}
+                                              <a href="{{ route('book.view',$book->book_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                                       
-                                               <a href="{{ route('publisher.edit',$publisher->publisher_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
+                                               <a href="{{ route('book.edit',$book->book_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
 
                                                <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>
                                                {!! Form::close() !!}
@@ -86,7 +91,7 @@
                                       @endforeach
                                     </table>
                                      @else
-                                    <div><h2>No Publisher Found.</h2></div>
+                                    <div><h2>No Book Found.</h2></div>
                                      @endif
                                   </div>
 
