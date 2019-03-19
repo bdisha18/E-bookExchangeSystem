@@ -28,8 +28,9 @@ class EmailRepository extends BaseRepository
 
     public function store($request) {
          $input= array_filter(Input::all());
-        Email::create($input);
-        return true;
+         $input['user_id'] = Auth::id();
+         Email::create($input);
+          return true;
     
         }
 

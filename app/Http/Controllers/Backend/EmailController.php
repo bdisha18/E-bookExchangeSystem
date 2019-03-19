@@ -11,14 +11,14 @@ class EmailController extends Controller
     protected $emailRepository;
     
     public function __construct(EmailRepository $emailRepository) {
-        $this->emailRepository = $offerRepository;
+        $this->emailRepository = $emailRepository;
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $emails = $this->emailRepository->index($request);
         return view('backend.email.index', compact('emails'));

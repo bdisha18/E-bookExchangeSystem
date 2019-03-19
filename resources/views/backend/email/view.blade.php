@@ -10,7 +10,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Offer Details
+                                <i class="mdi mdi-table "></i></span> Email Details
                         </h4>
 
 
@@ -30,48 +30,48 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Offer Id :</label>
-                                    <p>{{$offer->offer_id}}</p>
+                                    <label class="label">USer Id :</label>
+                                    <p>{{$email->user_id}}</p>
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Offer Title :</label>
-                                    <p>{{$offer->offer_title}}</p> 
+                                    <label class="label">Sent to :</label>
+                                    <p>{{$email->email_name}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Start Date :</label>
-                                    <p>{{$offer->start_date}}</p> 
+                                    <label class="label">Username :</label>
+                                    <p>{{$email->username}}</p> 
                                 </div>
                             </div>
 
 
                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">End Date :</label>
-                                    <p>{{$offer->end_date}}</p> 
+                                    <label class="label">Subject :</label>
+                                    <p>{{$email->subject}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Discount :</label>
-                                    <p>{{$offer->discount_amount}}</p> 
+                                    <label class="label">Message:</label>
+                                    <p>{{$email->message}}</p> 
                                 </div>
                             </div>
                      <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Offer Description :</label>
-                                    <p>{{$offer->offer_description}}</p> 
+                                    <label class="label">Created at :</label>
+                                    <p>{{$email->created_at}}</p> 
                                 </div>
                             </div>
                                
                               <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Status :</label>
-                                    <p>{{$offer->status}}</p> 
+                                    <p>{{$email->status}}</p> 
                                 </div>
                             </div>
                              </div>
@@ -80,7 +80,7 @@
                 </div>
         </div>
     </div>
-    <a href="{{route('offer.index')}}" class="button btn btn-danger">Back</a>
+    <a href="{{route('email.index')}}" class="button btn btn-danger">Back</a>
 </div>
 </section>
 @endsection

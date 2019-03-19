@@ -37,7 +37,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                @if(count($offers))
+                                @if(count($emails))
                                 <table class="table table-hover ">
                                     <thead>
                                       <tr>
@@ -88,7 +88,7 @@
                                       @endforeach
                                     </table>
                                      @else
-                                    <div><h2>No Offers Found.</h2></div>
+                                    <div><h2>No Email Found.</h2></div>
                                      @endif
                                   </div>
 

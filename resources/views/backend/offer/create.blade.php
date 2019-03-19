@@ -66,15 +66,6 @@
                                     <textarea rows="7" cols="25" placeholder="Write terms&conditions here"></textarea>
                                     <div class="text-danger">{{ $errors->first('terms&conditions') }}</div>
                                 </div>
-                                 
-
-                                  
-                                 
-                                  
-      
-      
-                                  
-      
                             </div>
                           </div>
                       </div>
