@@ -69,7 +69,7 @@
                                         @endif 
                                         
                                         <td>{{$book->book_price}}</td>
-                                        <td>{$book->author_name}}</td>
+                                        <td>{{$book->author_name}}</td>
                                         <td>{{$book->publisher_name}}</td>
                                         <td>{{$book->rating}}</td>
                                         <td><label class="switch">

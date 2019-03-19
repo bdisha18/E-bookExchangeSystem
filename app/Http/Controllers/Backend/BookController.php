@@ -65,9 +65,14 @@ class BookController extends Controller
     public function edit($id)
     {
                 $books = Book::all();
-        $Book = $this->bookRepository->find($id);
-        return view('backend.book.edit', compact('book', 'books'));
+        $book = $this->bookRepository->find($id);
+        return view('backend.book.edit', compact('book'));
 
+    }
+    public function view($id)
+    {
+        $book = $this->bookRepository->find($id);
+        return view('backend.book.view', compact('book'));
     }
 
     /**
