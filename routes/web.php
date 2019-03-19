@@ -89,6 +89,21 @@ function() {
     Route::delete('/delete/{id}', 'TransactionController@delete')->name('transaction.delete');
 });
 
+//for offers
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/offer'],
+function() {
+    Route::get('/index', 'OfferController@index')->name('offer.index');
+    Route::post('/status/{id}', 'OfferController@status')
+    ->name('offer.status');
+        Route::get('/create', 'OfferController@create')->name('offer.create');
+    Route::post('/store', 'OfferController@store')->name('offer.store');
+
+    Route::get('/view/{id}', 'OfferController@view')->name('offer.view');
+    Route::get('/edit/{id}', 'OfferController@edit')->name('offer.edit');
+    Route::post('/update/{id}', 'OfferController@update')->name('offer.update');
+    Route::delete('/delete/{id}', 'OfferController@delete')->name('offer.delete');
+});
+
 
 
 
