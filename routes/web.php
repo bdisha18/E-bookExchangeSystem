@@ -104,6 +104,21 @@ function() {
     Route::delete('/delete/{id}', 'OfferController@delete')->name('offer.delete');
 });
 
+//for email
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/email'],
+function() {
+    Route::get('/index', 'EmailController@index')->name('email.index');
+    Route::post('/status/{id}', 'EmailController@status')
+    ->name('email.status');
+        Route::get('/create', 'EmailController@create')->name('email.create');
+    Route::post('/store', 'EmailController@store')->name('email.store');
+
+    Route::get('/view/{id}', 'EmailController@view')->name('email.view');
+    Route::get('/edit/{id}', 'EmailController@edit')->name('email.edit');
+    Route::post('/update/{id}', 'EmailController@update')->name('email.update');
+    Route::delete('/delete/{id}', 'EmailController@delete')->name('email.delete');
+});
+
 
 
 

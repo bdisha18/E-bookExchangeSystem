@@ -96,6 +96,16 @@
                     </span>
                 </a>
             </li>
+           <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('email.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Emails</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
+                    </span>
+                </a>
+            </li>
            
             
         </ul>
