@@ -28,7 +28,7 @@ class EmailRepository extends BaseRepository
 
     public function store($request) {
          $input= array_filter(Input::all());
-        Offers::create($input);
+        Email::create($input);
         return true;
     
         }
@@ -36,9 +36,9 @@ class EmailRepository extends BaseRepository
 
     public function update($request, $id) {
     
-        $offer = Offers::findOrFail($id);
+        $email = Email::findOrFail($id);
         $data = $request->all();
-        $offer->update($data);
+        $email->update($data);
         return true;
     }
     
