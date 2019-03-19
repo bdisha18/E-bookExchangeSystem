@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">USer Id :</label>
+                                    <label class="label">User Id :</label>
                                     <p>{{$email->user_id}}</p>
                                 </div>
                             </div>

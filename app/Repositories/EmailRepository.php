@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
+use Illuminate\Support\Facades\Auth;
 use App\Model\Email;
 use App\Helper\Common;
 use Illuminate\Support\Facades\Input;

@@ -69,7 +69,7 @@
                                         <td>{{$email->subject}}</td>
                                         <td>{{$email->created_at}}</td>
                                         <td><label class="switch">
-                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$email->id}}" data-url="{{ route('email.status', $email->id) }}" {{($email->status == 'active')? 'checked' : ''}}>
+                                            <input type="checkbox" name="status" class="update-status"  data-id="{{$email->id}}" data-url="{{ route('email.status', $email->id) }}" {{($email->status == 'send')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
 
