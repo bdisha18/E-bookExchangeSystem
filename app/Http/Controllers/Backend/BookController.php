@@ -20,7 +20,7 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $books = $this->bookRepository->index($request);
         return view('backend.book.index', compact('books'));
@@ -45,6 +45,10 @@ class BookController extends Controller
         return redirect()->route('book.index')->with('status', 'Books Created Successfully.');
 
     }
+     public function create() {
+        return view('backend.book.create');
+    }
+
 
     /**
      * Display the specified resource.

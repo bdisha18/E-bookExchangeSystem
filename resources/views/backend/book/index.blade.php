@@ -19,18 +19,22 @@
                 </div>
             </div>
         </div>
-
-        <div class="container pull-up">
+<div class="container pull-up">
             <div class="row">
 
                 <div class="col-md-12">
                     <div class="card m-b-30">
                         <div class="card-header">
-                          @if (session('status'))
-                          <p style="color: green;">{{session('status')}}</p>
-                          @endif
+                          <a href="{{route('book.create')}}">
+                            <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Books</button>
+                          </a>
+                          <form action="{{route('book.index')}}" method="get">
+                            <input name="search" type="text" placeholder="Search.." >                   
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                          </form>
                           
                         </div>
+         
                         <div class="card-body">
                             <div class="table-responsive">
                                 @if(count($books))

@@ -5,6 +5,7 @@
         <group>
             <file>file:/E:/xampp/htdocs/socialsite/.env</file>
             <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Backend/BookController.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/publisher/index.blade.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/routes/web.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/app/Repositories/BookRepository.php</file>
         </group>
