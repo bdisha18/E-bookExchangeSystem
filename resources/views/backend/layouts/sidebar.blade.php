@@ -106,8 +106,8 @@
                     </span>
                 </a>
             </li>
-            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
-                <a class="menu-link" href="{{route('email.index')}}">
+            <li class="treeview menu-item <?= ($requestRoute == 'template.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('template.index')}}">
                     <span class="menu-label">
                         <span class="menu-name">Email Templates</span>
                     </span>

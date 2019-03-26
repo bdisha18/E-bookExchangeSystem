@@ -3,12 +3,10 @@
 namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
-use Illuminate\Support\Facades\Auth;
 use App\Model\EmailTemplate;
-use App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 
-class EmailRepository extends BaseRepository
+class EmailTemplateRepository extends BaseRepository
 {
     public function model() {
         return "App\Model\EmailTemplate";
@@ -21,16 +19,15 @@ class EmailRepository extends BaseRepository
                 ['email_name', 'LIKE', '%' . $request->search . '%'],
                 ])->orderBy('template_id', 'desc')->paginate(10);
         }else{
-            $template = Email::orderBy('template_id', 'desc')->paginate(10);
+            $template = EmailTemplate::orderBy('template_id', 'desc')->paginate(10);
         }
             return $template;
     }
 
     public function store($request) {
          $input= array_filter(Input::all());
-         $input['user_id'] = Auth::id();
-         EmailTemplate::create($input);
-          return true;
+         $template = EmailTemplate::create($input);
+        return $template;
     
         }
 

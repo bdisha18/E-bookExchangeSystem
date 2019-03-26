@@ -44,7 +44,7 @@ class EmailTemplateController extends Controller
      */
     public function store(Request $request)
     {
-         $this->emailTemplatesRepository->store($request);
+        $this->emailTemplateRepository->store($request);
         return redirect()->route('template.index')->with('status', 'Email Template Created Successfully.');
 
     
