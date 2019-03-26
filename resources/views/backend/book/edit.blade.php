@@ -35,6 +35,55 @@ use App\Model\Book;
                                     <input type="text" name="book_name" class="form-control" value="{{$book->book_name}}" placeholder="Book Name">
                                     <div class="text-danger">{{ $errors->first('book_name') }}</div>
                                 </div>
+                                <div class="form-group col-md-4">
+                                    <label>Author Name</label>
+                                    <input type="text" name="author_name" class="form-control" value="{{$book->author_name}}">
+                                    <div class="text-danger">{{ $errors->first('author_name') }}</div>
+                                </div>
+                              
+                               <div class="form-group col-md-4">
+                                    <label>Rating</label>
+                                    <input type="text" name="rating" class="form-control" value="{{$book->rating}}" placeholder="rate book">
+                                    <div class="text-danger">{{ $errors->first('rating') }}</div>
+                                </div>
+                         <div class="form-group col-md-4">
+                                    <label>Price</label>
+                                    <input type="text" name="book_price" class="form-control" value="{{$book->book_price}}" placeholder="book cost">
+                                    <div class="text-danger">{{ $errors->first('book_price') }}</div>
+                                </div>
+                        <div class="form-group col-md-4">
+                                    <label>Description</label>
+                                    <input type="text" name="description" class="form-control" value="{{$book->description}}">
+                                    <div class="text-danger">{{ $errors->first('description') }}</div>
+                                </div>
+                        <div class="form-group col-md-4">
+                                    <label>Number of Pages</label>
+                                    <input type="text" name="pages" class="form-control" value="{{$book->pages}}">
+                                    <div class="text-danger">{{ $errors->first('pages') }}</div>
+                                </div>
+                                              
+                        <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Status :</label>
+                                    <select name="status" class="form-control">
+                                        <option>Available</option>
+                                        <option>Soldout</option>
+                                    </select>
+                                </div>
+                            </div>
+                                 <div class="form-group col-md-4">
+                                    <label>Books Available</label>
+                                    <input type="text" name="book_available" class="form-control" value="{{$book->book_available}}">
+                                    <div class="text-danger">{{ $errors->first('book_available') }}</div>
+                                </div>
+                        <div class="form-group col-md-4">
+                                    <label>Released Date</label>
+                                    <input type="text" name="created_at" class="form-control" value="{{$book->created_at}}">
+                                    <div class="text-danger">{{ $errors->first('created_at') }}</div>
+                                    
+                                </div>
+                                     
+                                                         
                             </div>
                           </div>
                       </div>

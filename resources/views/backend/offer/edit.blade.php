@@ -55,7 +55,7 @@ use App\Model\Offer;
                                     <input type="text" name="discount_amount" class="form-control" value="{{$offer->discount_amount}}" placeholder="discount amount">
                                     <div class="text-danger">{{ $errors->first('discount_amount') }}</div>
                                 </div>
-                                  <div class="form-group col-md-4">
+                               <div class="form-group col-md-4">
                                   <label>Status</label><br>
                                     <label class="radio-inline">Active
                                       </label>
@@ -63,12 +63,14 @@ use App\Model\Offer;
                                       <label class="radio-inline">Deactivate</label>
                                       <input class="col-md-2" type="radio" name="status" value="inactive" {{($offer->status == 'inactive')? 'checked' : ''}}>
                                 </div>
-                                  <div class="form-group col-md-4">
+                              </div>
+   
+                                  <div class="form-group col-md-12">
                                     <label>Terms & Conditions</label>
-                                    <textarea name="t&c" class="form-control" 
-                                              placeholder="    Write  terms & conditions here"></textarea>
-                                    <div class="text-danger">{{ $errors->first('t&c') }}</div>
-                                
+                                    <textarea name="termsconditions" class="form-control" value="{{$offer->termsconditions}}"
+                                              placeholder="    Write  terms & conditions here" ></textarea>
+                            <div class="text-danger">{{ $errors->first('termsconditions') }}</div>
+
                                    </div>
                                
                               </div>

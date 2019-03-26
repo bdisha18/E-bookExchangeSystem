@@ -90,24 +90,25 @@ use App\Model\Offers;
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Cashback :</label>
-                                    <p>{{$transaction->cashback}}</p> 
+                                    <p>{{$transaction->total_cashback}}</p> 
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Discount :</label>
-                                    <p>{{Offers::where('offer_id', $transaction->offer_id)->value('offer_title')}}</p> 
+                                    <p>{{$transaction->discount}}</p> 
                                 </div>
                             </div>
                         </div>
                   </div>
                 </div>
-        </form>
+        
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="{{route('transaction.index')}}" class="button btn btn-danger">Back</a>
     </div>
+</form>
 </div>
 </div>
 </div>

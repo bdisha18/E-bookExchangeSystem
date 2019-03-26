@@ -65,10 +65,9 @@
                                         </td>
                                         <td>{{$offer->offer_description}}</td>
                                         </td>
-                                    
-                                        <td>{{$offer->start_date}}</td>
-                                        <td>{{$offer->end_date}}</td>
-                                        <td>{{$offer->discount_amount}}</td>
+                                    <td>{{date('d M Y', strtotime($offer->start_date))}}</td>     
+                                    <td>{{date('d M Y', strtotime($offer->end_date))}}</td>     
+                                    <td>{{$offer->discount_amount}}</td>
                                         <td><label class="switch">
                                             <input type="checkbox" name="status" class="update-status"  data-id="{{$offer->offer_id}}" data-url="{{ route('offer.status', $offer->offer_id) }}" {{($offer->status == 'active')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>

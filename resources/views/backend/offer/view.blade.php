@@ -77,7 +77,7 @@
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Terms&Conditions :</label>
-                                    <p>{{$offer->t&c}}</p> 
+                                    <p>{{$offer->termsconditions}}</p> 
                                 </div>
                             </div>
                     

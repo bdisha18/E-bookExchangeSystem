@@ -1,6 +1,9 @@
 
 @extends('backend.layouts.master')
 @section('content')
+@php
+use App\Model\Member;
+@endphp
 <!-- /.row -->
 
 <!--site header ends -->    
@@ -63,7 +66,7 @@
                                         <td>{{$i++}}</td>
                                         <td>{{ucwords($email->email_name)}}</td>
                                         </td>
-                                        <td>{{$email->username}}</td>
+                                        <td>{{Member::where('user_id',$email->user_id)->value('username')}}</td>
                                         </td>
                                     
                                         <td>{{$email->subject}}</td>
@@ -77,10 +80,7 @@
                                               {!! Form::open(['method'=>'DELETE', 'route'=>['email.delete',
                                                       $email->id]]) !!}
                                               <a href="{{ route('email.view',$email->id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
-                                                                      
-                                               <a href="{{ route('email.edit',$email->id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
-
-                                               <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>
+                                            <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>
                                                {!! Form::close() !!}
                                         </td>
                                         

@@ -1,6 +1,9 @@
 
 @extends('backend.layouts.master')
 @section('content')
+@php
+use App\Model\Publisher;
+@endphp
 
 <!--site header ends -->    
 <section class="admin-content">
@@ -88,7 +91,8 @@
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Publisher Name :</label>
-                                    <p>{{$book->publisher_name}}</p> 
+                            <p>{{Publisher::where('book_id', $book->book_id)->value('publisher_name')}}</p>
+
                                 </div>
                             </div>
                              <div class="col-md-4">
