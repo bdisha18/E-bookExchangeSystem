@@ -106,6 +106,67 @@
                     </span>
                 </a>
             </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('email.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Email Templates</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('email.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Categories</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('email.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Ratings</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('email.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Testimonials</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('email.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Address</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('email.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Orders</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
+                    </span>
+                </a>
+            </li>
+            
            
             
         </ul>

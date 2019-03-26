@@ -119,6 +119,90 @@ function() {
     Route::delete('/delete/{id}', 'EmailController@delete')->name('email.delete');
 });
 
+//for Email Template
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/emailtemplate'],
+function() {
+    Route::get('/index', 'EmailTemplateController@index')->name('template.index');
+        Route::get('/create', 'EmailTemplateController@create')->name('template.create');
+    Route::post('/store', 'EmailTemplateController@store')->name('template.store');
+
+    Route::get('/view/{id}', 'EmailTemplateController@view')->name('template.view');
+    Route::get('/edit/{id}', 'EmailTemplateController@edit')->name('template.edit');
+    Route::post('/update/{id}', 'EmailTemplateController@update')->name('template.update');
+    Route::delete('/delete/{id}', 'EmailTemplateController@delete')->name('template.delete');
+});
+
+// //for Categories
+// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/categories'],
+// function() {
+//     Route::get('/index', 'CategoryController@index')->name('category.index');
+//     Route::get('/create', 'CategoryController@create')->name('category.create');
+//     Route::post('/store', 'CategoryController@store')->name('category.store');
+//     Route::get('/edit/{id}', 'CategoryController@edit')->name('category.edit');
+//     Route::post('/update/{id}', 'CategoryController@update')->name('category.update');
+//     Route::delete('/delete/{id}', 'CategoryController@delete')->name('category.delete');
+// });
+
+// //for Rating
+// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/rating'],
+// function() {
+//     Route::get('/index', 'RatingController@index')->name('rating.index');
+//         Route::get('/create', 'RatingController@create')->name('rating.create');
+//     Route::post('/store', 'RatingController@store')->name('rating.store');
+
+//     Route::get('/view/{id}', 'RatingController@view')->name('rating.view');
+//     Route::get('/edit/{id}', 'RatingController@edit')->name('rating.edit');
+//     Route::post('/update/{id}', 'RatingController@update')->name('rating.update');
+//     Route::delete('/delete/{id}', 'RatingController@delete')->name('rating.delete');
+// });
+
+// //for Testimonials
+// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/testimonial'],
+// function() {
+//     Route::get('/index', 'TestimonialController@index')->name('testimonial.index');
+//     Route::get('/create', 'TestimonialController@create')->name('testimonial.create');
+//     Route::post('/store', 'TestimonialController@store')->name('testimonial.store');
+
+//     Route::get('/view/{id}', 'TestimonialController@view')->name('testimonial.view');
+//     Route::get('/edit/{id}', 'TestimonialController@edit')->name('testimonial.edit');
+//     Route::post('/update/{id}', 'TestimonialController@update')->name('testimonial.update');
+//     Route::delete('/delete/{id}', 'TestimonialController@delete')->name('testimonial.delete');
+// });
+
+
+// //for Address
+// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/address'],
+// function() {
+//     Route::get('/index', 'AddressController@index')->name('address.index');
+//      Route::post('/status/{id}', 'AddressController@status')
+//     ->name('address.status');
+//         Route::get('/create', 'AddressController@create')->name('rating.create');
+//     Route::post('/store', 'AddressController@store')->name('address.store');
+
+//     Route::get('/view/{id}', 'AddressController@view')->name('address.view');
+//     Route::get('/edit/{id}', 'AddressController@edit')->name('address.edit');
+//     Route::post('/update/{id}', 'AddressController@update')->name('address.update');
+//     Route::delete('/delete/{id}', 'AddressController@delete')->name('address.delete');
+// });
+
+
+// //for Orders
+// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/order'],
+// function() {
+//     Route::get('/index', 'OrderController@index')->name('order.index');
+//      Route::post('/status/{id}', 'OrderController@status')
+//     ->name('order.status');
+//         Route::get('/create', 'OrderController@create')->name('order.create');
+//     Route::post('/store', 'OrderController@store')->name('address.store');
+
+//     Route::get('/view/{id}', 'OrderController@view')->name('order.view');
+//     Route::get('/edit/{id}', 'OrderController@edit')->name('order.edit');
+//     Route::post('/update/{id}', 'OrderController@update')->name('order.update');
+//     Route::delete('/delete/{id}', 'OrderController@delete')->name('order.delete');
+// });
+
+
+
 
 
 
