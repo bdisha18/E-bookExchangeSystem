@@ -34,7 +34,7 @@ use App\Model\Interest;
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">User Id :</label>
-                                    <p>{{$user->id}}</p>
+                                    <p>{{$user->user_id}}</p>
                                 </div>
                             </div>
 
@@ -69,7 +69,7 @@ use App\Model\Interest;
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Birth Date :</label>
-                                    <p>{{$user->birth_date}}</p> 
+                                    <p>{{$user->dob}}</p> 
                                 </div>
                             </div>
 
@@ -93,6 +93,12 @@ use App\Model\Interest;
                                     <ul>
                                         <li>{{Interest::where('user_id', $user->user_id)->value('name')}}</li>
                                     </ul> 
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Status :</label>
+                                    <p>{{$user->status}}</p> 
                                 </div>
                             </div>
 

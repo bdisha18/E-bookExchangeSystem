@@ -55,11 +55,28 @@ use App\Model\Offer;
                                     <input type="text" name="discount_amount" class="form-control" value="{{$offer->discount_amount}}" placeholder="discount amount">
                                     <div class="text-danger">{{ $errors->first('discount_amount') }}</div>
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label>Status</label>
-                                    <input type="text" name="status" class="form-control" value="{{$offer->status}}" placeholder="status">
-                                    <div class="text-danger">{{ $errors->first('status') }}</div>
+                               <div class="form-group col-md-4">
+                                  <label>Status</label><br>
+                                    <label class="radio-inline">Active
+                                      </label>
+                                      <input class="col-md-2" type="radio" name="status" value="active" {{($offer->status == 'active')? 'checked' : ''}}>
+                                      <label class="radio-inline">Inactive</label>
+                                      <input class="col-md-2" type="radio" name="status" value="inactive" {{($offer->status == 'inactive')? 'checked' : ''}}>
                                 </div>
+                              </div>
+   
+                                  <div class="form-group col-md-12">
+                                    <label>Terms & Conditions</label>
+                                    <textarea name="termsconditions" class="form-control" value="{{$offer->termsconditions}}"
+                                              placeholder="    Write  terms & conditions here" ></textarea>
+                            <div class="text-danger">{{ $errors->first('termsconditions') }}</div>
+
+                                   </div>
+                               
+                              </div>
+                                </div>
+
+                                    </div>
                                
                                    
                             </div>
@@ -68,7 +85,7 @@ use App\Model\Offer;
                           <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="{{route('offer.index')}}" class="button
-                            btn btn-danger">Back</a>
+                            btn btn-danger">Submit</a>
                         </div>
                         </form>
                         

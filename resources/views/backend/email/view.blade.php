@@ -1,7 +1,9 @@
 
 @extends('backend.layouts.master')
 @section('content')
-
+@php
+use App\Model\Member;
+@endphp
 <!--site header ends -->    
 <section class="admin-content">
         <div class="bg-dark">
@@ -44,7 +46,8 @@
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Username :</label>
-                                    <p>{{$email->username}}</p> 
+                                    <p>{{Member::where('user_id',$email->user_id)->value('username')}}</p>
+                                 
                                 </div>
                             </div>
 

@@ -114,8 +114,6 @@ function() {
     Route::post('/store', 'EmailController@store')->name('email.store');
 
     Route::get('/view/{id}', 'EmailController@view')->name('email.view');
-    Route::get('/edit/{id}', 'EmailController@edit')->name('email.edit');
-    Route::post('/update/{id}', 'EmailController@update')->name('email.update');
     Route::delete('/delete/{id}', 'EmailController@delete')->name('email.delete');
 });
 

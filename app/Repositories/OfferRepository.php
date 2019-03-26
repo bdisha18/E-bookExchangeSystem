@@ -18,7 +18,7 @@ class OfferRepository extends BaseRepository
         
         if($request->search){
             $offer = Offers::where([ 
-                ['offer_titlr', 'LIKE', '%' . $request->search . '%'],
+                ['offer_title', 'LIKE', '%' . $request->search . '%'],
                 ])->orderBy('offer_id', 'desc')->paginate(10);
         }else{
             $offer = Offers::orderBy('offer_id', 'desc')->paginate(10);
@@ -28,7 +28,9 @@ class OfferRepository extends BaseRepository
 
     public function store($request) {
          $input= array_filter(Input::all());
-        Offers::create($input);
+         $input['category_id'] = '';
+         $input['book_id'] = '';
+         Offers::create($input);
         return true;
     
         }

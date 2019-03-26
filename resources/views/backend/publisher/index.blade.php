@@ -43,12 +43,9 @@
                                       <tr>
                                         <th>Sr.No.</th>
                                           <th>Publisher Name</th>
-
-                                          <th>Book Name</th>
-                                          <th>Author Name</th>
-                                          <th>Cover Image</th>
-                                          <th>Status</th>
-                                          <th>Released Date</th>
+                                          <th>No.of Books Published</th>
+                                          <th>Books Name</th>
+                                           <th>Created At</th>
 
                                           <th>Actions</th>
                                       </tr>
@@ -60,9 +57,9 @@
                                       @foreach($publishers as $publisher)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($publisher->publisher_name)}}
-                                        </td>
-                                        </td>
+                                        <td>{{ucwords($publisher->publisher_name)}}</td>
+                                        <td>{{$publisher->books_published}}</td>
+                                        <td>{{$publisher->publish_bookname}}</td>
                                         <td>{{$publisher->created_at}}</td>
 
                                         <td> 

@@ -41,7 +41,7 @@
                                 
                                 <div class="form-group col-md-4">
                                   <label>Status</label><br>
-                                    <label class="radio-inline">Activate
+                                    <label class="radio-inline">Active
                                       </label>
                                       <input class="col-md-2" type="radio" name="status" value="active" {{($admin->status == 'active')? 'checked' : ''}}>
                                       <label class="radio-inline">Deactivate</label>

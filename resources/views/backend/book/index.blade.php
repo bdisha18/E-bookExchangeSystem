@@ -1,6 +1,9 @@
 
 @extends('backend.layouts.master')
 @section('content')
+@php
+use App\Model\Publisher;
+@endphp
 <!-- /.row -->
 
 <!--site header ends -->    
@@ -70,7 +73,7 @@
                                         
                                         <td>{{$book->book_price}}</td>
                                         <td>{{$book->author_name}}</td>
-                                        <td>{{$book->publisher_name}}</td>
+                                        <td>{{Publisher::where('book_id', $book->book_id)->value('publisher_name')}}</td>
                                         <td>{{$book->rating}}</td>
                                         <td><label class="switch">
                                             <input type="checkbox" name="status" class="update-status"  data-id="{{$book->book_id}}" 

@@ -35,6 +35,7 @@ class PublisherRepository extends BaseRepository {
     public function store($request) {
         $input= array_filter(Input::all());
         $input['user_id'] = Auth::id();
+        
         Publisher::create($input);
         return true;
     }
