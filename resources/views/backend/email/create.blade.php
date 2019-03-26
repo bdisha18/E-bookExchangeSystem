@@ -57,7 +57,8 @@
                                     </div>
                                   <div class="form-group col-md-4">
                                     <label>Message</label>
-                                    <textarea rows="7" cols="25" placeholder="Write message here"></textarea>
+                                    <textarea class="form-control" name="message" rows="7" cols="25" class="message" id=""
+                                              placeholder="Write message here"></textarea>
                                     <div class="text-danger">{{ $errors->first('message') }}</div>
                                 </div>
                          </div>

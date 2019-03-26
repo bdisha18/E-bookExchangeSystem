@@ -74,6 +74,13 @@
                                     <p>{{$offer->status}}</p> 
                                 </div>
                             </div>
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Terms&Conditions :</label>
+                                    <p>{{$offer->t&c}}</p> 
+                                </div>
+                            </div>
+                    
                              </div>
                     </form>
                   </div>

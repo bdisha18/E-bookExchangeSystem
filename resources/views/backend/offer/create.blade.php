@@ -61,10 +61,11 @@
                                                         <option>Inactive</option></select>
                                     <div class="text-danger">{{ $errors->first('status') }}</div>
                                     </div>
-                                  <div class="form-group col-md-4">
+                                  <div class="form-group col-md-12">
                                     <label>Terms&conditions</label>
-                                    <textarea rows="7" cols="25" placeholder="Write terms&conditions here"></textarea>
-                                    <div class="text-danger">{{ $errors->first('terms&conditions') }}</div>
+                                    <textarea name="t&c" class="form-control" 
+                                              placeholder="    Write  terms & conditions here"></textarea>
+                                    <div class="text-danger">{{ $errors->first('t&c') }}</div>
                                 </div>
                             </div>
                           </div>

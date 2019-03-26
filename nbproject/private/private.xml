@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>app/Http/Controllers/Backend/EmailController.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>8</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/xampp/htdocs/socialsite/.env</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Backend/BookController.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/publisher/index.blade.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/routes/web.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Repositories/BookRepository.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/app/Repositories/EmailRepository.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/email/index.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/app/Repositories/TransactionRepository.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/email/view.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/email/create.blade.php</file>
         </group>
     </open-files>
 </project-private>

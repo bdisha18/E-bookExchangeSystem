@@ -28,7 +28,8 @@ class OfferRepository extends BaseRepository
 
     public function store($request) {
          $input= array_filter(Input::all());
-        Offers::create($input);
+         
+         Offers::create($input);
         return true;
     
         }

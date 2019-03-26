@@ -19,7 +19,7 @@ class CreateOffersTable extends Migration
             $table->integer('book_id');
             $table->string('offer_title');
             $table->text('offer_description');
-            $table->text('terms&conditions');
+            $table->text('t&c');
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('discount_amount');

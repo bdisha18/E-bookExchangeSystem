@@ -50,7 +50,7 @@ class UserRepository extends BaseRepository {
     
         $user = Member::findOrFail($id);
         $input= array_filter(Input::all());
-        $input['birth_date'] = date('Y-m-d', strtotime($request->birth_date));
+        $input['dob'] = date('Y-m-d', strtotime($request->dob));
 
         if(Input::hasFile('image'))
         {
