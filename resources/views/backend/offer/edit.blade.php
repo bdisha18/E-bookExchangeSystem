@@ -60,7 +60,7 @@ use App\Model\Offer;
                                     <label class="radio-inline">Active
                                       </label>
                                       <input class="col-md-2" type="radio" name="status" value="active" {{($offer->status == 'active')? 'checked' : ''}}>
-                                      <label class="radio-inline">Deactivate</label>
+                                      <label class="radio-inline">Inactive</label>
                                       <input class="col-md-2" type="radio" name="status" value="inactive" {{($offer->status == 'inactive')? 'checked' : ''}}>
                                 </div>
                               </div>

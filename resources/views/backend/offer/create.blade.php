@@ -63,9 +63,9 @@
                                     </div>
                                   <div class="form-group col-md-12">
                                     <label>Terms&conditions</label>
-                                    <textarea name="t&c" class="form-control" 
+                                    <textarea name="termsconditions" class="form-control" 
                                               placeholder="    Write  terms & conditions here"></textarea>
-                                    <div class="text-danger">{{ $errors->first('t&c') }}</div>
+                                    <div class="text-danger">{{ $errors->first('termsconditions') }}</div>
                                 </div>
                             </div>
                           </div>

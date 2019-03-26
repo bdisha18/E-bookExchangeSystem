@@ -32,7 +32,23 @@
                                     <input type="text" name="publisher_name" class="form-control" placeholder="Publisher Name">
                                     <div class="text-danger">{{ $errors->first('publisher_name') }}</div>
                                 </div>
-      
+                    <div class="form-group col-md-4">
+                                    <label>Book Name</label>
+                                    <input type="text" name="book_name" class="form-control" placeholder="Book Name">
+                                    <div class="text-danger">{{ $errors->first('book_name') }}</div>
+                                </div>
+                    <div class="form-group col-md-4">
+                                    <label>Author Name</label>
+                                    <input type="text" name="author_name" class="form-control" placeholder="Author Name">
+                                    <div class="text-danger">{{ $errors->first('author_name') }}</div>
+                                </div>
+                    <div class="form-row">
+                                <div class="form-group col-md-4">
+                                      <label>Image</label>
+                                      <input type="file" name="image" class="form-control" placeholder="Image"">
+                                      <div class="text-danger">{{ $errors->first('image') }}</div>
+                                </div>
+                              
                             </div>
                           </div>
                       </div>
