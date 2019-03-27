@@ -47,6 +47,7 @@
                                           <th>Signup Date</th>
                                           <th>Status</th>
                                           <th>Actions</th>
+                                          <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -74,6 +75,12 @@
                         <a href="{{ route('user.view',$user->user_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                 
                         <a href="{{ route('user.edit',$user->user_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
+
+                        <a href="{{ route('user.interest',$user->user_id) }}"><button type="button" title="Interests" class="btn btn-info btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+
+                        <a href="{{ route('interest.index',$user->user_id) }}"><button type="button" title="Favorites" class="btn btn-dark btn-xs"><span class="mdi mdi-eye"></span></button></a>
+
+                        <a href="{{ route('interest.index',$user->user_id) }}"><button type="button" title="Cart" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a>
 
 
                         

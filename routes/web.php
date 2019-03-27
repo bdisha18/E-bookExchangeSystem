@@ -37,7 +37,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
     Route::get('/edit/{id}', 'UserController@edit')->name('user.edit');
     Route::post('/update/{id}', 'UserController@update')->name('user.update');
     Route::get('/status', 'UserController@status')->name('user.status');
-    // Route::get('/delete', 'UserController@delete')->name('user.delete');
+    Route::get('/user-interest/{id}', 'UserController@users_interest')->name('user.interest');
+  
 });
 
 // for Admin
