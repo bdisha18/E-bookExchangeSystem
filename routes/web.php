@@ -154,18 +154,18 @@ function() {
 //     Route::delete('/delete/{id}', 'RatingController@delete')->name('rating.delete');
 // });
 
-// //for Testimonials
-// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/testimonial'],
-// function() {
-//     Route::get('/index', 'TestimonialController@index')->name('testimonial.index');
-//     Route::get('/create', 'TestimonialController@create')->name('testimonial.create');
-//     Route::post('/store', 'TestimonialController@store')->name('testimonial.store');
+ //for Testimonials
+ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/testimonial'],
+ function() {
+     Route::get('/index', 'TestimonialController@index')->name('testimonial.index');
+     Route::get('/create', 'TestimonialController@create')->name('testimonial.create');
+     Route::post('/store', 'TestimonialController@store')->name('testimonial.store');
 
-//     Route::get('/view/{id}', 'TestimonialController@view')->name('testimonial.view');
-//     Route::get('/edit/{id}', 'TestimonialController@edit')->name('testimonial.edit');
-//     Route::post('/update/{id}', 'TestimonialController@update')->name('testimonial.update');
-//     Route::delete('/delete/{id}', 'TestimonialController@delete')->name('testimonial.delete');
-// });
+     Route::get('/view/{id}', 'TestimonialController@view')->name('testimonial.view');
+     Route::get('/edit/{id}', 'TestimonialController@edit')->name('testimonial.edit');
+     Route::post('/update/{id}', 'TestimonialController@update')->name('testimonial.update');
+     Route::delete('/delete/{id}', 'TestimonialController@delete')->name('testimonial.delete');
+ });
 
 
 // //for Address
