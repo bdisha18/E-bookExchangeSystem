@@ -168,20 +168,20 @@ function() {
  });
 
 
-// //for Address
-// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/address'],
-// function() {
-//     Route::get('/index', 'AddressController@index')->name('address.index');
-//      Route::post('/status/{id}', 'AddressController@status')
-//     ->name('address.status');
-//         Route::get('/create', 'AddressController@create')->name('rating.create');
-//     Route::post('/store', 'AddressController@store')->name('address.store');
+//for Address
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/address'],
+function() {
+    Route::get('/index', 'AddressController@index')->name('address.index');
+     Route::post('/status/{id}', 'AddressController@status')
+    ->name('address.status');
+        Route::get('/create', 'AddressController@create')->name('rating.create');
+    Route::post('/store', 'AddressController@store')->name('address.store');
 
-//     Route::get('/view/{id}', 'AddressController@view')->name('address.view');
-//     Route::get('/edit/{id}', 'AddressController@edit')->name('address.edit');
-//     Route::post('/update/{id}', 'AddressController@update')->name('address.update');
-//     Route::delete('/delete/{id}', 'AddressController@delete')->name('address.delete');
-// });
+    Route::get('/view/{id}', 'AddressController@view')->name('address.view');
+    Route::get('/edit/{id}', 'AddressController@edit')->name('address.edit');
+    Route::post('/update/{id}', 'AddressController@update')->name('address.update');
+    Route::delete('/delete/{id}', 'AddressController@delete')->name('address.delete');
+});
 
 
 // //for Orders

@@ -64,7 +64,7 @@ class TransactionController extends Controller
     }
 
     public function delete($id) {
-        $this->transactionepository->delete($id);
+        $this->transactionRepository->delete($id);
         return back()->with('status', 'Deleted Successfuly.');
     }
 
