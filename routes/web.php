@@ -199,6 +199,17 @@ function() {
 //     Route::delete('/delete/{id}', 'OrderController@delete')->name('order.delete');
 // });
 
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/interest'],
+function() {
+    Route::get('/index', 'InterestController@index')->name('interest.index');
+        Route::get('/create', 'InterestController@create')->name('interest.create');
+    Route::post('/store', 'InterestController@store')->name('interest.store');
+    Route::get('/edit/{id}', 'InterestController@edit')->name('interest.edit');
+    Route::post('/update/{id}', 'InterestController@update')->name('interest.update');
+    Route::delete('/delete/{id}', 'InterestController@delete')->name('interest.delete');
+});
+
+
 
 
 
