@@ -42,7 +42,7 @@
                                     <thead>
                                       <tr>
                                         <th>Sr.No.</th>
-                                          
+                                        <th>Email Title</th>
                                           <th>Subject</th>
                                           <th>created_at</th>
                                           <th>Actions</th>

@@ -29,7 +29,7 @@
                               <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label>Email Title</label>
-                                    <input type="text" name="email_name" class="form-control" placeholder="Enter Email id">
+                                    <input type="text" name="email_name" class="form-control" placeholder="Enter Email Title">
                                     <div class="text-danger">{{ $errors->first('email_name') }}</div>
                                 </div>
                                    <div class="form-group col-md-4">

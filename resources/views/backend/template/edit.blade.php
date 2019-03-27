@@ -43,7 +43,7 @@
                         
                                  <div class="form-group col-md-12">
                                     <label>Message</label>
-                                    <textarea type="text" name="message" class="form-control" value="{{$template->message}}"></textarea>
+                                    <textarea type="text" name="message" class="form-control" value="{{old($template->message)}}"></textarea>
                                     <div class="text-danger">{{ $errors->first('message') }}</div>
                                 </div>
                                      
