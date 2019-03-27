@@ -15,8 +15,9 @@ class CreateInterestsTable extends Migration
     {
         Schema::create('interests', function (Blueprint $table) {
             $table->bigIncrements('interest_id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->string('name');
+            $table->string('image')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

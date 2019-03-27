@@ -166,6 +166,16 @@
                     </span>
                 </a>
             </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'interest.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('interest.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Interests</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="fa fa-address-book"></i>
+                    </span>
+                </a>
+            </li>
             
            
             

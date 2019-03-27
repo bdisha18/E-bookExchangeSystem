@@ -18,6 +18,7 @@ class CreateOffersTable extends Migration
             $table->integer('category_id');
             $table->integer('book_id');
             $table->string('offer_title');
+            $table->string('offer_image');
             $table->text('offer_description');
             $table->text('termsconditions');
             $table->date('start_date');
