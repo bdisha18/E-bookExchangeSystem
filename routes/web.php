@@ -130,16 +130,16 @@ function() {
     Route::delete('/delete/{id}', 'EmailTemplateController@delete')->name('template.delete');
 });
 
-// //for Categories
-// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/categories'],
-// function() {
-//     Route::get('/index', 'CategoryController@index')->name('category.index');
-//     Route::get('/create', 'CategoryController@create')->name('category.create');
-//     Route::post('/store', 'CategoryController@store')->name('category.store');
-//     Route::get('/edit/{id}', 'CategoryController@edit')->name('category.edit');
-//     Route::post('/update/{id}', 'CategoryController@update')->name('category.update');
-//     Route::delete('/delete/{id}', 'CategoryController@delete')->name('category.delete');
-// });
+//for Categories
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/categories'],
+function() {
+    Route::get('/index', 'CategoryController@index')->name('category.index');
+    Route::get('/create', 'CategoryController@create')->name('category.create');
+    Route::post('/store', 'CategoryController@store')->name('category.store');
+    Route::get('/edit/{id}', 'CategoryController@edit')->name('category.edit');
+    Route::post('/update/{id}', 'CategoryController@update')->name('category.update');
+    Route::delete('/delete/{id}', 'CategoryController@delete')->name('category.delete');
+});
 
  //for Testimonials
  Route::group(['namespace' => 'Backend', 'prefix' => 'admin/testimonial'],
