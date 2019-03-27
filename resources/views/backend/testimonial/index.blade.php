@@ -27,7 +27,7 @@
                     <div class="card m-b-30">
                         <div class="card-header">
                           <a href="{{route('testimonial.create')}}">
-                            <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Author</button>
+                            <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Testimonial</button>
                           </a>
                           <form action="{{route('testimonial.index')}}" method="get">
                             <input name="search" type="text" placeholder="Search.." >                   
@@ -58,7 +58,8 @@
                                         <td>{{$i++}}</td>
                                         <td>{{ucwords($testimonial->image)}}</td>
                                         <td>{{$testimonial->author_name}}</td>
-                                        <td>{{$testimonial->created_at}}</td>
+                                    <td>{{date('d M Y', strtotime($testimonial->created_at))}}</td>     
+
 
                                         <td> 
                                               {!! Form::open(['method'=>'DELETE', 'route'=>['testimonial.delete',
@@ -75,7 +76,7 @@
                                       @endforeach
                                     </table>
                                      @else
-                                    <div><h2>No Author Found.</h2></div>
+                                    <div><h2>No Testimonial Found.</h2></div>
                                      @endif
                                   </div>
 

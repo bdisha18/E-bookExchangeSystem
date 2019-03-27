@@ -34,7 +34,7 @@ class TestimonialRepository extends BaseRepository {
     public function store($request) {
         $input= array_filter(Input::all());
          if($request->image){
-        $image = Common::uploadImage($request->image,env('USER_IMAGE_PATH'));
+        $image = Common::uploadImage($request->image,env('testimonial_IMAGE_PATH'));
         $input['image'] = $image;
         }
         Testimonial::create($input);
@@ -50,11 +50,11 @@ class TestimonialRepository extends BaseRepository {
 
         if(Input::hasFile('image'))
         {
-            $image = public_path().'/'.env('Book_IMAGE_PATH').$book->image;
+            $image = public_path().'/'.env('TESTIMONIAL_IMAGE_PATH').$book->image;
                 if (file_exists($image)) { 
                     unlink($image);
                 }
-            $image = Common::uploadImage($input['image'],env('Book_IMAGE_PATH'));
+            $image = Common::uploadImage($input['image'],env('TESTIMONIAL_IMAGE_PATH'));
             $input['image'] = $image;
    
         }

@@ -48,7 +48,7 @@ class TestimonialController extends Controller
     public function store(Request $request)
     {
         $this->testimonialRepository->store($request);
-        return redirect()->route('testimonial.index')->with('status', 'Transaction Created Successfully.');
+        return redirect()->route('testimonial.index')->with('status', 'Testimonial Created Successfully.');
     
     }
 
@@ -61,7 +61,7 @@ class TestimonialController extends Controller
     public function view($id)
     {
         $testimonial = $this->testimonialRepository->find($id);
-        return view('backend.transaction.view', compact('testimonial'));
+        return view('backend.testimonial.view', compact('testimonial'));
     
     }
 

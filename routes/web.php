@@ -141,19 +141,6 @@ function() {
 //     Route::delete('/delete/{id}', 'CategoryController@delete')->name('category.delete');
 // });
 
-// //for Rating
-// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/rating'],
-// function() {
-//     Route::get('/index', 'RatingController@index')->name('rating.index');
-//         Route::get('/create', 'RatingController@create')->name('rating.create');
-//     Route::post('/store', 'RatingController@store')->name('rating.store');
-
-//     Route::get('/view/{id}', 'RatingController@view')->name('rating.view');
-//     Route::get('/edit/{id}', 'RatingController@edit')->name('rating.edit');
-//     Route::post('/update/{id}', 'RatingController@update')->name('rating.update');
-//     Route::delete('/delete/{id}', 'RatingController@delete')->name('rating.delete');
-// });
-
  //for Testimonials
  Route::group(['namespace' => 'Backend', 'prefix' => 'admin/testimonial'],
  function() {

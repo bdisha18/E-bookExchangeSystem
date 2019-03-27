@@ -42,16 +42,6 @@
                                     <input type="text" name="author_name" class="form-control" placeholder="Author Name">
                                     <div class="text-danger">{{ $errors->first('author_name') }}</div>
                                 </div>
-                    <div class="form-row">
-                                <div class="form-group col-md-4">
-                                      <label>Image</label>
-                                      <input type="file" name="image" class="form-control" placeholder="Image"">
-                                      <div class="text-danger">{{ $errors->first('image') }}</div>
-                                </div>
-                              
-                            </div>
-                          </div>
-                      </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="{{route('publisher.index')}}" class="button

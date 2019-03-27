@@ -29,14 +29,16 @@
                               <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label>Image</label>
-                                    <input type="text" name="image" class="form-control" >
+                                    <input type="file" name="image" class="form-control" >
                                     <div class="text-danger">{{ $errors->first('image') }}</div>
                                 </div>
+                                  
                                <div class="form-group col-md-4">
                                     <label>Author Name</label>
                                     <input type="text" name="author_name" class="form-control" placeholder="Enter Author Name">
                                     <div class="text-danger">{{ $errors->first('author_name') }}</div>
-                                  <div class="form-group col-md-12">
+                                  </div>
+                                    <div class="form-group col-md-12">
                                     <label>Description</label>
                                     <textarea name="description" class="form-control" 
                                               placeholder="    Write  description here"></textarea>
@@ -47,7 +49,7 @@
                       </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="{{route('offer.index')}}" class="button
+                            <a href="{{route('testimonial.index')}}" class="button
                             btn btn-danger">Back</a>
                         </div>
                         </form>
