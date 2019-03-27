@@ -23,10 +23,10 @@ class OrderRepository extends BaseRepository {
         if($request->search){
             $order = Order::where([
                 ['username', 'LIKE', '%' . $request->search . '%'],
-                ])->orderBy('id', 'desc')->paginate(10);
+                ])->orderBy('order_id', 'desc')->paginate(10);
         }else{
             
-            $order= Order::orderBy('id', 'desc')->paginate(10);
+            $order= Order::orderBy('order_id', 'desc')->paginate(10);
         }
          
             return $order;

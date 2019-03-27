@@ -1,6 +1,11 @@
 
 @extends('backend.layouts.master')
 @section('content')
+@php
+use App\Model\Member;
+use App\Model\Transaction;
+@endphp
+
 <!-- /.row -->
 
 <!--site header ends -->    
@@ -27,9 +32,6 @@
                 <div class="col-md-12">
                     <div class="card m-b-30">
                         <div class="card-header">
-                          <a href="{{route('publisher.create')}}">
-                            <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Publisher</button>
-                          </a>
                           <form action="{{route('order.index')}}" method="get">
                             <input name="search" type="text" placeholder="Search.." >                   
                             <button type="submit"><i class="fa fa-search"></i></button>
@@ -43,7 +45,7 @@
                                     <thead>
                                       <tr>
                                         <th>Sr.No.</th>
-                                          <th>User Name</th>
+                                          <th>Username</th>
                                           <th>Email</th>
                                           <th>Status</th>
                                           <th>Order Placed</th>
@@ -60,24 +62,22 @@
                                       @foreach($orders as $order)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($order->username)}}</td>
-                                        <td>{{$order->email}}</td>
+                                       <td>{{ucwords(Member::where('user_id', $order->user_id)->value('fname'))}} 
+                                            {{ucwords(Member::where('user_id', $order->user_id)->value('lname'))}}</td>
+           <td>{{Member::where('user_id', $order->user_id)->value('email')}}</td>
+                             
                                         <td>{{$order->status}}</td>
                                          <td>{{$order->created_at}}</td>
-                                          <td>{{$order->total_amount}}</td>
-                                        <td>{{$order->reference_id}}</td>
-                                         <td>{{$order->payment_method}}</td>
+                                          <td>{{Transaction::where('transaction_id',$order->transaction_id)->value('amount')}}</td>
+                                          <td>{{Transaction::where('transaction_id',$order->transaction_id)->value('reference_id')}}</td>
+                                          <td>{{Transaction::where('transaction_id',$order->transaction_id)->value('payment_method')}}</td>
 
  
                                         <td> 
-                                              {!! Form::open(['method'=>'DELETE', 'route'=>['publisher.delete',
-                                                      $publisher->offer_id]]) !!}
-                                              <a href="{{ route('order.view',$order->id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                                              <a href="{{ route('order.view',$order->order_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                                       
-                                               <a href="{{ route('order.edit',$order->id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
+                                               <a href="{{ route('order.edit',$order->order_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
 
-                                               <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>
-                                               {!! Form::close() !!}
                                         </td>
                                         
                                       </tr>

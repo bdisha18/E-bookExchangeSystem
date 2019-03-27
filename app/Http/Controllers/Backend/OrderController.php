@@ -21,7 +21,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $orders = $this->orderRepository->index($request);
         return view('backend.order.index', compact('orders'));
@@ -47,7 +47,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->orderRepository->store($request);
+        return redirect()->route('order.index')->with('status', 'Transaction Created Successfully.');
     }
 
     /**
@@ -72,7 +73,7 @@ class OrderController extends Controller
     {
         $orders = Order::all();
         $order = $this->orderRepository->find($id);
-        return view('backend.transaction.edit', compact('order', 'orders'));
+        return view('backend.order.edit', compact('order', 'orders'));
     }
 
     /**

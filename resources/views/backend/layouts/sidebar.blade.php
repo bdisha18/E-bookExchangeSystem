@@ -156,8 +156,8 @@
                     </span>
                 </a>
             </li>
-            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
-                <a class="menu-link" href="{{route('email.index')}}">
+            <li class="treeview menu-item <?= ($requestRoute == 'order.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('order.index')}}">
                     <span class="menu-label">
                         <span class="menu-name">Orders</span>
                     </span>
