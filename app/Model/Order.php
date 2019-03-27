@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class Order extends Model
     protected $fillable = [
         'order_id',
         'transaction_id',
-        'book_id',
+        'user_id',
         'status',
         'created_at',
         'updated_at'
