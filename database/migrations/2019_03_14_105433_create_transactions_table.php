@@ -17,12 +17,12 @@ class CreateTransactionsTable extends Migration
             $table->bigIncrements('transaction_id');
             $table->integer('user_id');
             $table->integer('card_id');
+            $table->integer('order_id');
             $table->integer('amount');
             $table->integer('reference_id');
             $table->string('payment_method');
             $table->enum('status',['paid','pending','declined']);
-             $table->integer('order_id');
-             $table->integer('total_cashback')->nullable();
+            $table->integer('total_cashback')->nullable();
             $table->integer('discount')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

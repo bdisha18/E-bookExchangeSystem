@@ -15,10 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('order_id');
-          
             $table->integer('transaction_id');
             $table->enum('status',['confirmed','pending','declined']);
-            $table->integer('book_id');
+            $table->integer('user_id');
+
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

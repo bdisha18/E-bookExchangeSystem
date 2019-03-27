@@ -171,20 +171,18 @@ function() {
 });
 
 
-// //for Orders
-// Route::group(['namespace' => 'Backend', 'prefix' => 'admin/order'],
-// function() {
-//     Route::get('/index', 'OrderController@index')->name('order.index');
-//      Route::post('/status/{id}', 'OrderController@status')
-//     ->name('order.status');
-//         Route::get('/create', 'OrderController@create')->name('order.create');
-//     Route::post('/store', 'OrderController@store')->name('address.store');
+ //for Orders
+ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/order'],
+ function() {
+     Route::get('/index', 'OrderController@index')->name('order.index');
+      Route::post('/status/{id}', 'OrderController@status')
+    ->name('order.status');
+        Route::get('/create', 'OrderController@create')->name('order.create');
+     Route::post('/store', 'OrderController@store')->name('order.store');
 
-//     Route::get('/view/{id}', 'OrderController@view')->name('order.view');
-//     Route::get('/edit/{id}', 'OrderController@edit')->name('order.edit');
-//     Route::post('/update/{id}', 'OrderController@update')->name('order.update');
-//     Route::delete('/delete/{id}', 'OrderController@delete')->name('order.delete');
-// });
+     Route::get('/view/{id}', 'OrderController@view')->name('order.view');
+     Route::get('/edit/{id}', 'OrderController@edit')->name('order.edit');     Route::post('/update/{id}', 'OrderController@update')->name('order.update');
+ });
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin/interest'],
 function() {
