@@ -5,7 +5,6 @@ namespace App\Repositories;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Order;
-use App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 
 class OrderRepository extends BaseRepository {
@@ -48,4 +47,5 @@ class OrderRepository extends BaseRepository {
         $order->update($input);
         return $order;
     }
+   
 }

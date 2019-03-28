@@ -16,7 +16,7 @@ use App\Model\Transaction;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Order Details
+                                <i class="mdi mdi-table "></i></span> Order
                         </h4>
 
 
@@ -74,7 +74,7 @@ use App\Model\Transaction;
 
  
                                         <td> 
-                                              <a href="{{ route('order.view',$order->order_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                                              <a href="{{ route('order.detail',$order->order_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                                       
                                                <a href="{{ route('order.edit',$order->order_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
 

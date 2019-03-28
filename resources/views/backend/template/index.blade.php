@@ -57,7 +57,7 @@
                                         <td>{{$i++}}</td>
                                         <td>{{ucwords($template->email_name)}}</td>
                                         <td>{{$template->subject}}</td>
-                                        <td>{{$template->created_at}}</td>
+                                        <td>{{date('d M Y', strtotime($template->created_at))}}</td>     
 
                                         <td> 
                                               {!! Form::open(['method'=>'DELETE', 'route'=>['template.delete',

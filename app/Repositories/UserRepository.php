@@ -5,6 +5,7 @@ namespace App\Repositories;
 use Prettus\Repository\Eloquent\BaseRepository;
 use App\Model\Member;
 use App\Model\Interest;
+use App\Model\Favourite;
 use App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
@@ -81,6 +82,12 @@ class UserRepository extends BaseRepository {
         $user = Member::findOrFail($id);
         $user_interest = Interest::where('user_id', $id)->get();
         return $user_interest;
+    }
+    
+     public function users_favorite($id){
+        $user = Member::findOrFail($id);
+        $user_favorite = Favourite::where('user_id', $id)->get();
+        return $user_favorite;
     }
 
     public function users_favorite($id){

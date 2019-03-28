@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class productdetail extends Model
+class Productdetail extends Model
 {
     protected $primarykey = "id";
     protected $fillable = [

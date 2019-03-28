@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Model\Order;
+use App\Model\Productdetail;
+use App\Model\Book;
 use App\Http\Controllers\Controller;
 use App\Repositories\OrderRepository;
 
@@ -87,6 +89,17 @@ class OrderController extends Controller
     {
          $this->orderRepository->update($request, $id);
         return redirect()->route('order.index')->with('status', 'Updated Successfully.');
+    }
+    
+     public function detail($id)
+    {
+        $orders = Order::findOrFail($id);
+        $order_detail = Productdetail::where('order_id', $id)->get();
+//        dd($order_detail);
+        $books = Book::where(['book_id' => $order_detail->book_id])->get();
+        dd($books);
+        
+        return view('backend.order.detail',compact('orders', 'books'));
     }
 
     /**

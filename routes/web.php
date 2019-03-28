@@ -38,6 +38,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
     Route::post('/update/{id}', 'UserController@update')->name('user.update');
     Route::get('/status', 'UserController@status')->name('user.status');
     Route::get('/user-interest/{id}', 'UserController@users_interest')->name('user.interest');
+    Route::get('/user-favorite/{id}', 'UserController@users_favorite')->name('user.favorite');
+   Route::get('/user-favorite-view/{id}', 'UserController@users_favorite_view')->name('user.favorite.view');
+
   
 });
 
@@ -184,6 +187,7 @@ function() {
      Route::get('/view/{id}', 'OrderController@view')->name('order.view');
      Route::get('/edit/{id}', 'OrderController@edit')->name('order.edit');     
      Route::post('/update/{id}', 'OrderController@update')->name('order.update');
+     Route::get('/detail/{id}','OrderController@detail')->name('order.detail');
  });
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin/interest'],

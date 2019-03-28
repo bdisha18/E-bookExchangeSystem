@@ -14,7 +14,7 @@ use App\Model\Publisher;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Whishlished Books
+                                <i class="mdi mdi-table "></i></span> Order Details
                         </h4>
 
 
@@ -28,6 +28,13 @@ use App\Model\Publisher;
                 <div class="col-md-12">
                     <div class="card m-b-30">
                         <div class="card-header">
+                          <a href="{{route('book.create')}}">
+                            <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Books</button>
+                          </a>
+                          <form action="{{route('book.index')}}" method="get">
+                            <input name="search" type="text" placeholder="Search.." >                   
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                          </form>
                           
                         </div>
          
@@ -47,7 +54,7 @@ use App\Model\Publisher;
                                          <th>Status</th>
                                          <th>Type</th>
                                           <th>Released Date</th>
-                                          <th>Actions</th>
+                                        
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -76,15 +83,7 @@ use App\Model\Publisher;
                                         <td>{{$book->category}}</td>
                                         <td>{{$book->created_at}}</td>
 
-                                        <td> 
-                                              {!! Form::open(['method'=>'DELETE', 'route'=>['book.delete',
-                                                      $book->book_id]]) !!}
-                                              <a href="{{ route('user.favorite.view',$book->book_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
-                                                                      
-
-                                               <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>
-                                               {!! Form::close() !!}
-                                        </td>
+                                    
                                         
                                       </tr>
                                       @endforeach

@@ -63,7 +63,7 @@ use App\Model\Category;
                                         {{ucwords(Category::where('id', $category->parent_id)->value('category_name'))}}  > {{ucwords($category->category_name)}}
                                         @endif
                                         </td>
-                                        <td>{{$category->created_at}}</td>
+                                        <td>{{date('d M Y', strtotime($category->created_at))}}</td>     
 
                                         <td> 
                                               {!! Form::open(['method'=>'DELETE', 'route'=>['category.delete',
