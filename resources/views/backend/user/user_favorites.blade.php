@@ -14,7 +14,7 @@ use App\Model\Publisher;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Books
+                                <i class="mdi mdi-table "></i></span> Whishlished Books
                         </h4>
 
 
@@ -28,11 +28,6 @@ use App\Model\Publisher;
                 <div class="col-md-12">
                     <div class="card m-b-30">
                         <div class="card-header">
-      
-                          {{--<form action="{{route('book.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                          </form>--}}
                           
                         </div>
          
@@ -84,7 +79,7 @@ use App\Model\Publisher;
                                         <td> 
                                               {!! Form::open(['method'=>'DELETE', 'route'=>['book.delete',
                                                       $book->book_id]]) !!}
-                                              <a href="{{ route('book.view',$book->book_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                                              <a href="{{ route('user.favorite.view',$book->book_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                                       
 
                                                <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>

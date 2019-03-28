@@ -17,7 +17,8 @@ class CreateProductdetailsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('order_id');
             $table->integer('book_id');
-            $table->timestamps();
+            $table->timestamps('created_at')->useCurrent();
+            $tbale->timestamps('updated_at')->useCurrent();
         });
     }
 

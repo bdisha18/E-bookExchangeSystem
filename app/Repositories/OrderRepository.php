@@ -5,7 +5,6 @@ namespace App\Repositories;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Order;
-use App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 
 class OrderRepository extends BaseRepository {
@@ -48,11 +47,5 @@ class OrderRepository extends BaseRepository {
         $order->update($input);
         return $order;
     }
-    
-    public function detail()
-    {
-        $order = Productdetail::where('order_id',$order->order_id)->value('book_id')->get();
-        $order = Book::where('book_id',$order->book_id)->value('book_name')->get();
-        return view('order.detail',compact('order'));
-    }
+   
 }

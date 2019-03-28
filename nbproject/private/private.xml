@@ -12,15 +12,16 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/order/index.blade.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/app/Repositories/UserRepository.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/user/user_favorites.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/book/index.blade.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Backend/OrderController.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Model/Order.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/order/view.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/app/Model/Favourite.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/order/detail.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/user/index.blade.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/routes/web.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/app/Repositories/OrderRepository.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/order/edit.blade.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/user/edit.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/user/user_favorites_view.blade.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Backend/UserController.php</file>
         </group>
     </open-files>
