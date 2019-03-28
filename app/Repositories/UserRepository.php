@@ -83,6 +83,12 @@ class UserRepository extends BaseRepository {
         return $user_interest;
     }
 
+    public function users_favorite($id){
+        $user = Member::findOrFail($id);
+        $user_interest = Interest::where('user_id', $id)->get();
+        return $user_interest;
+    }
+
 
 
 
