@@ -4,7 +4,9 @@
 @php
 use App\Model\Member;
 use App\Model\Transaction;
+use App\Model\Address;
 @endphp
+
 
 
 <!--site header ends -->    
@@ -88,7 +90,7 @@ use App\Model\Transaction;
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Address:</label>
-                                    <p>{{$order->payment_method}}</p> 
+                                    <p>{{Address::where('user_id',$order->user_id)->value('address')}}</p> 
                                     </div>
                             </div>
                             <div class="col-md-4">
@@ -98,7 +100,12 @@ use App\Model\Transaction;
 
                                     </div>
                             </div>
-                             
+                     <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Book Details</label>
+                          <p><a href="{{route('order.detail',$order->order_id)}}">Click here</a> </p>    
+                                </div>
+                            </div>        
                              
                              </div>
                     </form>

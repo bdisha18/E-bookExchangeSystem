@@ -88,6 +88,14 @@ class OrderController extends Controller
          $this->orderRepository->update($request, $id);
         return redirect()->route('order.index')->with('status', 'Updated Successfully.');
     }
+    
+    public function detail($id)
+    {
+         $order = $this->orderRepository->find($id);
+        return view('backend.order.detail', compact('order'));
+    
+
+    }
 
     /**
      * Remove the specified resource from storage.

@@ -118,7 +118,8 @@ use App\Model\Publisher;
                                     <label class="label">Uploaded File :</label>
                                     <p>{{$book->file}}</p> 
                                 </div>
-                            </div></div>
+                            </div>
+                            </div>
                     </form>
                   </div>
                 </div>

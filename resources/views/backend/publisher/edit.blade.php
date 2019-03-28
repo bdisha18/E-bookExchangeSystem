@@ -35,6 +35,17 @@ use App\Model\Book;
                                     <input type="text" name="publisher_name" class="form-control" value="{{$publisher->publisher_name}}" placeholder="Publisher Name">
                                     <div class="text-danger">{{ $errors->first('publisher_name') }}</div>
                                 </div>
+                                  <div class="form-group col-md-4">
+                                    <label>No.of Books Published</label>
+                                    <input type="text" name="books_published" class="form-control" value="{{$publisher->books_published}}" placeholder="Number of books published ">
+                                    <div class="text-danger">{{ $errors->first('books_published') }}</div>
+                                </div>
+                             <div class="form-group col-md-4">
+                                    <label>Books Name</label>
+                                    <input type="text" name="publish_bookname" class="form-control" value="{{$publisher->publish_bookname}}" placeholder="Published Books Name">
+                                    <div class="text-danger">{{ $errors->first('publish_bookname') }}</div>
+                                </div>
+ 
                             </div>
                           </div>
                       </div>

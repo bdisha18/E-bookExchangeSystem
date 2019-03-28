@@ -37,17 +37,30 @@
 
                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Publisher Name :</label>
+                                    <label class="label">Publisher  Name :</label>
                                     <p>{{$publisher->publisher_name}}</p> 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="label">Book Id :</label>
-                                    <p>{{$publisher->book_id}}</p> 
+                                    <label class="label">No. of Books Published :</label>
+                                    <p>{{$publisher->books_published}}</p> 
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Publish Books Name :</label>
+                                    <p>{{$publisher->publish_bookname}}</p> 
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Book Category :</label>
+                                    <p>{{$publisher->book_category}}</p> 
+                                </div>
+                            </div>
+      
                         </div>
                     </form>
                   </div>

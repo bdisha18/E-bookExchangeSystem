@@ -48,4 +48,11 @@ class OrderRepository extends BaseRepository {
         $order->update($input);
         return $order;
     }
+    
+    public function detail()
+    {
+        $order = Productdetail::where('order_id',$order->order_id)->value('book_id')->get();
+        $order = Book::where('book_id',$order->book_id)->value('book_name')->get();
+        return view('order.detail',compact('order'));
+    }
 }

@@ -184,6 +184,7 @@ function() {
      Route::get('/view/{id}', 'OrderController@view')->name('order.view');
      Route::get('/edit/{id}', 'OrderController@edit')->name('order.edit');     
      Route::post('/update/{id}', 'OrderController@update')->name('order.update');
+     Route::get('/detail/{id}','OrderController@detail')->name('order.detail');
  });
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin/interest'],
