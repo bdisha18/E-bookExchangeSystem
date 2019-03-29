@@ -80,7 +80,7 @@
 
                         <a href="{{ route('user.favorite',$user->user_id) }}"><button type="button" title="Favorites" class="btn btn-dark btn-xs"><span class="mdi mdi-eye"></span></button></a>
 
-                        <a href="{{ route('interest.index',$user->user_id) }}"><button type="button" title="Cart" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a>
+                        <a href="{{ route('user.cart',$user->user_id) }}"><button type="button" title="Cart" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a>
 
 
                         

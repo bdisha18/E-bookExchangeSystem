@@ -13,7 +13,7 @@ use App\Model\Publisher;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Favorities Details
+                                <i class="mdi mdi-table "></i></span> Favorite Details
                         </h4>
 
 
@@ -41,7 +41,7 @@ use App\Model\Publisher;
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Book Name :</label>
-                                    <p>{{$book->book_name}}</p> 
+                                    <p></p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
@@ -125,7 +125,6 @@ use App\Model\Publisher;
                 </div>
         </div>
     </div>
-    <a href="{{route('user.favorite')}}" class="button btn btn-danger">Back</a>
 </div>
 </section>
 @endsection

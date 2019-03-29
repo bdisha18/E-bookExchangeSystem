@@ -3,6 +3,7 @@
 @section('content')
 @php
 use App\Model\Publisher;
+use App\Model\Book;
 @endphp
 <!-- /.row -->
 
@@ -57,22 +58,23 @@ use App\Model\Publisher;
                                       @foreach($books as $book)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($book->book_name)}}</td>
+                                        <td>{{Book::where('book_id',$book->book_id)->value('book_name')}}</td>
                                         @if(file_exists(public_path().'/'.env('BOOK_IMAGE_PATH').$book->image) && $book->image)
                                         <td><img src="{{ asset(env('BOOK_IMAGE_PATH').$publisher->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
                                         @else
                                         <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="image" height="60px"></td>
                                         @endif 
                                         
-                                        <td>{{$book->book_price}}</td>
-                                        <td>{{$book->author_name}}</td>
+                                        <td>{{Book::where('book_id',$book->book_id)->value('book_price')}}</td>
+                                        <td>{{Book::where('book_id',$book->book_id)->value('author_name')}}</td>
                                         <td>{{Publisher::where('book_id', $book->book_id)->value('publisher_name')}}</td>
-                                        <td>{{$book->rating}}</td>
+                                        <td>{{Book::where('book_id',$book->book_id)->value('book_rating')}}</td>
                                         <td><label class="switch">
                                             <input type="checkbox" name="status" class="update-status"  data-id="{{$book->book_id}}" 
                                                    data-url="{{ route('book.status', $book->book_id) }}" {{($book->status == 'active')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
+                                        <td>{{Book::where('book_id',$book->book_id)->value('type')}}</td>
                                         <td>{{$book->category}}</td>
                                         <td>{{$book->created_at}}</td>
 

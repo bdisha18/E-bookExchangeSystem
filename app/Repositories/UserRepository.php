@@ -6,6 +6,7 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use App\Model\Member;
 use App\Model\Interest;
 use App\Model\Favourite;
+use App\Model\Book;
 use App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
@@ -89,8 +90,19 @@ class UserRepository extends BaseRepository {
         $user_favorite = Favourite::where('user_id', $id)->get();
         return $user_favorite;
     }
+    
+    public function user_favorite_view($id)
+    {
+        $user = Member::findorFail($id);
+        $user_favorite = Favourite::where('user_id',$id);
+        $user_favorite_view = Book::where(['book_id'=> $user_favorite->book_id])->get();
+        return $user_favorite_view;
+    }
 
-   
+    public function user_cart($id)
+    {
+       
+    }
 
 
 

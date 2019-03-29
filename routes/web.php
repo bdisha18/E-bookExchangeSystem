@@ -40,6 +40,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
     Route::get('/user-interest/{id}', 'UserController@users_interest')->name('user.interest');
     Route::get('/user-favorite/{id}', 'UserController@users_favorite')->name('user.favorite');
    Route::get('/user-favorite-view/{id}', 'UserController@users_favorite_view')->name('user.favorite.view');
+    Route::get('/user-cart/{id}', 'UserController@users_cart')->name('user.cart');
 
   
 });
