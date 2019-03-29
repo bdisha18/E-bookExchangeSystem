@@ -13,7 +13,7 @@ use App\Model\Publisher;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Book Details
+                                <i class="mdi mdi-table "></i></span> Favorities Details
                         </h4>
 
 
@@ -125,7 +125,7 @@ use App\Model\Publisher;
                 </div>
         </div>
     </div>
-    <a href="{{route('user.favorite.view')}}" class="button btn btn-danger">Back</a>
+    <a href="{{route('user.favorite')}}" class="button btn btn-danger">Back</a>
 </div>
 </section>
 @endsection

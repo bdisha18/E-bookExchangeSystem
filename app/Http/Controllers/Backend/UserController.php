@@ -81,8 +81,8 @@ class UserController extends Controller
     }
     public function users_favorite_view($id) 
     {
-        $books = $this->userRepository->find($id);
-        return view('backend.user.user_favorites_view', compact('books'));
+        $book = $this->userRepository->find($id);
+        return view('backend.user.user_favorites_view', compact('book'));
     }
 
 }
