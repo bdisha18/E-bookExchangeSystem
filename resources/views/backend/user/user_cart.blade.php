@@ -1,6 +1,9 @@
 
 @extends('backend.layouts.master')
 @section('content')
+@php
+use App\Model\Book;
+@endphp
 <!-- /.row -->
 
 <!--site header ends -->    
@@ -32,9 +35,9 @@
                                 </div>
                             </div>
                              <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="label">Total costs :</label>
+                                    <label class="label">Total Costs:</label>
                                 </div>
                             </div>
 
@@ -42,7 +45,41 @@
                             <div class="table-responsive">
                                 
                           </div>
+                            
                         </div>
                       </div>
-                    </section>
+                                
+                                </section>
+
+            <div class="row">
+
+                <div class="col-md-11">
+                    <div class="card m-b-30">
+                        <div class="card-header">
+                            <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Image :</label>
+                                </div>
+                            </div>
+                             <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="label">Book Id:</label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">{{Book::where('book_id',$cart->book_id)->value('book_name')}}</label>
+                                </div>
+                                
+
+                            </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                
+                          </div>
+                            
+                        </div>
+                      </div>
+
                   @endsection

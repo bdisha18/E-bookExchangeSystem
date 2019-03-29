@@ -88,7 +88,9 @@ class UserController extends Controller
     public function users_cart($id)
     {
         $cart = $this->userRepository->user_cart($id);
-        return view('backend.user.user_cart',compact('cart'));
+        return view('backend.user.user_cart', compact('cart'));
+ 
+        
     }
 
 }

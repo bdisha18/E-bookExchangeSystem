@@ -7,6 +7,7 @@ use App\Model\Member;
 use App\Model\Interest;
 use App\Model\Favourite;
 use App\Model\Book;
+use App\Model\Cart;
 use App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
@@ -101,8 +102,14 @@ class UserRepository extends BaseRepository {
 
     public function user_cart($id)
     {
+              
+                $user = Member::findorFail($id);
+               dd($user);
        
+            return $cart;
     }
+
+    
 
 
 
