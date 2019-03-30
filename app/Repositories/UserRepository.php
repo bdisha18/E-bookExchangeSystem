@@ -94,19 +94,24 @@ class UserRepository extends BaseRepository {
     
     public function user_favorite_view($id)
     {
-        $user = Member::findorFail($id);
-        $user_favorite = Favourite::where('user_id',$id);
-        $user_favorite_view = Book::where(['book_id'=> $user_favorite->book_id])->get();
+         $user = Member::findOrFail($id);
+        $favorite = Favourite::where('user_id', $id)->get();
+       $user_favorite_view = Book::where(['book_id'=>$favorite->book_id])->get();
+       dd($user_favorite_view);
         return $user_favorite_view;
     }
 
     public function user_cart($id)
     {
-              
-                $user = Member::findorFail($id);
-               dd($user);
-       
-            return $cart;
+       $user = Member::findorFail($id);
+               //    dd($user);
+
+       $cart = Cart::where(['user_id'=>$user->user_id])->get();
+      // dd($cart);
+      // $book = Book::where(['book_id'=>$cart->book_id])->get();
+        //    dd($book);
+
+        return $cart;
     }
 
     

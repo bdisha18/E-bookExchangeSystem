@@ -21,7 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('book_image');
             $table->string('author_name');
             $table->integer('book_rating')->nullable();
-            $table->integer('book_price');
+            $table->string('book_price');
             $table->text('description');
             $table->integer('pages');
             $table->integer('book_available');
