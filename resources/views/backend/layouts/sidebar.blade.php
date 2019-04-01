@@ -52,7 +52,7 @@
                         <span class="menu-name">Publishers</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="icon-placeholder mdi mdi-account-outline "></i>
+                        <i class="icon-placeholder mdi mdi-book-multiple "></i>
                     </span>
                 </a>
             </li>
@@ -62,7 +62,7 @@
                         <span class="menu-name">Transactions</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="icon-placeholder mdi mdi-account-outline "></i>
+                        <i class="icon-placeholder mdi mdi-cash-multiple "></i>
                     </span>
                 </a>
             </li>
@@ -72,7 +72,7 @@
                         <span class="menu-name">Books</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-book-open"></i>
                     </span>
                 </a>
             </li>
@@ -82,7 +82,7 @@
                         <span class="menu-name">Offers</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-gift"></i>
                     </span>
                 </a>
             </li>
@@ -92,7 +92,7 @@
                         <span class="menu-name">Emails</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="fa icon-placeholder mdi mdi-gmail"></i>
                     </span>
                 </a>
             </li>
@@ -102,7 +102,7 @@
                         <span class="menu-name">Email Templates</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-mailbox-open-outline"></i>
                     </span>
                 </a>
             </li>
@@ -112,7 +112,7 @@
                         <span class="menu-name">Categories</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-view-list "></i>
                     </span>
                 </a>
             </li>
@@ -122,7 +122,7 @@
                         <span class="menu-name">Ratings</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-star-outline "></i>
                     </span>
                 </a>
             </li>
@@ -132,7 +132,7 @@
                         <span class="menu-name">Testimonials</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-chart-pie "></i>
                     </span>
                 </a>
             </li>
@@ -142,7 +142,7 @@
                         <span class="menu-name">Address</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-map-marker "></i>
                     </span>
                 </a>
             </li>
@@ -152,7 +152,7 @@
                         <span class="menu-name">Orders</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-webpack "></i>
                     </span>
                 </a>
             </li>
@@ -162,7 +162,7 @@
                         <span class="menu-name">Interests</span>
                     </span>
                     <span class="menu-icon">
-                        <i class="fa fa-address-book"></i>
+                        <i class="icon-placeholder mdi mdi-heart "></i>
                     </span>
                 </a>
             </li>

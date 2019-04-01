@@ -46,7 +46,8 @@ use App\Model\Address;
                                 <div class="form-group">
                                     <label class="label">Username :</label>
                                     <p>{{ucwords(Member::where('user_id', $order->user_id)->value('fname'))}} 
-                    {{ucwords(Member::where('user_id', $order->user_id)->value('lname'))}}</p>
+                                    {{ucwords(Member::where('user_id', $order->user_id)->value('lname'))}}
+                                </p>
                                 </div>
                             </div>
                              <div class="col-md-4">

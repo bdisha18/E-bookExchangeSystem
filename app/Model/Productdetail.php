@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Productdetail extends Model
 {
-    protected $primarykey = "id";
+	protected $table = 'productdetails';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
+
     protected $fillable = [
-      'order_id','book_id','created_at','updated_at'  
+      'book_id','order_id', 'created_at','updated_at' 
     ];
 }

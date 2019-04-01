@@ -15,10 +15,9 @@ class CreateProductdetailsTable extends Migration
     {
         Schema::create('productdetails', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id');
             $table->integer('book_id');
-            $table->timestamps('created_at')->useCurrent();
-            $tbale->timestamps('updated_at')->useCurrent();
+            $table->integer('order_id');
+            $table->timestamps();
         });
     }
 

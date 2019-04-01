@@ -34,7 +34,7 @@ use App\Model\Transaction;
                         <div class="card-header">
                           <form action="{{route('order.index')}}" method="get">
                             <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="fa fa-search"></i></button>
+                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
                           </form>
                           
                         </div>
@@ -47,11 +47,11 @@ use App\Model\Transaction;
                                         <th>Sr.No.</th>
                                           <th>Username</th>
                                           <th>Email</th>
-                                          <th>Status</th>
-                                          <th>Order Placed</th>
-                                          <th>Total Amount</th>
+                                         <th>Total Amount</th>
                                           <th>Reference Id</th>
                                           <th>Payment Method</th>
+                                           <th>Status</th>
+                                            <th>Order Placed</th>
                                            <th>Actions</th>
                                       </tr>
                                     </thead>
@@ -66,11 +66,13 @@ use App\Model\Transaction;
                                             {{ucwords(Member::where('user_id', $order->user_id)->value('lname'))}}</td>
            <td>{{Member::where('user_id', $order->user_id)->value('email')}}</td>
                              
-                                        <td>{{$order->status}}</td>
-                                         <td>{{$order->created_at}}</td>
+                                      
+                                         
                                           <td>{{Transaction::where('transaction_id',$order->transaction_id)->value('amount')}}</td>
                                           <td>{{Transaction::where('transaction_id',$order->transaction_id)->value('reference_id')}}</td>
                                           <td>{{Transaction::where('transaction_id',$order->transaction_id)->value('payment_method')}}</td>
+                                          <td>{{$order->status}}</td>
+                                          <td>{{$order->created_at}}</td>
 
  
                                         <td> 

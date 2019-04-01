@@ -30,7 +30,7 @@
                           </a>
                           <form action="{{route('interest.index')}}" method="get">
                             <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="fa fa-search"></i></button>
+                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
                           </form>
                           
                         </div>

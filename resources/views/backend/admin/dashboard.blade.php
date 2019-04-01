@@ -46,7 +46,7 @@
                             <div class="text-center p-t-20">
                                 <div class="avatar-lg avatar">
                                     <div class="avatar-title rounded-circle badge-soft-danger"><i
-                                                class="mdi mdi-account-multiple h1 m-0"></i></div>
+                                                class="mdi mdi-book-multiple h1 m-0"></i></div>
 
                                 </div>
                                 <div class="text-center">
@@ -66,7 +66,7 @@
                             <div class="text-center p-t-20">
                                 <div class="avatar-lg avatar">
                                     <div class="avatar-title rounded-circle badge-soft-info"><i
-                                                class="mdi mdi-eye-settings-outline h1 m-0"></i></div>
+                                                class="mdi mdi-book-open h1 m-0"></i></div>
 
                                 </div>
                                 <div class="text-center">
@@ -86,7 +86,7 @@
                             <div class="text-center p-t-20">
                                 <div class="avatar-lg avatar">
                                     <div class="avatar-title rounded-circle badge-soft-dark"><i
-                                                class="mdi mdi-vector-intersection h1 m-0"></i></div>
+                                                class="mdi mdi-star h1 m-0"></i></div>
 
                                 </div>
                                 <div class="text-center">
@@ -106,7 +106,7 @@
                             <div class="text-center p-t-20">
                                 <div class="avatar-lg avatar">
                                     <div class="avatar-title rounded-circle badge-soft-primary"><i
-                                                class="mdi mdi-account h1 m-0"></i></div>
+                                                class="mdi mdi-account-check h1 m-0"></i></div>
 
                                 </div>
                                 <div class="text-center">

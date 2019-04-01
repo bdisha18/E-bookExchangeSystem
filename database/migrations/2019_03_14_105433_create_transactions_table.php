@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('card_id');
             $table->integer('order_id');
             $table->integer('amount');
-            $table->integer('reference_id');
+            $table->string('reference_id');
             $table->string('payment_method');
             $table->enum('status',['paid','pending','declined']);
             $table->integer('total_cashback')->nullable();

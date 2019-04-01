@@ -31,7 +31,7 @@
                           </a>
                           <form action="{{route('testimonial.index')}}" method="get">
                             <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="fa fa-search"></i></button>
+                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
                           </form>
                           
                         </div>
@@ -56,7 +56,11 @@
                                       @foreach($testimonials as $testimonial)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($testimonial->image)}}</td>
+                                        @if(file_exists(public_path().'/'.env('TESTIMONIAL_IMAGE_PATH').$testimonial->image) && $testimonial->image)
+                                        <td><img src="{{ asset(env('TESTIMONIAL_IMAGE_PATH').$testimonial->image)}}" alt="profile pic" class="testimonialImage" height="50px" width="60"></td>
+                                        @else
+                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="testimonial pic" class="testimonialImage" height="60px"></td>
+                                        @endif 
                                         <td>{{$testimonial->author_name}}</td>
                                     <td>{{date('d M Y', strtotime($testimonial->created_at))}}</td>     
 

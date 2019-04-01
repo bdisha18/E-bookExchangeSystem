@@ -33,7 +33,7 @@ class OrderRepository extends BaseRepository {
 
     public function store($request) {
         $input= array_filter(Input::all());
-         $order = Order::create($input);
+        $order = Order::create($input);
         return $order;
     
     }

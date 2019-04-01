@@ -3,7 +3,8 @@
 @section('content')
 @php
 use App\Model\Member;
-use App\Model\Transaction;
+use App\Model\Transaction; 
+use App\Model\Address;
 @endphp
 
 
@@ -53,16 +54,7 @@ use App\Model\Transaction;
                                     <p>{{Member::where('user_id', $order->user_id)->value('email')}}</p> 
                                 </div>
                             </div>
-                                 <div class="form-group col-md-4">
-                                     <label class="label">Status</label><br>
-                                    <label class="radio-inline">Confirmed</label>
-                                      <input class="col-md-1" type="radio" name="status" value="confirmed" {{($order->status == 'confirmed')? 'checked' : ''}}>
-                                      <label class="radio-inline">Panding</label>
-                                      <input class="col-md-1" type="radio" name="status" value="panding" {{($order->status == 'panding')? 'checked' : ''}}>
-                                <label class="radio-inline">Declined</label>
-                                      <input class="col-md-1" type="radio" name="status" value="declined" {{($order->status == 'declined')? 'checked' : ''}}>
-                                   
-                                 </div>
+                                 
                           <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Order Placed :</label>
@@ -87,17 +79,28 @@ use App\Model\Transaction;
                                     <p>{{Transaction::where('transaction_id',$order->transaction_id)->value('payment_method')}}</p> 
                                     </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Address:</label>
-                                    <p>{{$order->payment_method}}</p> 
-                                    </div>
-                            </div>
+                            
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Contact Number :</label>
                           <p>{{Member::where('user_id', $order->user_id)->value('contactno')}}</p> 
 
+                                    </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                     <label class="label">Status</label><br>
+                                    <label class="radio-inline">Confirmed</label>
+                                      <input class="col-md-1" type="radio" name="status" value="confirmed" {{($order->status == 'confirmed')? 'checked' : ''}}>
+                                      <label class="radio-inline">Panding</label>
+                                      <input class="col-md-1" type="radio" name="status" value="panding" {{($order->status == 'panding')? 'checked' : ''}}>
+                                <label class="radio-inline">Declined</label>
+                                      <input class="col-md-1" type="radio" name="status" value="declined" {{($order->status == 'declined')? 'checked' : ''}}>
+                                   
+                                 </div>
+                                 <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Address:</label>
+                                    <p>{{Address::where('user_id', $order->user_id)->value('address')}}, {{Address::where('user_id', $order->user_id)->value('city')}}, {{Address::where('user_id', $order->user_id)->value('state')}}</p> 
                                     </div>
                             </div>
                              

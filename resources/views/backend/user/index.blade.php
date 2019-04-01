@@ -31,7 +31,7 @@
                         @endif
                         <form action="{{route('user.index')}}" method="get">
                             <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="fa fa-search"></i></button>
+                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
                           </form>
                         </div>
                         <div class="card-body">
@@ -47,7 +47,7 @@
                                           <th>Signup Date</th>
                                           <th>Status</th>
                                           <th>Actions</th>
-                                          <th></th>
+                                          <th>Additional</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -75,12 +75,14 @@
                         <a href="{{ route('user.view',$user->user_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                 
                         <a href="{{ route('user.edit',$user->user_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
+                    </td>
+                    <td>
 
-                        <a href="{{ route('user.interest',$user->user_id) }}"><button type="button" title="Interests" class="btn btn-info btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                        <a href="{{ route('user.interest',$user->user_id) }}"><button type="button" title="Interests" class="btn btn-info btn-xs"><span class="mdi mdi-heart"></span></button></a> 
 
-                        <a href="{{ route('user.favorite',$user->user_id) }}"><button type="button" title="Favorites" class="btn btn-dark btn-xs"><span class="mdi mdi-eye"></span></button></a>
+                        <a href="{{ route('user.favorite',$user->user_id) }}"><button type="button" title="Favorites" class="btn btn-dark btn-xs"><span class="mdi mdi-bookmark"></span></button></a>
 
-                        <a href="{{ route('user.cart',$user->user_id) }}"><button type="button" title="Cart" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a>
+                        <a href="{{ route('user.cart',$user->user_id) }}"><button type="button" title="Cart" class="btn btn-warning btn-xs"><span class="mdi mdi-cart"></span></button></a>
 
 
                         

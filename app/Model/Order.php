@@ -15,4 +15,8 @@ class Order extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function order_details(){
+    	return $this->hasMany('App\Model\Productdetail', 'order_id', 'order_id');
+    }
 }

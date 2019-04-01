@@ -107,6 +107,7 @@ class UserRepository extends BaseRepository {
                //    dd($user);
 
        $cart = Cart::where(['user_id'=>$user->user_id])->get();
+       
       // dd($cart);
       // $book = Book::where(['book_id'=>$cart->book_id])->get();
         //    dd($book);
