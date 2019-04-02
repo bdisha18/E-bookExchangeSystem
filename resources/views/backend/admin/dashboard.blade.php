@@ -8,7 +8,7 @@
                     <div class="col-md-10 mx-auto text-center text-white p-b-30">
                         <div class="m-b-20">
                             <div class="avatar avatar-xl my-auto">
-                                <img class="avatar-img rounded" src="assets/img/logos/instagram.jpg" alt="">
+                                <img class="avatar-img rounded" src="http://localhost/socialsite/public/image/book.png" alt="">
 
                             </div>
                         </div>

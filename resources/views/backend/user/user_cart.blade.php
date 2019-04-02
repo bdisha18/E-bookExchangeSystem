@@ -30,8 +30,7 @@ use App\Model\Publisher;
                           <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="label">Total Products :</label>
-                                    <p></p>
+                                    <label class="label">Total Products : {{$cart->count()}} products</label>
                                 </div>
                             </div>
                         
@@ -72,15 +71,15 @@ use App\Model\Publisher;
                 <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
 
                         </div>
-                        @foreach($cart as $book)
+                      
                          <div class="col-md-12" style="margin-top: 30px; padding-left: 80%;">
                                 <div class="form-group">
                                     <label class="label">Total Amount:</label>
-                                    <p>{{$book->total_amount}}</p>
+                                    <p>{{$cart->sum('total_amount')}}</p>
                                 </div>
                             </div>
                         
-                            @endforeach
+                       
                    
                      
                           

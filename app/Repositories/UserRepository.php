@@ -11,6 +11,8 @@ use App\Model\Cart;
 use App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Collection;
+
 
 class UserRepository extends BaseRepository {
 
@@ -31,6 +33,7 @@ class UserRepository extends BaseRepository {
                 ])->orderBy('user_id', 'desc')->paginate(10);
         }else{
             $user = Member::orderBy('user_id', 'desc')->paginate(10);
+            
         }
             return $user;
     }
@@ -39,9 +42,9 @@ class UserRepository extends BaseRepository {
         $input= array_filter(Input::all());
 
         if($request->image){
-        $image = Common::uploadImage($request->image,env('USER_IMAGE_PATH'));
+        $image = Common::uploadImage($request->image, env('USER_IMAGE_PATH'));
         $input['image'] = $image;
-  }
+        }
         if(isset($input['password'])) {
             $input['password'] = bcrypt($input['password']);
         }
@@ -107,7 +110,7 @@ class UserRepository extends BaseRepository {
                //    dd($user);
 
        $cart = Cart::where(['user_id'=>$user->user_id])->get();
-       
+       $cart->count();
       // dd($cart);
       // $book = Book::where(['book_id'=>$cart->book_id])->get();
         //    dd($book);

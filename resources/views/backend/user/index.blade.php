@@ -59,9 +59,9 @@
                                         </td>
                                         <td>{{$user->email}}</td>
                                         @if(file_exists(public_path().'/'.env('USER_IMAGE_PATH').$user->image) && $user->image)
-                                        <td><img src="{{ asset(env('USER_IMAGE_PATH').$user->image)}}" alt="profile pic" class="userImage" height="65px" width="80px"></td>
+                                        <td><img src="{{ asset(env('USER_IMAGE_PATH').$user->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
                                         @else
-                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="userImage" height="60px"></td>
+                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="image" height="60px"></td>
                                         @endif 
                                         <td>{{date('d M Y', strtotime($user->created_at))}}</td>     
 
