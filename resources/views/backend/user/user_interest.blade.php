@@ -11,7 +11,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Interests
+                                <i class="mdi mdi-heart"></i></span> Interests
                         </h4>
 
 
@@ -78,8 +78,9 @@
 
                             <!-- /.box-body -->
                           </div>
-                          <!-- /.box -->
+
                         </div>
+                <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
                       </div>
                     </section>
                   @endsection

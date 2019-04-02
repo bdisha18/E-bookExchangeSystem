@@ -16,7 +16,7 @@ use App\Model\Transaction;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Order
+                                <i class="icon-placeholder mdi mdi-webpack "></i></span> Order
                         </h4>
 
 

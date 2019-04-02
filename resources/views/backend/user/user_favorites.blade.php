@@ -15,7 +15,7 @@ use App\Model\Book;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Whishlished Books
+                                <i class="mdi mdi-bookmark"></i></span> Whishlished Books
                         </h4>
 
 
@@ -100,6 +100,8 @@ use App\Model\Book;
                           </div>
                           <!-- /.box -->
                         </div>
+                <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
+
                       </div>
                     </section>
                   @endsection

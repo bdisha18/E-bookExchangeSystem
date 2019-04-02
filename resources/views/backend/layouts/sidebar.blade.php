@@ -116,16 +116,6 @@
                     </span>
                 </a>
             </li>
-            <li class="treeview menu-item <?= ($requestRoute == 'email.index') ? 'active' : '' ?>">
-                <a class="menu-link" href="{{route('email.index')}}">
-                    <span class="menu-label">
-                        <span class="menu-name">Ratings</span>
-                    </span>
-                    <span class="menu-icon">
-                        <i class="icon-placeholder mdi mdi-star-outline "></i>
-                    </span>
-                </a>
-            </li>
             <li class="treeview menu-item <?= ($requestRoute == 'testimonial.index') ? 'active' : '' ?>">
                 <a class="menu-link" href="{{route('testimonial.index')}}">
                     <span class="menu-label">

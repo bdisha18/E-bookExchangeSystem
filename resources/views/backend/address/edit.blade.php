@@ -9,7 +9,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Edit Address
+                                <i class="mdi mdi-launch "></i></span> Edit Address
                         </h4>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ use App\Model\Publisher;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Book Details
+                                <i class="mdi mdi-eye "></i></span> Book Details
                         </h4>
 
 

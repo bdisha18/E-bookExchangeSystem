@@ -13,7 +13,7 @@ use App\Model\Publisher;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Cart Detail
+                                <i class="mdi mdi-cart "></i></span> Cart Detail
                         </h4>
 
 
@@ -69,6 +69,7 @@ use App\Model\Publisher;
 
                         </div>
                       </div>
+                <a href="{{route('user.index')}}" class="button btn btn-danger">Back</a>
 
                         </div>
                         @foreach($cart as $book)
@@ -78,6 +79,7 @@ use App\Model\Publisher;
                                     <p>{{$book->total_amount}}</p>
                                 </div>
                             </div>
+                        
                             @endforeach
                    
                      

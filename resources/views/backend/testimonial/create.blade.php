@@ -9,7 +9,7 @@
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Create Testimonials
+                                <i class="icon-placeholder mdi mdi-chart-pie  "></i></span> Create Testimonials
                      
                     </div>
                 </div>

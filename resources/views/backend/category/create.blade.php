@@ -12,7 +12,7 @@ use App\Model\Category;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span> Create New Category
+                                <i class="icon-placeholder mdi mdi-view-list "></i></span> Create New Category
                         </h4>
                     </div>
                 </div>

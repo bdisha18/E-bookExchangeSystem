@@ -14,7 +14,7 @@ use App\Model\Member;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-table "></i></span>Emails
+                                <i class="fa icon-placeholder mdi mdi-gmail"></i></span>Emails
                         </h4>
 
 
