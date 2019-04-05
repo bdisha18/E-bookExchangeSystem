@@ -33,15 +33,11 @@
                                     <div class="text-danger">{{ $errors->first('publisher_name') }}</div>
                                 </div>
                     <div class="form-group col-md-4">
-                                    <label>Book Name</label>
-                                    <input type="text" name="book_name" class="form-control" placeholder="Book Name">
-                                    <div class="text-danger">{{ $errors->first('book_name') }}</div>
+                                    <label>Books Published</label>
+                                    <input type="text" name="book_published" class="form-control" placeholder="How many Books Published">
+                                    <div class="text-danger">{{ $errors->first('book_published') }}</div>
                                 </div>
-                    <div class="form-group col-md-4">
-                                    <label>Author Name</label>
-                                    <input type="text" name="author_name" class="form-control" placeholder="Author Name">
-                                    <div class="text-danger">{{ $errors->first('author_name') }}</div>
-                                </div>
+                              </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="{{route('publisher.index')}}" class="button

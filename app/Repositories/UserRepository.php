@@ -97,10 +97,14 @@ class UserRepository extends BaseRepository {
     
     public function user_favorite_view($id)
     {
-         $user = Member::findOrFail($id);
-        $favorite = Favourite::where('user_id', $id)->get();
-       $user_favorite_view = Book::where(['book_id'=>$favorite->book_id])->get();
-       dd($user_favorite_view);
+         $book = Book::findOrFail($id);
+//                 dd($user);
+
+        $favorites = Favourite::where('book_id', $id)->get();
+       // dd($favorites);
+        foreach($favorites as $favorite ){
+       $user_favorite_view = Book::where('book_id', $favorite->book_id)->get();
+        }
         return $user_favorite_view;
     }
 
@@ -110,21 +114,12 @@ class UserRepository extends BaseRepository {
                //    dd($user);
 
        $cart = Cart::where(['user_id'=>$user->user_id])->get();
-       $cart->count();
-      // dd($cart);
+      // $cart->count();
+//       dd($cart);
       // $book = Book::where(['book_id'=>$cart->book_id])->get();
         //    dd($book);
 
         return $cart;
     }
-
-    
-
-
-
-
-  
-
- 
 
 }

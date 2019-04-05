@@ -50,17 +50,13 @@
                                       @php
                                       $i =1;
                                       @endphp
-                                        @php
-                            
-                                      $detail = App\Model\Book::where('book_id', $book->book_id)->get();
-                                     
-                                      @endphp
-                                      @foreach($orders->order_details as $book)
+                       
+                                      @foreach($orders as $book)
                                     
                                       
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($detail->book_name)}}</td>
+                                        <td>{{ucwords($book->book_name)}}</td>
                                         @if(file_exists(public_path().'/'.env('BOOK_IMAGE_PATH').$book->book_image) && $book->book_image)
                                         <td><img src="{{ asset(env('BOOK_IMAGE_PATH').$book->book_image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
                                         @else
@@ -69,7 +65,7 @@
                                         
                                         <td>{{$book->book_price}}</td>
                                         <td>{{$book->author_name}}</td>
-                                        <td>{{$book->rating}}</td>
+                                        <td>{{$book->book_rating}}</td>
                                         <td>{{$book->created_at}}</td>
 
                                     

@@ -78,16 +78,18 @@ use App\Model\Book;
                                         <td>{{$book->category}}</td>
                                         <td>{{$book->created_at}}</td>
 
-                                        <td> 
+                                        <td>
                                               {!! Form::open(['method'=>'DELETE', 'route'=>['book.delete',
                                                       $book->book_id]]) !!}
                                               <a href="{{ route('user.favorite.view',$book->book_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                                       
 
-                                               <button  title="Delete" type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this user?');"><span class="mdi mdi-delete"></span></button>
+                                               <button  title="Delete" type="submit" class="btn btn-danger btn-xs" 
+                                                        onclick="return confirm('Are you sure you want to delete this user?');">
+                                                   <span class="mdi mdi-delete"></span></button>
                                                {!! Form::close() !!}
-                                        </td>
                                         
+                                        </td>
                                       </tr>
                                       @endforeach
                                     </table>

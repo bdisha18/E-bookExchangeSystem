@@ -50,7 +50,6 @@ use App\Model\Publisher;
                                            <th>Price</th>
                                           <th>Author Name</th>
                                           <th>Publisher Name</th>
-                                          <th>Rating</th>
                                          <th>Status</th>
                                          <th>Type</th>
                                           <th>Released Date</th>
@@ -74,7 +73,6 @@ use App\Model\Publisher;
                                         <td>{{$book->book_price}}</td>
                                         <td>{{$book->author_name}}</td>
                                         <td>{{Publisher::where('book_id', $book->book_id)->value('publisher_name')}}</td>
-                                        <td>{{$book->rating}}</td>
                                         <td><label class="switch">
                                             <input type="checkbox" name="status" class="update-status"  data-id="{{$book->book_id}}" 
                                                    data-url="{{ route('book.status', $book->book_id) }}" {{($book->status == 'active')? 'checked' : ''}}>

@@ -32,7 +32,63 @@
                                     <input type="text" name="book_name" class="form-control" placeholder="Book Name">
                                     <div class="text-danger">{{ $errors->first('book_name') }}</div>
                                 </div>
-      
+                                   <div class="form-group col-md-4">
+                                    <label>Book Category</label>
+                                    <input type="text" name="category" class="form-control" placeholder="Category">
+                                    <div class="text-danger">{{ $errors->first('category') }}</div>
+                                </div>
+                               
+                                   <div class="form-group col-md-4">
+                                      <label>Image</label>
+                                      <input type="file" name="book_image" class="form-control" placeholder="Image">
+                                      <div class="text-danger">{{ $errors->first('book_image') }}</div>
+                                </div>
+                    <div class="form-group col-md-4">
+                                    <label>Author Name</label>
+                                    <input type="text" name="author_name" class="form-control" placeholder="Author Name">
+                                    <div class="text-danger">{{ $errors->first('author_name') }}</div>
+                                </div>
+                    <div class="form-group col-md-4">
+                                    <label>Book Price</label>
+                                    <input type="text" name="book_price" class="form-control" placeholder="Book Price">
+                                    <div class="text-danger">{{ $errors->first('book_price') }}</div>
+                                </div>
+                    <div class="form-group col-md-4">
+                                    <label>Book Type</label>
+                                    <input type="text" name="type" class="form-control" placeholder="Book Type">
+                                    <div class="text-danger">{{ $errors->first('type') }}</div>
+                                </div>
+                    <div class="form-group col-md-4">
+                                  <label>Status</label><br>
+                                    <label class="radio-inline">Available
+                                      </label>
+                                      <input class="col-md-2" type="radio" name="status" value="available" >
+                                      <label class="radio-inline">Soldout</label>
+                                      <input class="col-md-2" type="radio" name="status" value="soldout">
+                                </div>
+                              
+                    <div class="form-group col-md-4">
+                                    <label>Number of Pages</label>
+                                    <input type="text" name="pages" class="form-control" placeholder="Number of Pages">
+                                    <div class="text-danger">{{ $errors->first('pages') }}</div>
+                                </div>
+                     <div class="form-group col-md-4">
+                                    <label>Books Available</label>
+                                    <input type="text" name="book_available" class="form-control" placeholder="Books Available">
+                                    <div class="text-danger">{{ $errors->first('book_available') }}</div>
+                                </div>
+                    <div class="form-group col-md-12">
+                                    <label>Descriptions</label>
+                                    <textarea name="description" class="form-control" 
+                                              placeholder="    Write Book Description here"></textarea>
+                                    <div class="text-danger">{{ $errors->first('description') }}</div>
+                                </div>   
+                <div class="form-group col-md-4">
+                                    <label>File</label>
+                                    <input type="text" name="file" class="form-control" placeholder="File">
+                                    <div class="text-danger">{{ $errors->first('file') }}</div>
+                                </div>
+                    
                             </div>
                           </div>
                       </div>

@@ -74,7 +74,16 @@ class OrderController extends Controller
     
     public function detail($id)
     {
-        $orders = Order::findOrFail($id);
+        $orderdetail = Order::findOrFail($id);
+        
+        $productdetails = Productdetail::where('order_id', $id)->get();
+        //dd($productdetails);
+        foreach($productdetails as $productdetail)  {
+            $orders = Book::where('book_id', $productdetail->book_id)->get();
+         //dd($orders);
+        }
+       // dd($orders);
+        
         
         return view('backend.order.detail',compact('orders'));
     }

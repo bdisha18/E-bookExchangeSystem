@@ -34,20 +34,20 @@ use App\Model\Publisher;
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Book Id :</label>
-                                    <p>{{$book->book_id}}</p>
+                                    <p>{{$book[0]->book_id}}</p>
                                 </div>
                             </div>
 
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Book Name :</label>
-                                    <p></p> 
+                                    <p>{{$book[0]->book_name}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Author Name :</label>
-                                    <p>{{$book->author_name}}</p> 
+                                    <p>{{$book[0]->author_name}}</p> 
                                 </div>
                             </div>
 
@@ -55,68 +55,68 @@ use App\Model\Publisher;
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Book Image :</label>
-                                    <p>{{$book->book_image}}</p> 
+                                    <p>{{$book[0]->book_image}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Rating :</label>
-                                    <p>{{$book->book_rating}}</p> 
+                                    <p>{{$book[0]->book_rating}}</p> 
                                 </div>
                             </div>
                      <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Released Date :</label>
-                                    <p>{{$book->created_at}}</p> 
+                                    <p>{{$book[0]->created_at}}</p> 
                                 </div>
                             </div>
                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Book Price :</label>
-                                    <p>{{$book->book_price}}</p> 
+                                    <p>{{$book[0]->book_price}}</p> 
                                 </div>
                             </div>
                               <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Status :</label>
-                                    <p>{{$book->status}}</p> 
+                                    <p>{{$book[0]->status}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Type :</label>
-                                    <p>{{$book->category}}</p> 
+                                    <p>{{$book[0]->category}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Publisher Name :</label>
-                            <p>{{Publisher::where('book_id', $book->book_id)->value('publisher_name')}}</p>
+                            <p>{{Publisher::where('book_id', $book[0]->book_id)->value('publisher_name')}}</p>
 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Description :</label>
-                                    <p>{{$book->description}}</p> 
+                                    <p>{{$book[0]->description}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Number of Pages :</label>
-                                    <p>{{$book->pages}}</p> 
+                                    <p>{{$book[0]->pages}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Books Available :</label>
-                                    <p>{{$book->book_available}}</p> 
+                                    <p>{{$book[0]->book_available}}</p> 
                                 </div>
                             </div>
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Uploaded File :</label>
-                                    <p>{{$book->file}}</p> 
+                                    <p>{{$book[0]->file}}</p> 
                                 </div>
                             </div>
                             </div>

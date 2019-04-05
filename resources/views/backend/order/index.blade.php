@@ -76,7 +76,7 @@ use App\Model\Transaction;
 
  
                                         <td> 
-                                              <a href="{{ route('order.detail',$order->order_id) }}"><button type="button" title="view" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
+                                              <a href="{{ route('order.detail',$order->order_id) }}"><button type="button" title="order detail" class="btn btn-success btn-xs"><span class="mdi mdi-eye"></span></button></a> 
                                                                       
                                                <a href="{{ route('order.edit',$order->order_id) }}"><button type="button" title="edit" class="btn btn-primary btn-xs"><span class="mdi mdi-launch"></span></button></a>
 
