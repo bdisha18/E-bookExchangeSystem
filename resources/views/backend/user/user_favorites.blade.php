@@ -4,6 +4,7 @@
 @php
 use App\Model\Publisher;
 use App\Model\Book;
+use App\Model\Rating;
 @endphp
 <!-- /.row -->
 
@@ -68,7 +69,7 @@ use App\Model\Book;
                                         <td>{{Book::where('book_id',$book->book_id)->value('book_price')}}</td>
                                         <td>{{Book::where('book_id',$book->book_id)->value('author_name')}}</td>
                                         <td>{{Publisher::where('book_id', $book->book_id)->value('publisher_name')}}</td>
-                                        <td>{{Book::where('book_id',$book->book_id)->value('book_rating')}}</td>
+                                        <td>{{Rating::where('book_id',$book->book_id)->value('rating')}}</td>
                                         <td><label class="switch">
                                             <input type="checkbox" name="status" class="update-status"  data-id="{{$book->book_id}}" 
                                                    data-url="{{ route('book.status', $book->book_id) }}" {{($book->status == 'active')? 'checked' : ''}}>

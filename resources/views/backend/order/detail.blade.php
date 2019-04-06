@@ -1,8 +1,10 @@
 
 @extends('backend.layouts.master')
 @section('content')
+<?php
+use App\Model\Rating;
+?>
 
-<!-- /.row -->
 
 <!--site header ends -->    
 <section class="admin-content">
@@ -65,7 +67,7 @@
                                         
                                         <td>{{$book->book_price}}</td>
                                         <td>{{$book->author_name}}</td>
-                                        <td>{{$book->book_rating}}</td>
+                                        <td>{{Rating::where('book_id',$book->book_id)->value('rating')}}</td>
                                         <td>{{$book->created_at}}</td>
 
                                     

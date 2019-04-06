@@ -3,6 +3,7 @@
 @section('content')
 @php
 use App\Model\Publisher;
+use App\Model\Rating;
 @endphp
 
 <!--site header ends -->    
@@ -61,7 +62,7 @@ use App\Model\Publisher;
                              <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Rating :</label>
-                                    <p>{{$book[0]->book_rating}}</p> 
+                                    <p>{{Rating::where('book_id',$book[0]->book_id)->value('rating')}}</p> 
                                 </div>
                             </div>
                      <div class="col-md-4">

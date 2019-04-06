@@ -82,7 +82,7 @@
                               <div class="form-row">
                                 <div class="form-group col-md-4">
                                       <label>Select Image</label>
-                                      <input type="file" name="image" class="form-control" placeholder="Image" value="{{$user->image}}">
+                                      <input type="file" name="image" class="form-control" placeholder="Image">
                                       <div class="text-danger">{{ $errors->first('image') }}</div>
                                 </div>
                               

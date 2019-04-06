@@ -16,7 +16,7 @@ class Order extends Model
         'updated_at'
     ];
 
-    public function order_details(){
-    	return $this->hasMany('App\Model\Productdetail', 'order_id', 'order_id');
+    public function product(){
+    	return $this->belongsTo('App\Model\Productdetail', 'id', 'order_id');
     }
 }

@@ -2,6 +2,7 @@
 @section('content')
 @php
 use App\Model\Book;
+use App\Model\Rating;
 @endphp
 
 <!--site header ends -->    
@@ -43,18 +44,13 @@ use App\Model\Book;
                               
                                <div class="form-group col-md-4">
                                     <label>Rating</label>
-                                    <input type="text" name="rating" class="form-control" value="{{$book->rating}}" placeholder="rate book">
+                                    <input type="text" name="rating" class="form-control" value="{{Rating::where('book_id',$book->book_id)->value('rating')}}" placeholder="rate book">
                                     <div class="text-danger">{{ $errors->first('rating') }}</div>
                                 </div>
                          <div class="form-group col-md-4">
                                     <label>Price</label>
                                     <input type="text" name="book_price" class="form-control" value="{{$book->book_price}}" placeholder="book cost">
                                     <div class="text-danger">{{ $errors->first('book_price') }}</div>
-                                </div>
-                        <div class="form-group col-md-4">
-                                    <label>Description</label>
-                                    <input type="text" name="description" class="form-control" value="{{$book->description}}">
-                                    <div class="text-danger">{{ $errors->first('description') }}</div>
                                 </div>
                         <div class="form-group col-md-4">
                                     <label>Number of Pages</label>
@@ -82,6 +78,12 @@ use App\Model\Book;
                                     <div class="text-danger">{{ $errors->first('created_at') }}</div>
                                     
                                 </div>
+                <div class="form-group col-md-4">
+                                    <label>Description</label>
+                                    <textarea name="description" class="form-control" value="{{$book->description}}"></textarea>
+                                    <div class="text-danger">{{ $errors->first('description') }}</div>
+                                </div>
+                                          
                                      
                                                          
                             </div>
@@ -89,8 +91,7 @@ use App\Model\Book;
                       </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="{{route('book.index')}}" class="button
-                            btn btn-danger">Back</a>
+                            <a href="{{route('book.index')}}" class="button btn btn-danger">Back</a>
                         </div>
                         </form>
                         
