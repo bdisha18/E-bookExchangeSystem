@@ -17,6 +17,8 @@ class CreatePublishersTable extends Migration
             $table->bigIncrements('publisher_id');
             $table->integer('user_id');
             $table->string('publisher_name');
+            $table->integer('books_published');
+            $table->text('publish_bookname');
             $table->integer('book_id')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

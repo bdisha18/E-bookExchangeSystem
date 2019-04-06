@@ -37,7 +37,28 @@
                                     <input type="text" name="book_published" class="form-control" placeholder="How many Books Published">
                                     <div class="text-danger">{{ $errors->first('book_published') }}</div>
                                 </div>
-                              </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Books Category</label>
+                                    <input type="text" name="book_category" class="form-control" placeholder="books category">
+                                    <div class="text-danger">{{ $errors->first('book_category') }}</div>
+                                </div>
+                    
+                                  <div class="form-group col-md-12">
+                                    <label>Publish Books Name</label>
+                                    <textarea name="publish_bookname" class="form-control" 
+                                              placeholder="    Write Published books name here"></textarea>
+                                    <div class="text-danger">{{ $errors->first('publish_bookname') }}</div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                  <label>Status</label><br>
+                                    <label class="radio-inline">Active
+                                      </label>
+                                      <input class="col-md-2" type="radio" name="status" value="active" >
+                                      <label class="radio-inline">Inactive</label>
+                                      <input class="col-md-2" type="radio" name="status" value="inactive">
+                                </div>
+                      
+                               </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="{{route('publisher.index')}}" class="button

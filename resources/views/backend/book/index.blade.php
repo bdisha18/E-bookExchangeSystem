@@ -75,7 +75,7 @@ use App\Model\Publisher;
                                         <td>{{Publisher::where('book_id', $book->book_id)->value('publisher_name')}}</td>
                                         <td><label class="switch">
                                             <input type="checkbox" name="status" class="update-status"  data-id="{{$book->book_id}}" 
-                                                   data-url="{{ route('book.status', $book->book_id) }}" {{($book->status == 'active')? 'checked' : ''}}>
+                                                   data-url="{{ route('book.status', $book->book_id) }}" {{($book->status == 'available')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
                                         <td>{{$book->category}}</td>

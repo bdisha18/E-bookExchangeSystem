@@ -1,6 +1,9 @@
 
 @extends('backend.layouts.master')
 @section('content')
+<?php
+use App\Model\Member;
+?>
 
 <!--site header ends -->    
 <section class="admin-content">
@@ -60,7 +63,22 @@
                                     <p>{{$publisher->book_category}}</p> 
                                 </div>
                             </div>
-      
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Contact Number :</label>
+                                    <p>{{Member::where('user_id',$publisher->user_id)->value('contactno')}}</p>
+                        </div>
+                            </div>
+                   <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Email Id :</label>
+                                    <p>{{Member::where('user_id',$publisher->user_id)->value('email')}}</p>
+                        </div></div>    
+                        <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Image :</label>
+                                    <p>{{Member::where('image',$publisher->user_id)->value('image')}}</p>
+                        </div>               
                         </div>
                     </form>
                   </div>

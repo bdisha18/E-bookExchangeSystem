@@ -122,8 +122,13 @@ use App\Model\Rating;
                             </div>
                             </div>
                     </form>
-                  </div>
+                      </div>
                 </div>
+
+             <a href="{{route('user.favorite',$book[0]->book_id)}}" class="button btn btn-danger">Ba
+                 
+                 ck</a>
+
         </div>
     </div>
 </div>

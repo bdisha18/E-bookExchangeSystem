@@ -62,9 +62,9 @@
                                       <tr>
                                         <td>{{$i++}}</td>
                                         <td>{{ucwords($offer->offer_title)}}</td>
-                                        </td>
+                                        
                                         <td>{{$offer->offer_description}}</td>
-                                        </td>
+                                        
                                     <td>{{date('d M Y', strtotime($offer->start_date))}}</td>     
                                     <td>{{date('d M Y', strtotime($offer->end_date))}}</td>     
                                     <td>{{$offer->discount_amount}}</td>
