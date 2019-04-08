@@ -86,8 +86,8 @@ use App\Model\Interest;
                                     <p>{{$user->facebook_link}}</p> 
                                 </div>
                             </div>
-
-                            <div class="col-md-4">
+                       @foreach($users as $user)
+                       <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Interests :</label>
                                     <ul>
@@ -95,6 +95,7 @@ use App\Model\Interest;
                                     </ul> 
                                 </div>
                             </div>
+                       @endforeach
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Status :</label>
