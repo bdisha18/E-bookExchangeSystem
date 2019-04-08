@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Model\Member;
-use App\Model\Interest; 
+use App\Model\Interest;
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 
@@ -42,8 +42,10 @@ class UserController extends Controller
     public function view($id)
     { 
         $user = $this->userRepository->find($id);
-        $users = Interest::all();
-        return view('backend.user.view', compact('user','users'));
+//        dd($user);
+        $interests = Interest::where(['user_id'=> $user->user_id])->get();
+//        dd($interests);
+        return view('backend.user.view', compact('user','interests'));
     }
 
     

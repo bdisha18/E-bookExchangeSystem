@@ -86,20 +86,25 @@ use App\Model\Interest;
                                     <p>{{$user->facebook_link}}</p> 
                                 </div>
                             </div>
-                       @foreach($users as $user)
-                       <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="label">Interests :</label>
-                                    <ul>
-                                        <li>{{Interest::where('user_id', $user->user_id)->value('name')}}</li>
-                                    </ul> 
-                                </div>
-                            </div>
-                       @endforeach
+                        
+                            
+                       
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="label">Status :</label>
                                     <p>{{$user->status}}</p> 
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="label">Interests :</label>
+                                    <ul>
+                                         @foreach($interests as $interest) 
+                                        <li>{{$interest->name}}</li>
+                                         @endforeach
+                                    </ul> 
                                 </div>
                             </div>
 

@@ -12,8 +12,8 @@
                     </div>
                     </a>
                     <div class="dropdown-menu  dropdown-menu-right"   >
-                        <a class="dropdown-item" href="#">  Reset Password</a>
-                        <a class="dropdown-item" href="#"> Logout</a>
+                        <a class="dropdown-item" href="">  Reset Password</a>
+                        <a class="dropdown-item" href="{{route('admin.logout')}}"> Logout</a>
                     </div>
                 </li>
             </ul>

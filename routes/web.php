@@ -53,6 +53,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
     Route::get('/edit/{id}', 'AdminController@edit')->name('admin.edit');
     Route::post('/update/{id}', 'AdminController@update')->name('admin.update');
     Route::delete('/delete/{id}', 'AdminController@delete')->name('admin.delete');
+    Route::get('/logout', 'AdminController@logout')->name('admin.logout');
     
 });
 

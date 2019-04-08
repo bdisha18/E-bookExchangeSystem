@@ -122,10 +122,4 @@ class UserRepository extends BaseRepository {
         return $cart;
     }
 
-    public function view($id)
-    {
-         $user = Member::findOrFail($id);
-        $user_view = Interest::where('user_id',$user->user_id)->get();
-        return $user_view;
-    }
 }
