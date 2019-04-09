@@ -44,7 +44,7 @@ class UserController extends Controller
         $user = $this->userRepository->find($id);
 //        dd($user);
         $interests = Interest::where(['user_id'=> $user->user_id])->get();
-//        dd($interests);
+  //dd($interests);
         return view('backend.user.view', compact('user','interests'));
     }
 

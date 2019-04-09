@@ -74,6 +74,7 @@ class OfferController extends Controller
     {
         $offers = Offers::all();
         $offer = $this->offerRepository->find($id);
+//        dd($offer);
         return view('backend.offer.edit', compact('offer'));
 
     }

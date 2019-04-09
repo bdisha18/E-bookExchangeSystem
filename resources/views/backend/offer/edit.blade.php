@@ -37,7 +37,7 @@ use App\Model\Offer;
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label>Offer Description</label>
-                                    <input type="text" name="offer_description" class="form-control" value="{{$offer->offer_description}}" placeholder="Offer Description">
+                                    <textarea name="offer_description" class="form-control" placeholder="Offer Description">{{$offer->offer_description}}</textarea>
                                     <div class="text-danger">{{ $errors->first('offer_description') }}</div>
                                 </div>
                                <div class="form-group col-md-4">
@@ -67,8 +67,8 @@ use App\Model\Offer;
    
                                   <div class="form-group col-md-12">
                                     <label>Terms & Conditions</label>
-                                    <textarea name="termsconditions" class="form-control" value="{{$offer->termsconditions}}"
-                                              placeholder="    Write  terms & conditions here" ></textarea>
+                                    <textarea name="termsconditions" class="form-control" 
+                                              placeholder="    Write  terms & conditions here" >{{$offer->termsconditions}}</textarea>
                             <div class="text-danger">{{ $errors->first('termsconditions') }}</div>
 
                                    </div>
