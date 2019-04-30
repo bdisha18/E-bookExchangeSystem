@@ -12,7 +12,6 @@
 |
 */
 
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,13 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Backend' ], function() {
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
-});
 
-Route::group(['prefix' => 'user', 'namespace' => 'Frontend' ], function() {
-    Route::get('/front/dashboard', 'UserController@dashboard')->name('user.dashboard');
-    Route::get('/front/index','UserController@index')->name('user.index');
-});
 
+});
 
 // for User
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
@@ -183,13 +178,30 @@ function() {
 });
 
 
+ //for Orders
+ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/order'],
+ function() {
+     Route::get('/index', 'OrderController@index')->name('order.index');
+      Route::post('/status/{id}', 'OrderController@status')
+    ->name('order.status');
+        Route::get('/create', 'OrderController@create')->name('order.create');
+     Route::post('/store', 'OrderController@store')->name('order.store');
 
-include 'admin.php';
+     Route::get('/view/{id}', 'OrderController@view')->name('order.view');
+     Route::get('/edit/{id}', 'OrderController@edit')->name('order.edit');     
+     Route::post('/update/{id}', 'OrderController@update')->name('order.update');
+     Route::get('/detail/{id}','OrderController@detail')->name('order.detail');
+ });
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/interest'],
+function() {
+    Route::get('/index', 'InterestController@index')->name('interest.index');
+        Route::get('/create', 'InterestController@create')->name('interest.create');
+    Route::post('/store', 'InterestController@store')->name('interest.store');
+    Route::get('/edit/{id}', 'InterestController@edit')->name('interest.edit');
+    Route::post('/update/{id}', 'InterestController@update')->name('interest.update');
+    Route::delete('/delete/{id}', 'InterestController@delete')->name('interest.delete');
+});
 
 
 

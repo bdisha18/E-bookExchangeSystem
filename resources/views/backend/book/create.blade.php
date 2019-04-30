@@ -53,11 +53,7 @@
                                     <input type="text" name="book_price" class="form-control" placeholder="Book Price">
                                     <div class="text-danger">{{ $errors->first('book_price') }}</div>
                                 </div>
-                    <div class="form-group col-md-4">
-                                    <label>Book Type</label>
-                                    <input type="text" name="type" class="form-control" placeholder="Book Type">
-                                    <div class="text-danger">{{ $errors->first('type') }}</div>
-                                </div>
+               
                     <div class="form-group col-md-4">
                                   <label>Status</label><br>
                                     <label class="radio-inline">Available

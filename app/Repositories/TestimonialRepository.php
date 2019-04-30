@@ -50,8 +50,8 @@ class TestimonialRepository extends BaseRepository {
 
         if(Input::hasFile('image'))
         {
-            $image = public_path().'/'.env('TESTIMONIAL_IMAGE_PATH').$book->image;
-                if (file_exists($image)) { 
+            $image = public_path().'/'.env('TESTIMONIAL_IMAGE_PATH').$testimonial->image;
+                if (file_exists($image) && $testimonial->image) { 
                     unlink($image);
                 }
             $image = Common::uploadImage($input['image'],env('TESTIMONIAL_IMAGE_PATH'));

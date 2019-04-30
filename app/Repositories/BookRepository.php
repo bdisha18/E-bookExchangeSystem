@@ -51,7 +51,7 @@ class BookRepository extends BaseRepository {
         if(Input::hasFile('image'))
         {
             $image = public_path().'/'.env('Book_IMAGE_PATH').$book->image;
-                if (file_exists($image)) { 
+                if (file_exists($image) && $book->image) { 
                     unlink($image);
                 }
             $image = Common::uploadImage($input['image'],env('Book_IMAGE_PATH'));
