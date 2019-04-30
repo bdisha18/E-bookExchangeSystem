@@ -72,12 +72,7 @@ use App\Model\Rating;
                                     <input type="text" name="book_available" class="form-control" value="{{$book->book_available}}">
                                     <div class="text-danger">{{ $errors->first('book_available') }}</div>
                                 </div>
-                        <div class="form-group col-md-4">
-                                    <label>Released Date</label>
-                                    <input type="text" name="created_at" class="form-control" value="{{$book->created_at}}">
-                                    <div class="text-danger">{{ $errors->first('created_at') }}</div>
-                                    
-                                </div>
+                        
                 <div class="form-group col-md-4">
                                     <label>Description</label>
                                     <textarea name="description" class="form-control" value="{{$book->description}}"></textarea>

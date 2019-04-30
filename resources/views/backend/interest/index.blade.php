@@ -56,8 +56,8 @@
                                       <tr>
                                         <td>{{$i++}}</td>
                                         <td>{{ucwords($interest->name)}}</td>
-                                        @if(file_exists(public_path().'/'.env('BOOK_IMAGE_PATH').$interest->image) && $interest->image)
-                                        <td><img src="{{ asset(env('BOOK_IMAGE_PATH').$interest->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
+                                        @if(file_exists(public_path().'/'.env('INTEREST_IMAGE_PATH').$interest->image) && $interest->image)
+                                        <td><img src="{{ asset(env('INTEREST_IMAGE_PATH').$interest->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
                                         @else
                                         <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="image" height="60px"></td>
                                         @endif 

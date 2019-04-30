@@ -46,12 +46,12 @@ class InterestRepository extends BaseRepository {
     public function update($request, $id) {
     
         $interest = Interest::findOrFail($id);
-        $input= array_filter(Input::all());
+        $input= Input::all();
 
         if(Input::hasFile('image'))
         {
             $image = public_path().'/'.env('INTEREST_IMAGE_PATH').$interest->image;
-                if (file_exists($image)) { 
+                if (file_exists($image) && $interest->image) { 
                     unlink($image);
                 }
             $image = Common::uploadImage($input['image'],env('INTEREST_IMAGE_PATH'));
@@ -60,5 +60,7 @@ class InterestRepository extends BaseRepository {
         }
         $interest->update($input);
          return $input;
+
+         
     }
 }

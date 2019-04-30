@@ -62,7 +62,7 @@ class UserRepository extends BaseRepository {
         if(Input::hasFile('image'))
         {
         $image = public_path().'/'.env('USER_IMAGE_PATH').$user->image;
-        if (file_exists($image)) { 
+        if (file_exists($image) && $user->image) { 
             unlink($image);
         }
         $image = Common::uploadImage($input['image'],env('USER_IMAGE_PATH'));

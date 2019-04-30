@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use App\User;
+use  App\Helper\Common;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 
@@ -47,7 +48,7 @@ class AdminRepository extends BaseRepository {
         if(Input::hasFile('image'))
         {
         $image = public_path().'/'.env('ADMIN_IMAGE_PATH').$admin->image;
-        if (file_exists($image)) { 
+        if (file_exists($image) && $admin->image) { 
             unlink($image);
         }
         $image = Common::uploadImage($input['image'],env('ADMIN_IMAGE_PATH'));

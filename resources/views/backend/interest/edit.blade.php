@@ -37,7 +37,7 @@ use App\Model\Book;
                                 </div>
                                  <div class="form-group col-md-4">
                                       <label>Image</label>
-                                      <input type="file" name="image" class="form-control" placeholder="Image" value="{{$interest->image}}">
+                                      <input type="file" name="image" class="form-control">
                                       <div class="text-danger">{{ $errors->first('image') }}</div>
                                 </div>                             
                             </div>
