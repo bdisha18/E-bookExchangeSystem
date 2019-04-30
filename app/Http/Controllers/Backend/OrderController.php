@@ -75,14 +75,14 @@ class OrderController extends Controller
     public function detail($id)
     {
         $orderdetail = Order::with('product')->findOrFail($id);
-        dd($orderdetail);
+       // dd($orderdetail);
   
         $productdetails = Productdetail::where('order_id', $id)->get();
 //        dd($productdetails);
-//        foreach($productdetails as $productdetail)  {
-//            $orders = Book::where('book_id', $productdetail->book_id)->get();
+         foreach($productdetails as $productdetail)  {
+           $orders = Book::where('book_id', $productdetail->book_id)->get();
          //dd($orders);
-//        }
+        }
        // dd($orders);
         
         

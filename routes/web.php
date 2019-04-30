@@ -24,9 +24,13 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Backend' ], function() {
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
-
-
 });
+
+Route::group(['prefix' => 'user', 'namespace' => 'Frontend' ], function() {
+    Route::get('/front/dashboard', 'UserController@dashboard')->name('user.dashboard');
+    Route::get('/front/index','UserController@index')->name('user.index');
+});
+
 
 // for User
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {

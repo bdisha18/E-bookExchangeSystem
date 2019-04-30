@@ -12,13 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Repositories/UserRepository.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Backend/AdminController.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/User.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/frontend/user/index.blade.php</file>
             <file>file:/E:/xampp/htdocs/socialsite/routes/web.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/layouts/header.blade.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/resources/views/backend/user/view.blade.php</file>
-            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Backend/UserController.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/resources/views/frontend/user/dashboard.blade.php</file>
+            <file>file:/E:/xampp/htdocs/socialsite/app/Http/Controllers/Frontend/UserController.php</file>
         </group>
     </open-files>
 </project-private>
