@@ -1,8 +1,9 @@
 
 @extends('backend.layouts.master')
 @section('content')
-<!-- /.row -->
-
+@php
+use App\Model\Category;
+@endphp
 <!--site header ends -->    
 <section class="admin-content">
         <div class="bg-dark">
@@ -14,7 +15,19 @@
                                 <i class="icon-placeholder mdi mdi-heart"></i></span> Interests
                         </h4>
 
-
+                        <div class="form-dark">
+                            <div class="input-group input-group-flush mb-3">
+                              <form action="{{route('interest.index')}}" method="get">
+                                <input placeholder="Search Interests" type="search" name="search" 
+                                       class="form-control form-control-lg search form-control-prepended">
+                              </form>
+                              <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </div>
+                              </div>  
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -28,10 +41,7 @@
                           <a href="{{route('interest.create')}}">
                             <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Interests</button>
                           </a>
-                          <form action="{{route('interest.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                          </form>
+                          
                           
                         </div>
          
@@ -42,7 +52,7 @@
                                     <thead>
                                       <tr>
                                         <th>Sr.No.</th>
-                                          <th>Interest Title</th>
+                                          <th>Interest Category</th>
                                           <th>Image</th>
                                           <th>Created Date</th>
                                           <th>Actions</th>
@@ -55,7 +65,7 @@
                                       @foreach($interests as $interest)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($interest->name)}}</td>
+                                        <td>{{Category::where('id', $interest->category_id)->value('category_name')}}</td>
                                         @if(file_exists(public_path().'/'.env('INTEREST_IMAGE_PATH').$interest->image) && $interest->image)
                                         <td><img src="{{ asset(env('INTEREST_IMAGE_PATH').$interest->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
                                         @else

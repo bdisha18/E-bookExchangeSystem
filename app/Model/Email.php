@@ -8,7 +8,7 @@ class Email extends Model
 {
     protected $primaryKey = 'id';
     protected $fillable = [
-        'email_name','user_id','fname','lname','subject','message','order_id','transaction_id','status',
+        'email_name','user_id','fname','lname','subject','message','status',
         'created_at','updated_at'
         
     ];

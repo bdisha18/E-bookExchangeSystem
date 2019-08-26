@@ -16,7 +16,19 @@ use App\Model\Category;
                         <h4 class=""> <span class="btn btn-white-translucent">
                                 <i class="icon-placeholder mdi mdi-view-list "></i></span> Category
                         </h4>
-
+                        <div class="form-dark">
+                            <div class="input-group input-group-flush mb-3">
+                              <form action="{{route('category.index')}}" method="get">
+                                <input placeholder="Search Categories" type="search" name="search" 
+                                       class="form-control form-control-lg search form-control-prepended">
+                              </form>
+                              <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </div>
+                              </div>  
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -31,10 +43,7 @@ use App\Model\Category;
                           <a href="{{route('category.create')}}">
                             <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Category</button>
                           </a>
-                          <form action="{{route('category.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                          </form>
+                          
                           
                         </div>
          
@@ -45,7 +54,9 @@ use App\Model\Category;
                                     <thead>
                                       <tr>
                                         <th>Sr.No.</th>
-                                          <th>Category Name</th>     
+                                          <th>Category Name</th>
+                                          <th>Type</th>
+                                          <th>Image</th>     
                                           <th>Created Date</th>
                                           <th>Actions</th>
                                       </tr>
@@ -63,6 +74,12 @@ use App\Model\Category;
                                         {{ucwords(Category::where('id', $category->parent_id)->value('category_name'))}}  > {{ucwords($category->category_name)}}
                                         @endif
                                         </td>
+                                        <td>{{$category->type}}</td>
+                                        @if(file_exists(public_path().'/'.env('CATEGORY_IMAGE_PATH').$category->image) && $category->image)
+                                        <td><img src="{{ asset(env('CATEGORY_IMAGE_PATH').$category->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
+                                        @else
+                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="image" height="60px"></td>
+                                        @endif
                                         <td>{{date('d M Y', strtotime($category->created_at))}}</td>     
 
                                         <td> 

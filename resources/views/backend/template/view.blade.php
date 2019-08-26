@@ -28,20 +28,20 @@
                     
                         <div class="row">
 
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Email Title :</label>
                                     <p>{{$template->email_name}}</p> 
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Subject :</label>
                                     <p>{{$template->subject}}</p> 
                                 </div>
                             </div>
                             
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Created at :</label>
                                     <p>{{$template->created_at}}</p> 
@@ -59,8 +59,8 @@
                   </div>
                 </div>
         </div>
-    </div>
     <a href="{{route('template.index')}}" class="button btn btn-danger">Back</a>
+    </div>
 </div>
 </section>
 @endsection

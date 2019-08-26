@@ -11,6 +11,6 @@ class Interest extends Model
     public $timestamps = false;
     
     protected $fillable = [
-      'interest_id', 'user_id','name','image','created_at','updated_at'
+      'interest_id', 'user_id','category_id','image','created_at','updated_at'
     ];
 }

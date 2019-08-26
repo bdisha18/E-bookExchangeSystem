@@ -13,182 +13,112 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes(['verify'=> true]);
-
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-
-
-
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Backend' ], function() {
-    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
-});
-
-Route::group(['prefix' => 'user', 'namespace' => 'Frontend' ], function() {
-    Route::get('/front/dashboard', 'UserController@dashboard')->name('user.dashboard');
-    Route::get('/front/index','UserController@index')->name('user.index');
-});
-
-
-// for User
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
-    Route::get('/index', 'UserController@index')->name('user.index');
-    Route::post('/status/{id}', 'UserController@status')
-    ->name('user.status');
-    Route::get('/view/{id}', 'UserController@view')->name('user.view');
-    Route::get('/edit/{id}', 'UserController@edit')->name('user.edit');
-    Route::post('/update/{id}', 'UserController@update')->name('user.update');
-    Route::get('/status', 'UserController@status')->name('user.status');
-    Route::get('/user-interest/{id}', 'UserController@users_interest')->name('user.interest');
-    Route::get('/user-favorite/{id}', 'UserController@users_favorite')->name('user.favorite');
-   Route::get('/user-favorite-view/{id}', 'UserController@users_favorite_view')->name('user.favorite.view');
-    Route::get('/user-cart/{id}', 'UserController@users_cart')->name('user.cart');
-
-  
-});
-
-// for Admin
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
-    Route::get('/index', 'AdminController@index')->name('admin.index');
-    Route::post('/status/{id}', 'AdminController@status')
-    ->name('admin.status');
-    Route::get('/edit/{id}', 'AdminController@edit')->name('admin.edit');
-    Route::post('/update/{id}', 'AdminController@update')->name('admin.update');
-    Route::delete('/delete/{id}', 'AdminController@delete')->name('admin.delete');
-    Route::get('/logout', 'AdminController@logout')->name('admin.logout');
-    
-});
-
-  //for Books
- Route::group(['namespace' => 'Backend', 'prefix' => 'admin/book'], function() {
-    Route::get('/index', 'BookController@index')->name('book.index');
-    Route::post('/status/{id}', 'BookController@status')
-    ->name('book.status');
-    Route::get('/create','BookController@create')->name('book.create');
-    Route::post('/store','BookController@store')->name('book.store');
-     Route::get('/view/{id}', 'BookController@view')->name('book.view');
-     Route::get('/edit/{id}', 'BookController@edit')->name('book.edit');
-   Route::post('/update/{id}', 'BookController@update')->name('book.update');
-    Route::delete('/delete/{id}', 'BookController@delete')->name('book.delete');
-    
- });
-
-//for Publisher
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/publisher'],
-function() {
-    Route::get('/index', 'PublisherController@index')->name('publisher.index');
-    Route::get('/create', 'PublisherController@create')->name('publisher.create');
-    Route::post('/store', 'PublisherController@store')->name('publisher.store');
-    Route::get('/view/{id}', 'PublisherController@view')->name('publisher.view');
-    Route::get('/edit/{id}', 'PublisherController@edit')->name('publisher.edit');
-    Route::post('/update/{id}', 'PublisherController@update')->name('publisher.update');
-    Route::delete('/delete/{id}', 'PublisherController@delete')->name('publisher.delete');
-});
-   
-//for transaction
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/transaction'],
-function() {
-    Route::get('/index', 'TransactionController@index')->name('transaction.index');
-    Route::post('/status/{id}', 'TransactionController@status')
-    ->name('transaction.status');
-    Route::get('/view/{id}', 'TransactionController@view')->name('transaction.view');
-    Route::get('/edit/{id}', 'TransactionController@edit')->name('transaction.edit');
-    Route::post('/update/{id}', 'TransactionController@update')->name('transaction.update');
-    Route::delete('/delete/{id}', 'TransactionController@delete')->name('transaction.delete');
-});
-
-//for offers
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/offer'],
-function() {
-    Route::get('/index', 'OfferController@index')->name('offer.index');
-    Route::post('/status/{id}', 'OfferController@status')
-    ->name('offer.status');
-        Route::get('/create', 'OfferController@create')->name('offer.create');
-    Route::post('/store', 'OfferController@store')->name('offer.store');
-
-    Route::get('/view/{id}', 'OfferController@view')->name('offer.view');
-    Route::get('/edit/{id}', 'OfferController@edit')->name('offer.edit');
-    Route::post('/update/{id}', 'OfferController@update')->name('offer.update');
-    Route::delete('/delete/{id}', 'OfferController@delete')->name('offer.delete');
-});
-
-//for email
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/email'],
-function() {
-    Route::get('/index', 'EmailController@index')->name('email.index');
-    Route::post('/status/{id}', 'EmailController@status')
-    ->name('email.status');
-        Route::get('/create', 'EmailController@create')->name('email.create');
-    Route::post('/store', 'EmailController@store')->name('email.store');
-
-    Route::get('/view/{id}', 'EmailController@view')->name('email.view');
-    Route::delete('/delete/{id}', 'EmailController@delete')->name('email.delete');
-});
-
-//for Email Template
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/emailtemplate'],
-function() {
-    Route::get('/index', 'EmailTemplateController@index')->name('template.index');
-        Route::get('/create', 'EmailTemplateController@create')->name('template.create');
-    Route::post('/store', 'EmailTemplateController@store')->name('template.store');
-
-    Route::get('/view/{id}', 'EmailTemplateController@view')->name('template.view');
-    Route::get('/edit/{id}', 'EmailTemplateController@edit')->name('template.edit');
-    Route::post('/update/{id}', 'EmailTemplateController@update')->name('template.update');
-    Route::delete('/delete/{id}', 'EmailTemplateController@delete')->name('template.delete');
-});
-
-//for Categories
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/categories'],
-function() {
-    Route::get('/index', 'CategoryController@index')->name('category.index');
-    Route::get('/create', 'CategoryController@create')->name('category.create');
-    Route::post('/store', 'CategoryController@store')->name('category.store');
-    Route::get('/edit/{id}', 'CategoryController@edit')->name('category.edit');
-    Route::post('/update/{id}', 'CategoryController@update')->name('category.update');
-    Route::delete('/delete/{id}', 'CategoryController@delete')->name('category.delete');
-});
-
- //for Testimonials
- Route::group(['namespace' => 'Backend', 'prefix' => 'admin/testimonial'],
- function() {
-     Route::get('/index', 'TestimonialController@index')->name('testimonial.index');
-     Route::get('/create', 'TestimonialController@create')->name('testimonial.create');
-     Route::post('/store', 'TestimonialController@store')->name('testimonial.store');
-
-     Route::get('/view/{id}', 'TestimonialController@view')->name('testimonial.view');
-     Route::get('/edit/{id}', 'TestimonialController@edit')->name('testimonial.edit');
-     Route::post('/update/{id}', 'TestimonialController@update')->name('testimonial.update');
-     Route::delete('/delete/{id}', 'TestimonialController@delete')->name('testimonial.delete');
- });
-
-
-//for Address
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/address'],
-function() {
-    Route::get('/index', 'AddressController@index')->name('address.index');
-     Route::post('/status/{id}', 'AddressController@status')
-    ->name('address.status');
-        Route::get('/create', 'AddressController@create')->name('rating.create');
-    Route::post('/store', 'AddressController@store')->name('address.store');
-
-    Route::get('/view/{id}', 'AddressController@view')->name('address.view');
-    Route::get('/edit/{id}', 'AddressController@edit')->name('address.edit');
-    Route::post('/update/{id}', 'AddressController@update')->name('address.update');
-    Route::delete('/delete/{id}', 'AddressController@delete')->name('address.delete');
-});
 
 
 
 include 'admin.php';
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::group(['namespace' => 'Frontend' ], function() {
+Route::get('home/index', 'HomeController@index')->name('home.index');
+Route::get('newsletter/store', 'HomeController@newsletter_store')->name('newsletter.store');
+Route::get('login/index', 'LoginController@login')->name('user.login');
+Route::post('login/store', 'LoginController@dologin')->name('user.dologin');
+Route::get('register/index', 'LoginController@register')->name('user.register');
+Route::post('register/store', 'LoginController@register_store')->name('register.store');
+Route::get('user/logout', 'LoginController@logout')->name('user.logout');
+});
+
+Route::group(['prefix' => 'page', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('contact', 'PageController@contact')->name('user.contact');
+Route::post('contact/store', 'PageController@contact_store')->name('contact.store');
+});
+
+Route::group(['prefix' => 'publish', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('create', 'PublishController@create')->name('publish.create');
+Route::post('store', 'PublishController@store')->name('publish.store');
+});
+
+Route::group(['prefix' => 'cart', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('index', 'CartController@index')->name('cart.index');
+Route::get('add/{id}', 'CartController@addToCart')->name('cart.add');
+Route::get('delete/{id}', 'CartController@delete')->name('cart.delete');
+Route::get('whishlist', 'CartController@whishlist')->name('cart.whishlist');
+});
+
+Route::group(['prefix' => 'product', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('categories', 'ProductController@category')->name('product.category');
+Route::get('index/{id}', 'ProductController@index')->name('product.index');
+Route::get('list/{id?}', 'ProductController@list')->name('product.list');
+Route::get('audiobook-list/{id?}', 'ProductController@audiobook_list')->name('audiobook.list');
+Route::get('magazines', 'ProductController@magazine')->name('magazine.category');
+Route::get('audiobooks', 'ProductController@audiobook')->name('audiobook.category');
+});
+
+Route::group(['prefix' => 'document', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+ Route::get('categories', 'DocumentController@category')->name('document.category');
+// Route::get('index/{id}', 'DocumentController@index')->name('document.index');
+// Route::get('list/{id?}', 'DocumentController@list')->name('document.list');
+});
+
+
+Route::group(['prefix' => 'user', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+
+Route::get('index', 'UserController@index')->name('user.index');
+Route::get('edit', 'UserController@edit')->name('user.edit');
+Route::post('update', 'UserController@update')->name('user.update');
+Route::get('password/edit', 'UserController@edit_password')->name('password.edit');
+Route::post('password/update', 'UserController@update_password')->name('password.update');
+Route::post('interest/update/{id}', 'UserController@interest_update')->name('interest.update');
+});
+
+Route::group(['prefix' => 'address', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('index/{id?}', 'AddressController@index')->name('address.index');
+Route::post('store', 'AddressController@store')->name('address.store');
+Route::post('update/{id}', 'AddressController@update')->name('address.update');
+Route::get('delete/{id}', 'AddressController@delete')->name('address.delete');
+	
+});
+
+Route::group(['prefix' => 'card', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('index', 'CardController@index')->name('card.index');
+Route::post('store', 'CardController@store')->name('card.store');
+Route::post('update/{id}', 'CardController@update')->name('card.update');
+Route::get('delete/{id}', 'CardController@delete')->name('card.delete');
+	
+});
+
+Route::group(['prefix' => 'secondhand', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('index', 'SecondHandController@index')->name('second.index');
+Route::post('store', 'SecondHandController@store')->name('second.store');
+	
+});
+
+Route::group(['prefix' => 'order', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('index', 'OrderController@index')->name('order.index');
+});
+
+Route::group(['prefix' => 'favorite', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::post('update/{id?}', 'HomeController@favorite_update')->name('favorite.update');
+});
+
+Route::group(['prefix' => 'payment', 'namespace' => 'Frontend', 'middleware' => 'user' ], function() {
+Route::get('product-detail', 'PaymentController@productDetail')->name('payment.productdetail');
+Route::get('address', 'PaymentController@address')->name('payment.address');
+Route::post('address/update/{id}', 'PaymentController@address_update')->name('payment.address.update');
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

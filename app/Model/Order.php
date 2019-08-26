@@ -11,6 +11,7 @@ class Order extends Model
         'order_id',
         'transaction_id',
         'user_id',
+        'address_id',
         'status',
         'created_at',
         'updated_at'

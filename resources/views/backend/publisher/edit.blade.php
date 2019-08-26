@@ -1,8 +1,5 @@
 @extends('backend.layouts.master')
 @section('content')
-@php
-use App\Model\Book;
-@endphp
 
 <!--site header ends -->    
 <section class="admin-content">
@@ -12,7 +9,7 @@ use App\Model\Book;
                     <div class="col-12 text-white p-t-40 p-b-90">
 
                         <h4 class=""> <span class="btn btn-white-translucent">
-                                <i class="mdi mdi-launch "></i></span> Publisher Details
+                                <i class="mdi mdi-launch "></i></span> Published Books Details
                         </h4>
                     </div>
                 </div>
@@ -24,26 +21,50 @@ use App\Model\Book;
                 <div class="col-lg-12">
 
                     <!--widget card begin-->
-                    <form role="form" action="{{ route('publisher.update',$publisher->publisher_id) }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('publisher.update',$publisher->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label>Publisher Name</label>
-                                    <input type="text" name="publisher_name" class="form-control" value="{{$publisher->publisher_name}}" placeholder="Publisher Name">
-                                    <div class="text-danger">{{ $errors->first('publisher_name') }}</div>
+                                <div class="form-group col-md-6">
+                                    <label>Title</label>
+                                    <input type="text" name="title" class="form-control" value="{{$publisher->title}}" placeholder="Title">
+                                    <div class="text-danger">{{ $errors->first('title') }}</div>
                                 </div>
-                                  <div class="form-group col-md-4">
-                                    <label>No.of Books Published</label>
-                                    <input type="text" name="books_published" class="form-control" value="{{$publisher->books_published}}" placeholder="Number of books published ">
-                                    <div class="text-danger">{{ $errors->first('books_published') }}</div>
+                                <div class="form-group col-md-6">
+                                    <label>Category</label>
+                                    <select class="form-control" name="category_id">
+                                        <option value="">None</option>
+                                       @foreach($categories as $category)
+                                       <option value="{{$category->id}}" {{($category->id == $publisher->category_id)? 'selected' : ''}}> 
+                                        {{ucwords($category->category_name)}}
+                                      </option>
+                                        @endforeach
+                                    </select>
+                                    <div class="text-danger">{{ $errors->first('category_id') }}</div>
+                            </div>
+                                  <div class="form-group col-md-6">
+                                    <div>File</div>
+                                      <div class="upload-btn-wrapper">
+                                        <button class="upload-btn">Upload a file</button>
+                                        <input type="file" name="file" value="{{$publisher->file}}" />
+                                      </div>
+                                    <div class="text-danger">{{ $errors->first('file') }}</div>
                                 </div>
-                             <div class="form-group col-md-4">
-                                    <label>Books Name</label>
-                                    <input type="text" name="publish_bookname" class="form-control" value="{{$publisher->publish_bookname}}" placeholder="Published Books Name">
-                                    <div class="text-danger">{{ $errors->first('publish_bookname') }}</div>
+                                
+                                <div class="form-group col-md-6">
+                                  <label>Status</label><br>
+                                    <label class="radio-inline">Active
+                                      </label>
+                                      <input class="col-md-2" type="radio" name="status" value="active" >
+                                      <label class="radio-inline">Inactive</label>
+                                      <input class="col-md-2" type="radio" name="status" value="inactive">
+                                </div>
+                             <div class="form-group col-md-12">
+                                    <label>Description</label>
+                                    <textarea  name="description" class="form-control" placeholder="Description">{{$publisher->description}}</textarea>
+                                    <div class="text-danger">{{ $errors->first('description') }}</div>
                                 </div>
  
                             </div>

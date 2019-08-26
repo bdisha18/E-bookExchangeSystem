@@ -27,18 +27,18 @@
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>City</label>
                                     <input type="text" name="city" class="form-control" value="{{$address->city}}" placeholder="City">
                                     <div class="text-danger">{{ $errors->first('city') }}</div>
                                 </div>
                                 
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>State</label>
                                     <input type="text" name="state" class="form-control" value="{{$address->state}}">
                                     <div class="text-danger">{{ $errors->first('state') }}</div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>Country</label>
                                     <input type="text" name="country" class="form-control" value="{{$address->country}}">
                                     <div class="text-danger">{{ $errors->first('country') }}</div>

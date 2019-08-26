@@ -18,6 +18,7 @@
     
     <!--Bootstrap +  Admin CSS-->
     <link rel='stylesheet' type='text/css' href='https://d33wubrfki0l68.cloudfront.net/css/ed18bd005cf8b05f329fad0688d122e0515499ff/default/assets/css/atmos.min.css'/>
+     <link rel='stylesheet' type='text/css' href='{{asset('css/main.css')}}'/>
 </head>
 <body class="sidebar-pinned ">
     
@@ -41,6 +42,73 @@
 <script src='https://d33wubrfki0l68.cloudfront.net/js/c36248babf70a3c7ad1dcd98d4250fa60842eea9/assets/vendor/apexchart/apexcharts.min.js'></script>
 <!--chart data for current dashboard-->
 <script src='https://d33wubrfki0l68.cloudfront.net/js/3749472f7427605de9b2426672b2b5c5195c9cd2/assets/js/dashboard-05.js'></script>
+
+<!-- noty notification -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="js/noty/packaged/jquery.noty.packaged.min.js"></script>
+
+<!-- Ckeditor -->
+<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
+
+<script>
+    $(document).ready(function() {
+    CKEDITOR.replaceClass = 'ckeditor';
+ });
+</script>
+<script>
+    var message = '';
+<?php
+$success = Session::get('success');
+$error = Session::get('error');
+$warning = Session::get('warning');
+$information = Session::get('information');
+
+if ($success) {
+    Session::forget('success');
+    ?>
+    var message = '<?= $success ?>';
+    var type = 'success';
+    <?php
+}
+if ($error) {
+    Session::forget('error');
+    ?>
+    var message = '<?= $error ?>';
+    var type = 'error';
+    <?php
+}
+if ($warning) {
+    Session::forget('warning');
+    ?>
+    var message = '<?= $warning ?>';
+    var type = 'warning';
+    <?php
+}
+if ($information) {
+    Session::forget('information');
+    ?>
+    var message = '<?= $information ?>';
+    var type = 'information';
+    <?php
+}
+?>
+if (message !== '') {
+    var n = noty({
+    text: message,
+    layout: 'topRight',
+    theme: 'BootstrapTheme', // or relax
+    type: type,
+    timeout: 4000,
+    animation: {
+        open: 'animated bounceInLeft', // Animate.css class names
+        close: 'animated bounceOutLeft', // Animate.css class names
+        easing: 'swing', // unavailable - no need
+        speed: 500 // unavailable - no need
+    }
+});
+}
+</script>
+
 
 </body>
 </html>

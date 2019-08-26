@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
-use App\Model\Publisher;
+use App\Model\Document;
+use App\Model\Category;
 use App\Http\Controllers\Controller;
 use App\Repositories\PublisherRepository;
 
@@ -24,7 +25,8 @@ class PublisherController extends Controller
     }
 
     public function create() {
-        return view('backend.publisher.create');
+        $categories = Category::where(['type'=> 'document'])->get();
+        return view('backend.publisher.create', compact('categories'));
     }
 
     public function store(Request $request) {
@@ -46,9 +48,10 @@ class PublisherController extends Controller
     }
     
     public function edit($id) {
-        $publishers = Publisher::all();
+        $publishers = Document::all();
+        $categories = Category::where(['type'=> 'document'])->get();
         $publisher = $this->publisherRepository->find($id);
-        return view('backend.publisher.edit', compact('publisher', 'publishers'));
+        return view('backend.publisher.edit', compact('publisher', 'publishers', 'categories'));
     }
 
    
@@ -70,7 +73,7 @@ class PublisherController extends Controller
 
      public function status() {
         $request = Input::all();
-        $this->publisherRepository->update($request, $request['publisher_id']);
+        $this->publisherRepository->update($request, $request['id']);
     }
  
 }

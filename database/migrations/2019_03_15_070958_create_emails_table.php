@@ -21,9 +21,7 @@ class CreateEmailsTable extends Migration
             $table->string('lname');
             $table->string('subject');
             $table->text('message');
-            $table->integer('order_id');
-            $table->integer('transaction_id');
-            $table->enum('status',['send','declined']);
+            $table->enum('status',['send','declined', 'recieved']);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

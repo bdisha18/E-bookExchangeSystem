@@ -30,32 +30,55 @@ use App\Model\Category;
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>category Name</label>
                                     <input type="text" name="category_name" class="form-control" placeholder="Category Name">
                                     <div class="text-danger">{{ $errors->first('category_name') }}</div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>Parent Category</label>
                                     <select class="form-control" name="parent_id" value="{{old('parent_id')}}">
                                         <option value="">Select Category</option>
                                         @foreach($categories as $category)
-                                        <option value="{{$category->id}}">@if($category->parent_id == '' )
+                                            @if($category->parent_id == '' )
+                                        <option value="{{$category->id}}">
                                         {{ucwords($category->category_name)}}
-                                        @else
-                                        {{ucwords(Category::where('id', $category->parent_id)->value('category_name'))}}  > {{ucwords($category->category_name)}}
-                                        @endif</option>
+                                        
+                                    </option>
+                                        @endif
                                         @endforeach
                                     </select>
                                     <div class="text-danger">{{ $errors->first('parent_id') }}</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Type</label>
+                                    <select class="form-control" name="type" value="{{old('type')}}">
+                                        <option value="">Select Type</option>
+                                        <option value="document">Documents</option>
+                                        <option value="book">Books</option>
+                                    </select>
+                                    <div class="text-danger">{{ $errors->first('type') }}</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                      <div>Image</div>
+                                      <div class="upload-btn-wrapper">
+                                        <button class="upload-btn">Upload a file</button>
+                                        <input type="file" name="image" />
+                                      </div>
+                                      <div class="text-danger">{{ $errors->first('image') }}</div>
+                                  </div>
+                             <div class="form-group col-md-6">
+                                    <label>Descriptions</label>
+                                    <textarea name="description" class="form-control" 
+                                              placeholder="Write Description here"></textarea>
+                                    <div class="text-danger">{{ $errors->first('description') }}</div>
                                 </div>
                             </div>
 
       
                             </div>
                           </div>
-                      </div>
-                          <div class="form-group">
+                        <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="{{route('category.index')}}" class="button
                             btn btn-danger">Back</a>

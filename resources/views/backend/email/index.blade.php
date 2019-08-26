@@ -16,7 +16,19 @@ use App\Model\Member;
                         <h4 class=""> <span class="btn btn-white-translucent">
                                 <i class="fa icon-placeholder mdi mdi-gmail"></i></span>Emails
                         </h4>
-
+                        <div class="form-dark">
+                            <div class="input-group input-group-flush mb-3">
+                              <form action="{{route('email.index')}}" method="get">
+                                <input placeholder="Search Emails" type="search" name="search" 
+                                       class="form-control form-control-lg search form-control-prepended">
+                              </form>
+                              <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </div>
+                              </div>  
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -32,10 +44,7 @@ use App\Model\Member;
                           <a href="{{route('email.create')}}">
                             <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Emails</button>
                           </a>
-                          <form action="{{route('email.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                          </form>
+                          
                           
                         </div>
                         <div class="card-body">
@@ -66,7 +75,7 @@ use App\Model\Member;
                                         <td>{{$i++}}</td>
                                         <td>{{ucwords($email->email_name)}}</td>
                                         </td>
-                                        <td>{{Member::where('user_id',$email->user_id)->value('username')}}</td>
+                                        <td>{{Member::where('user_id',$email->user_id)->value('fname')}} {{Member::where('user_id',$email->user_id)->value('lname')}}</td>
                                         </td>
                                     
                                         <td>{{$email->subject}}</td>

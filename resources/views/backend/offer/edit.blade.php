@@ -30,32 +30,32 @@ use App\Model\Offer;
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>Offer Title</label>
                                     <input type="text" name="offer_title" class="form-control" value="{{$offer->offer_title}}" placeholder="Offer Title">
                                     <div class="text-danger">{{ $errors->first('offer_title') }}</div>
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label>Offer Description</label>
-                                    <textarea name="offer_description" class="form-control" placeholder="Offer Description">{{$offer->offer_description}}</textarea>
-                                    <div class="text-danger">{{ $errors->first('offer_description') }}</div>
+                                <div class="form-group col-md-6">
+                                    <label>Category</label>
+                                    <input type="text" name="category_id" class="form-control" value="{{$offer->category_id}}" placeholder="Enter Category">
+                                    <div class="text-danger">{{ $errors->first('category_id') }}</div>
                                 </div>
-                               <div class="form-group col-md-4">
+                               <div class="form-group col-md-6">
                                     <label>Start Date</label>
-                                    <input type="text" name="start_date" class="form-control" value="{{$offer->start_date}}" placeholder="start_date">
+                                    <input type="date" name="start_date" class="form-control" value="{{$offer->start_date}}" placeholder="start_date">
                                     <div class="text-danger">{{ $errors->first('start_date') }}</div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>End Date</label>
-                                    <input type="text" name="end_date" class="form-control" value="{{$offer->end_date}}" placeholder="end_date">
+                                    <input type="date" name="end_date" class="form-control" value="{{$offer->end_date}}" placeholder="end_date">
                                     <div class="text-danger">{{ $errors->first('end_date') }}</div>
                                 </div>
-                               <div class="form-group col-md-4">
+                               <div class="form-group col-md-6">
                                     <label>Discount</label>
                                     <input type="text" name="discount_amount" class="form-control" value="{{$offer->discount_amount}}" placeholder="discount amount">
                                     <div class="text-danger">{{ $errors->first('discount_amount') }}</div>
                                 </div>
-                               <div class="form-group col-md-4">
+                               <div class="form-group col-md-6">
                                   <label>Status</label><br>
                                     <label class="radio-inline">Active
                                       </label>
@@ -63,15 +63,26 @@ use App\Model\Offer;
                                       <label class="radio-inline">Inactive</label>
                                       <input class="col-md-2" type="radio" name="status" value="inactive" {{($offer->status == 'inactive')? 'checked' : ''}}>
                                 </div>
-                              </div>
+                                <div class="form-group col-md-6">
+                                      <div>Image</div>
+                                      <div class="upload-btn-wrapper">
+                                        <button class="upload-btn">Upload a file</button>
+                                        <input type="file" name="offer_image" value="{{$offer->offer_image}}" />
+                                      </div>
+                                      <div class="text-danger">{{ $errors->first('offer_image') }}</div>
+                                  </div>
+                                <div class="form-group col-md-12">
+                                    <label>Offer Description</label>
+                                    <textarea name="offer_description" class="form-control" placeholder="Offer Description">{{$offer->offer_description}}</textarea>
+                                    <div class="text-danger">{{ $errors->first('offer_description') }}</div>
+                                </div>
    
                                   <div class="form-group col-md-12">
                                     <label>Terms & Conditions</label>
-                                    <textarea name="termsconditions" class="form-control" 
-                                              placeholder="    Write  terms & conditions here" >{{$offer->termsconditions}}</textarea>
-                            <div class="text-danger">{{ $errors->first('termsconditions') }}</div>
-
-                                   </div>
+                                    <textarea name="termsconditions" class="form-control ckeditor" 
+                                     placeholder="Write terms & conditions here" >{{$offer->termsconditions}}</textarea>
+                                    <div class="text-danger">{{ $errors->first('termsconditions') }}</div>
+                                  </div>
                                
                               </div>
                                 </div>
@@ -79,13 +90,11 @@ use App\Model\Offer;
                                     </div>
                                
                                    
-                            </div>
-                          </div>
-                      </div>
+                         
                           <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="{{route('offer.index')}}" class="button
-                            btn btn-danger">Submit</a>
+                            btn btn-danger">Back</a>
                         </div>
                         </form>
                         

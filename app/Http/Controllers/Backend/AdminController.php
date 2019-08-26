@@ -57,7 +57,11 @@ class AdminController extends Controller
         //     'password_confirmation'=>'sometimes|required_with:password'
         // ]);
         $this->adminRepository->update($request, $id);
-        return redirect()->route('admin.index')->with('status', 'Updated Successfully.');
+        // return response()->json([
+        //     'type' => 'alert',
+        //     'text' => 'dfvzdfvfd', 
+        // ]);
+        return redirect()->route('admin.index');
     }
 
     public function delete($id) {

@@ -34,7 +34,7 @@ class TestimonialRepository extends BaseRepository {
     public function store($request) {
         $input= array_filter(Input::all());
          if($request->image){
-        $image = Common::uploadImage($request->image,env('testimonial_IMAGE_PATH'));
+        $image = Common::uploadImage($request->image,env('TESTIMONIAL_IMAGE_PATH'));
         $input['image'] = $image;
         }
         Testimonial::create($input);

@@ -32,63 +32,63 @@ use App\Model\Offers;
                         <form role="form">
                     
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">UserName :</label>
                                     <p>{{Member::where('user_id', $transaction->user_id)->value('username')}}</p>
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Email :</label>
                                     <p>{{Member::where('user_id', $transaction->user_id)->value('email')}}</p> 
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Reference Id :</label>
                                     <p>{{$transaction->reference_id}}</p> 
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Email :</label>
                                     <p>{{Member::where('user_id', $transaction->user_id)->value('email')}}</p> 
                                 </div>
                             </div>
 
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Payment Method :</label>
                                     <p>{{$transaction->payment_method}}</p> 
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Status :</label>
                                     <p>{{$transaction->status}}</p> 
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Amount :</label>
                                     <p>{{$transaction->amount}}</p> 
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Cashback :</label>
                                     <p>{{$transaction->total_cashback}}</p> 
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Discount :</label>
                                     <p>{{$transaction->discount}}</p> 
@@ -99,8 +99,8 @@ use App\Model\Offers;
                   </div>
                 </div>
         </div>
-    </div>
     <a href="{{route('transaction.index')}}" class="button btn btn-danger">Back</a>
+</div>
 </div>
 </section>
 @endsection

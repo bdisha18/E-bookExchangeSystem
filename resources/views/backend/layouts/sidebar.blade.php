@@ -1,8 +1,8 @@
 <aside class="admin-sidebar">
     <div class="admin-sidebar-brand">
         <!-- begin sidebar branding-->
-        <img class="admin-brand-logo" src="{{asset('/image/admin/download.jpeg')}}" width="30" height="30">
-        <span class="admin-brand-content font-secondary"><a href='/default/'> Admin</a>
+        <img class="admin-brand-logo" src="{{asset('/image/admin/download.jpg')}}" width="30" height="30">
+        <span class="admin-brand-content font-secondary"><a href='{{route('admin.dashboard')}}'> Admin</a>
         </span>
 
         <!-- end sidebar branding-->
@@ -49,7 +49,7 @@
              <li class="treeview menu-item <?= ($requestRoute == 'publisher.index') ? 'active' : '' ?>">
                 <a class="menu-link" href="{{route('publisher.index')}}">
                     <span class="menu-label">
-                        <span class="menu-name">Publishers</span>
+                        <span class="menu-name">Published Documents</span>
                     </span>
                     <span class="menu-icon">
                         <i class="icon-placeholder mdi mdi-book-multiple "></i>
@@ -150,6 +150,16 @@
                 <a class="menu-link" href="{{route('interest.index')}}">
                     <span class="menu-label">
                         <span class="menu-name">Interests</span>
+                    </span>
+                    <span class="menu-icon">
+                        <i class="icon-placeholder mdi mdi-heart "></i>
+                    </span>
+                </a>
+            </li>
+            <li class="treeview menu-item <?= ($requestRoute == 'contact.index') ? 'active' : '' ?>">
+                <a class="menu-link" href="{{route('contact.index')}}">
+                    <span class="menu-label">
+                        <span class="menu-name">Contacts</span>
                     </span>
                     <span class="menu-icon">
                         <i class="icon-placeholder mdi mdi-heart "></i>

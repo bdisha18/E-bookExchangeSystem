@@ -11,6 +11,6 @@ class Address extends Model
     public $timestamps = false;
 
     protected $fillable = [
-      'user_id','address','city','country','state','created_at','updated_at' 
+      'user_id','address','city', 'type', 'primary', 'name', 'pincode', 'contactno', 'state','created_at','updated_at' 
     ];
 }

@@ -34,7 +34,7 @@ class OfferController extends Controller
      */
     public function create()
     {
-                return view('backend.offer.create');
+        return view('backend.offer.create');
 
     }
 
@@ -46,7 +46,7 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-                $this->offerRepository->store($request);
+        $this->offerRepository->store($request);
         return redirect()->route('offer.index')->with('status', 'Offer Created Successfully.');
 
     }

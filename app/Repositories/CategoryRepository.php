@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
+use Illuminate\Support\Facades\Input;
 use App\Model\Category;
 use App\Helper\Common;
 
@@ -18,12 +19,16 @@ class CategoryRepository extends BaseRepository {
     }
 
     public function store($request) {
-        $data = $request->all();
+        $input = $request->all();
 
-        if($data['parent_id'] == NULl){
-           $data['parent_id'] = 0;
+        if($input['parent_id'] == NULl){
+           $input['parent_id'] = 0;
         }
-        Category::create($data);
+        if($request->image){
+        $image = Common::uploadImage($request->image,env('CATEGORY_IMAGE_PATH'));
+        $input['image'] = $image;
+        }
+        Category::create($input);
 
         return true;
     }
@@ -41,13 +46,23 @@ class CategoryRepository extends BaseRepository {
     }
 
     public function update_data($request, $id) {
-        $data = $request->all();
+        $input = $request->all();
         
-        if($data['parent_id'] == NULL){
-            $data['parent_id'] = 0;
+        if($input['parent_id'] == NULL){
+            $input['parent_id'] = 0;
         }
         $category = Category::findOrFail($id);
-        $category->update($data);
+         if(Input::hasFile('image'))
+        {
+            $image = public_path().'/'.env('CATEGORY_IMAGE_PATH').$category->image;
+                if (file_exists($image) && $category->image) { 
+                    unlink($image);
+                }
+            $image = Common::uploadImage($input['image'],env('CATEGORY_IMAGE_PATH'));
+            $input['image'] = $image;
+   
+        }
+        $category->update($input);
         return true;
     }
 

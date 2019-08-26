@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend' ], function() {
 });
 
 // for User
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user', 'middleware' => 'auth'], function() {
     Route::get('/index', 'UserController@index')->name('user.index');
     Route::post('/status/{id}', 'UserController@status')
     ->name('user.status');
@@ -47,7 +47,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/user'], function() {
 });
 
 // for Admin
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin' , 'middleware' => 'auth'], function() {
     Route::get('/index', 'AdminController@index')->name('admin.index');
     Route::post('/status/{id}', 'AdminController@status')
     ->name('admin.status');
@@ -59,7 +59,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
 });
 
   //for Books
- Route::group(['namespace' => 'Backend', 'prefix' => 'admin/book'], function() {
+ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/book', 'middleware' => 'auth'], function() {
     Route::get('/index', 'BookController@index')->name('book.index');
     Route::post('/status/{id}', 'BookController@status')
     ->name('book.status');
@@ -73,7 +73,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/admin'], function() {
  });
 
 //for Publisher
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/publisher'],
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/publisher', 'middleware' => 'auth'],
 function() {
     Route::get('/index', 'PublisherController@index')->name('publisher.index');
     Route::get('/create', 'PublisherController@create')->name('publisher.create');
@@ -82,10 +82,11 @@ function() {
     Route::get('/edit/{id}', 'PublisherController@edit')->name('publisher.edit');
     Route::post('/update/{id}', 'PublisherController@update')->name('publisher.update');
     Route::delete('/delete/{id}', 'PublisherController@delete')->name('publisher.delete');
+    Route::post('/status/{id}', 'PublisherController@status')->name('publisher.status');
 });
    
 //for transaction
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/transaction'],
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/transaction', 'middleware' => 'auth'],
 function() {
     Route::get('/index', 'TransactionController@index')->name('transaction.index');
     Route::post('/status/{id}', 'TransactionController@status')
@@ -97,7 +98,7 @@ function() {
 });
 
 //for offers
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/offer'],
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/offer', 'middleware' => 'auth'],
 function() {
     Route::get('/index', 'OfferController@index')->name('offer.index');
     Route::post('/status/{id}', 'OfferController@status')
@@ -112,7 +113,7 @@ function() {
 });
 
 //for email
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/email'],
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/email', 'middleware' => 'auth'],
 function() {
     Route::get('/index', 'EmailController@index')->name('email.index');
     Route::post('/status/{id}', 'EmailController@status')
@@ -125,7 +126,7 @@ function() {
 });
 
 //for Email Template
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/emailtemplate'],
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/emailtemplate', 'middleware' => 'auth'],
 function() {
     Route::get('/index', 'EmailTemplateController@index')->name('template.index');
         Route::get('/create', 'EmailTemplateController@create')->name('template.create');
@@ -138,7 +139,7 @@ function() {
 });
 
 //for Categories
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/categories'],
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/categories', 'middleware' => 'auth'],
 function() {
     Route::get('/index', 'CategoryController@index')->name('category.index');
     Route::get('/create', 'CategoryController@create')->name('category.create');
@@ -149,7 +150,7 @@ function() {
 });
 
  //for Testimonials
- Route::group(['namespace' => 'Backend', 'prefix' => 'admin/testimonial'],
+ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/testimonial', 'middleware' => 'auth'],
  function() {
      Route::get('/index', 'TestimonialController@index')->name('testimonial.index');
      Route::get('/create', 'TestimonialController@create')->name('testimonial.create');
@@ -163,7 +164,7 @@ function() {
 
 
 //for Address
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/address'],
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin/address', 'middleware' => 'auth'],
 function() {
     Route::get('/index', 'AddressController@index')->name('address.index');
      Route::post('/status/{id}', 'AddressController@status')
@@ -179,7 +180,7 @@ function() {
 
 
  //for Orders
- Route::group(['namespace' => 'Backend', 'prefix' => 'admin/order'],
+ Route::group(['namespace' => 'Backend', 'prefix' => 'admin/order', 'middleware' => 'auth'],
  function() {
      Route::get('/index', 'OrderController@index')->name('order.index');
       Route::post('/status/{id}', 'OrderController@status')
@@ -193,14 +194,24 @@ function() {
      Route::get('/detail/{id}','OrderController@detail')->name('order.detail');
  });
 
-Route::group(['namespace' => 'Backend', 'prefix' => 'admin/interest'],
-function() {
+    //for Interest
+    Route::group(['namespace' => 'Backend', 'prefix' => 'admin/interest', 'middleware' => 'auth'],
+    function() {
     Route::get('/index', 'InterestController@index')->name('interest.index');
         Route::get('/create', 'InterestController@create')->name('interest.create');
     Route::post('/store', 'InterestController@store')->name('interest.store');
     Route::get('/edit/{id}', 'InterestController@edit')->name('interest.edit');
     Route::post('/update/{id}', 'InterestController@update')->name('interest.update');
     Route::delete('/delete/{id}', 'InterestController@delete')->name('interest.delete');
+});
+
+
+     //for Contact
+    Route::group(['namespace' => 'Backend', 'prefix' => 'admin/contact', 'middleware' => 'auth'],
+    function() {
+    Route::get('/index', 'ContactController@index')->name('contact.index');
+    Route::get('/view/{id}', 'ContactController@view')->name('contact.view');
+    Route::delete('/delete/{id}', 'ContactController@delete')->name('contact.delete');
 });
 
 

@@ -8,6 +8,6 @@ class Category extends Model
 {
     protected $primaryKey = 'id';
     protected $fillable = [
-        'parent_id','category_name','created_at','updated_at'
+        'parent_id','category_name', 'type', 'description', 'image', 'created_at','updated_at'
     ];
 }

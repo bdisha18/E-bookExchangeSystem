@@ -27,37 +27,37 @@
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>Sent to</label>
                                     <input type="text" name="email_name" class="form-control" placeholder="Enter Email id">
                                     <div class="text-danger">{{ $errors->first('email_name') }}</div>
                                 </div>
-                               <div class="form-group col-md-4">
+                               <div class="form-group col-md-6">
                                     <label>First Name</label>
                                     <input type="text" name="fname" class="form-control" placeholder="Enter First Name">
                                     <div class="text-danger">{{ $errors->first('fname') }}</div>
                                 </div> 
-                                  <div class="form-group col-md-4">
+                                  <div class="form-group col-md-6">
                                     <label>Last Name</label>
                                     <input type="text" name="lname" class="form-control" placeholder="Enter Last Name">
                                     <div class="text-danger">{{ $errors->first('lname') }}</div>
                                 </div>
-                                   <div class="form-group col-md-4">
+                                   <div class="form-group col-md-6">
                                     <label>Subject</label>
                                     <input type="text" name="subject" class="form-control" placeholder="enter subject of the email">
                                     <div class="text-danger">{{ $errors->first('subject') }}</div>
                                 </div>
-                                  <div class="form-group col-md-4">
+                                  <div class="form-group col-md-6">
                                     <label>Status</label>
                                     <select name="status" class="form-control" id="" placeholder="enter status">
-                                                        <option>Select</option>
-                                                        <option>Send</option>
-                                                        <option>Declined</option></select>
+                                        <option>Select</option>
+                                        <option>Send</option>
+                                        <option>Declined</option></select>
                                     <div class="text-danger">{{ $errors->first('status') }}</div>
                                     </div>
-                                  <div class="form-group col-md-4">
+                                  <div class="form-group col-md-12">
                                     <label>Message</label>
-                                    <textarea class="form-control" name="message" rows="7" cols="25" class="message" id=""
+                                    <textarea class="form-control ckeditor" name="message" rows="7" cols="25" class="message" id=""
                                               placeholder="Write message here"></textarea>
                                     <div class="text-danger">{{ $errors->first('message') }}</div>
                                 </div>

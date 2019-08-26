@@ -28,20 +28,20 @@
                         <form role="form">
                     
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Testimonial Id :</label>
                                     <p>{{$testimonial->id}}</p>
                                 </div>
                             </div>
 
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Image :</label>
                                     <p>{{$testimonial->image}}</p> 
                                 </div>
                             </div>
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Author Name :</label>
                                     <p>{{$testimonial->author_name}}</p> 
@@ -49,13 +49,13 @@
                             </div>
 
 
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Released Date :</label>
                                     <p>{{$testimonial->created_at}}</p> 
                                 </div>
                             </div>
-                                   <div class="col-md-4">
+                                   <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Description :</label>
                                     <p>{{$testimonial->description}}</p> 
@@ -66,8 +66,8 @@
                   </div>
                 </div>
         </div>
-    </div>
     <a href="{{route('testimonial.index')}}" class="button btn btn-danger">Back</a>
+    </div>
 </div>
 </section>
 @endsection

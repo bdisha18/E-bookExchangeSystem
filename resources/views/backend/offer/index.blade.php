@@ -13,7 +13,19 @@
                         <h4 class=""> <span class="btn btn-white-translucent">
                                 <i class="icon-placeholder mdi mdi-gift"></i></span>Offers
                         </h4>
-
+                        <div class="form-dark">
+                            <div class="input-group input-group-flush mb-3">
+                              <form action="{{route('offer.index')}}" method="get">
+                                <input placeholder="Search Offers" type="search" name="search" 
+                                       class="form-control form-control-lg search form-control-prepended">
+                              </form>
+                              <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </div>
+                              </div>  
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -29,10 +41,7 @@
                           <a href="{{route('offer.create')}}">
                             <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Offers</button>
                           </a>
-                          <form action="{{route('offer.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                          </form>
+                          
                           
                         </div>
                         <div class="card-body">
@@ -43,14 +52,11 @@
                                       <tr>
                                         <th>Sr.No.</th>
                                           <th>Offer Title</th>
-                                          <th>Offer Description</th>
-                                          
+                                          <th>Image</th>
+                                          <th>Discount</th>
                                           <th>Start Date</th>
                                           <th>End Date</th>
-                                          <th>Discount</th>
                                           <th>Status</th>
-                                       
-
                                           <th>Actions</th>
                                       </tr>
                                     </thead>
@@ -62,12 +68,15 @@
                                       <tr>
                                         <td>{{$i++}}</td>
                                         <td>{{ucwords($offer->offer_title)}}</td>
+                                        <td>{{$offer->discount_amount}}</td>
+                                         @if(file_exists(public_path().'/'.env('OFFER_IMAGE_PATH').$offer->offer_image) && $offer->offer_image)
+                                        <td><img src="{{ asset(env('OFFER_IMAGE_PATH').$offer->offer_image)}}" class="image" height="50px" width="60"></td>
+                                        @else
+                                        <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" class="image" height="60px"></td>
+                                        @endif
                                         
-                                        <td>{{$offer->offer_description}}</td>
-                                        
-                                    <td>{{date('d M Y', strtotime($offer->start_date))}}</td>     
-                                    <td>{{date('d M Y', strtotime($offer->end_date))}}</td>     
-                                    <td>{{$offer->discount_amount}}</td>
+                                        <td>{{date('d M Y', strtotime($offer->start_date))}}</td>     
+                                        <td>{{date('d M Y', strtotime($offer->end_date))}}</td>     
                                         <td><label class="switch">
                                             <input type="checkbox" name="status" class="update-status"  data-id="{{$offer->offer_id}}" data-url="{{ route('offer.status', $offer->offer_id) }}" {{($offer->status == 'active')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>

@@ -30,48 +30,47 @@ use App\Model\Member;
                         <form role="form">
                     
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">User Id :</label>
                                     <p>{{$email->user_id}}</p>
                                 </div>
                             </div>
-
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Sent to :</label>
                                     <p>{{$email->email_name}}</p> 
                                 </div>
                             </div>
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Username :</label>
-                                    <p>{{Member::where('user_id',$email->user_id)->value('username')}}</p>
+                                    <p>{{Member::where('user_id',$email->user_id)->value('fname')}} {{Member::where('user_id',$email->user_id)->value('lname')}}</p>
                                  
                                 </div>
                             </div>
 
 
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Subject :</label>
                                     <p>{{$email->subject}}</p> 
                                 </div>
                             </div>
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Message:</label>
                                     <p>{{$email->message}}</p> 
                                 </div>
                             </div>
-                     <div class="col-md-4">
+                     <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Created at :</label>
                                     <p>{{$email->created_at}}</p> 
                                 </div>
                             </div>
                                
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Status :</label>
                                     <p>{{$email->status}}</p> 
@@ -82,8 +81,8 @@ use App\Model\Member;
                   </div>
                 </div>
         </div>
-    </div>
     <a href="{{route('email.index')}}" class="button btn btn-danger">Back</a>
+    </div>
 </div>
 </section>
 @endsection

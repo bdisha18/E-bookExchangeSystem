@@ -16,7 +16,19 @@ use App\Model\Publisher;
                         <h4 class=""> <span class="btn btn-white-translucent">
                                 <i class="icon-placeholder mdi mdi-book-open "></i></span> Books
                         </h4>
-
+                        <div class="form-dark">
+                            <div class="input-group input-group-flush mb-3">
+                              <form action="{{route('book.index')}}" method="get">
+                                <input placeholder="Search Books" type="search" name="search" 
+                                       class="form-control form-control-lg search form-control-prepended">
+                              </form>
+                              <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </div>
+                              </div>  
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -31,10 +43,7 @@ use App\Model\Publisher;
                           <a href="{{route('book.create')}}">
                             <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Books</button>
                           </a>
-                          <form action="{{route('book.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                          </form>
+                          
                           
                         </div>
          
@@ -49,9 +58,9 @@ use App\Model\Publisher;
                                           <th>Cover Image</th>
                                            <th>Price</th>
                                           <th>Author Name</th>
-                                          <th>Publisher Name</th>
-                                         <th>Status</th>
+                                          <!-- <th>Publisher Name</th> -->
                                          <th>Type</th>
+                                         <th>Status</th>
                                           <th>Released Date</th>
                                           <th>Actions</th>
                                       </tr>
@@ -63,23 +72,22 @@ use App\Model\Publisher;
                                       @foreach($books as $book)
                                       <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{ucwords($book->book_name)}}</td>
-                                        @if(file_exists(public_path().'/'.env('BOOK_IMAGE_PATH').$book->image) && $book->image)
-                                        <td><img src="{{ asset(env('BOOK_IMAGE_PATH').$publisher->image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
+                                        <td>{{str_limit(ucwords($book->book_name), 15)}}</td>
+                                        @if(file_exists(public_path().'/'.env('BOOK_IMAGE_PATH').$book->book_image) && $book->book_image)
+                                        <td><img src="{{ asset(env('BOOK_IMAGE_PATH').$book->book_image)}}" alt="Book Cover" class="image" height="50px" width="60"></td>
                                         @else
                                         <td><img src="{{ asset(env('DEFAULT_IMAGE_PATH'))}}" alt="profile pic" class="image" height="60px"></td>
                                         @endif 
                                         
                                         <td>{{$book->book_price}}</td>
-                                        <td>{{$book->author_name}}</td>
-                                        <td>{{Publisher::where('book_id', $book->book_id)->value('publisher_name')}}</td>
+                                        <td>{{str_limit($book->author_name, 15)}}</td>
+                                        <td>{{$book->category}}</td>
                                         <td><label class="switch">
                                             <input type="checkbox" name="status" class="update-status"  data-id="{{$book->book_id}}" 
                                                    data-url="{{ route('book.status', $book->book_id) }}" {{($book->status == 'available')? 'checked' : ''}}>
                                             <span class="slider round"></span></label>
                                         </td>
-                                        <td>{{$book->category}}</td>
-                                        <td>{{$book->created_at}}</td>
+                                        <td>{{date('d M Y', strtotime($book->created_at))}}</td>
 
                                         <td> 
                                               {!! Form::open(['method'=>'DELETE', 'route'=>['book.delete',

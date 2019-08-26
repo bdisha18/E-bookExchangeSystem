@@ -28,20 +28,20 @@
                         <form role="form">
                     
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Offer Id :</label>
                                     <p>{{$offer->offer_id}}</p>
                                 </div>
                             </div>
 
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Offer Title :</label>
                                     <p>{{$offer->offer_title}}</p> 
                                 </div>
                             </div>
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Start Date :</label>
                                     <p>{{$offer->start_date}}</p> 
@@ -49,32 +49,32 @@
                             </div>
 
 
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">End Date :</label>
                                     <p>{{$offer->end_date}}</p> 
                                 </div>
                             </div>
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Discount :</label>
                                     <p>{{$offer->discount_amount}}</p> 
                                 </div>
                             </div>
-                     <div class="col-md-4">
+                     <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Offer Description :</label>
                                     <p>{{$offer->offer_description}}</p> 
                                 </div>
                             </div>
                                
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Status :</label>
                                     <p>{{$offer->status}}</p> 
                                 </div>
                             </div>
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Terms&Conditions :</label>
                                     <p>{{$offer->termsconditions}}</p> 
@@ -86,8 +86,8 @@
                   </div>
                 </div>
         </div>
-    </div>
     <a href="{{route('offer.index')}}" class="button btn btn-danger">Back</a>
+    </div>
 </div>
 </section>
 @endsection

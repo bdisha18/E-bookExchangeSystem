@@ -27,9 +27,13 @@ class OfferRepository extends BaseRepository
     }
 
     public function store($request) {
-         $input= array_filter(Input::all());
-         $input['category_id'] = '';
-         $input['book_id'] = '';
+        $input= array_filter(Input::all());
+         // $input['category_id'] = '';
+        if($request->offer_image){
+        $image = Common::uploadImage($request->offer_image,env('OFFER_IMAGE_PATH'));
+        $input['offer_image'] = $image;
+        }
+         $input['book_id'] = null;
          Offers::create($input);
         return true;
     
@@ -39,8 +43,18 @@ class OfferRepository extends BaseRepository
     public function update($request, $id) {
     
         $offer = Offers::findOrFail($id);
-        $data = $request->all();
-        $offer->update($data);
+        $input= array_filter(Input::all());
+        if(Input::hasFile('offer_image'))
+        {
+        $image = public_path().'/'.env('OFFER_IMAGE_PATH').$offer->offer_image;
+        if (file_exists($image) && $offer->offer_image) { 
+            unlink($image);
+        }
+        $image = Common::uploadImage($input['offer_image'],env('OFFER_IMAGE_PATH'));
+        $input['offer_image'] = $image;
+   
+        }
+        $offer->update($input);
         return true;
     }
     

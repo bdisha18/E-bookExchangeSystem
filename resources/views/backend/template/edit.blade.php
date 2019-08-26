@@ -27,13 +27,13 @@
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>Email Title</label>
                                     <input type="text" name="email_name" class="form-control" value="{{$template->email_name}}" placeholder="Email Name">
                                     <div class="text-danger">{{ $errors->first('email_name') }}</div>
                                 </div>
                                 
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>Subject</label>
                                     <input type="text" name="subject" class="form-control" value="{{$template->subject}}">
                                     <div class="text-danger">{{ $errors->first('subject') }}</div>
@@ -43,7 +43,7 @@
                         
                                  <div class="form-group col-md-12">
                                     <label>Message</label>
-                                    <textarea type="text" name="message" class="form-control" value="{{old($template->message)}}"></textarea>
+                                    <textarea type="text" name="message" class="form-control ckeditor" >{{$template->message}}</textarea>
                                     <div class="text-danger">{{ $errors->first('message') }}</div>
                                 </div>
                                      

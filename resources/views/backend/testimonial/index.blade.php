@@ -14,7 +14,19 @@
                                 <i class="icon-placeholder mdi mdi-chart-pie  "></i></span> Testimonial
                         </h4>
 
-
+                        <div class="form-dark">
+                            <div class="input-group input-group-flush mb-3">
+                              <form action="{{route('testimonial.index')}}" method="get">
+                                <input placeholder="Search Testimonials" type="search" name="search" 
+                                       class="form-control form-control-lg search form-control-prepended">
+                              </form>
+                              <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </div>
+                              </div>  
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -29,10 +41,7 @@
                           <a href="{{route('testimonial.create')}}">
                             <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Testimonial</button>
                           </a>
-                          <form action="{{route('testimonial.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                          </form>
+                          
                           
                         </div>
                         <div class="card-body">

@@ -27,19 +27,19 @@
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>Email Title</label>
                                     <input type="text" name="email_name" class="form-control" placeholder="Enter Email Title">
                                     <div class="text-danger">{{ $errors->first('email_name') }}</div>
                                 </div>
-                                   <div class="form-group col-md-4">
+                                   <div class="form-group col-md-6">
                                     <label>Subject</label>
                                     <input type="text" name="subject" class="form-control" placeholder="enter subject of the email">
                                     <div class="text-danger">{{ $errors->first('subject') }}</div>
                                 </div>
                                   <div class="form-group col-md-12">
                                     <label>Message</label>
-                                    <textarea class="form-control" name="message" class="message" placeholder="Write message here"></textarea>
+                                    <textarea class="form-control ckeditor" name="message" class="message" placeholder="Write message here"></textarea>
                                     <div class="text-danger">{{ $errors->first('message') }}</div>
                                 </div>
                          </div>

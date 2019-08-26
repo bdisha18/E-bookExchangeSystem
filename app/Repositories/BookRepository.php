@@ -34,9 +34,9 @@ class BookRepository extends BaseRepository {
     public function store($request) {
         $input= array_filter(Input::all());
 
-        if($request->image){
-        $image = Common::uploadImage($request->image,env('BOOK_IMAGE_PATH'));
-        $input['image'] = $image;
+        if($request->book_image){
+        $image = Common::uploadImage($request->book_image,env('BOOK_IMAGE_PATH'));
+        $input['book_image'] = $image;
         }
         Book::create($input);
         return true;
@@ -48,15 +48,25 @@ class BookRepository extends BaseRepository {
         $book = Book::findOrFail($id);
         $input= array_filter(Input::all());
 
-        if(Input::hasFile('image'))
+        if(Input::hasFile('book_image'))
         {
-            $image = public_path().'/'.env('Book_IMAGE_PATH').$book->image;
-                if (file_exists($image) && $book->image) { 
+            $image = public_path().'/'.env('BOOK_IMAGE_PATH').$book->book_image;
+                if (file_exists($image) && $book->book_image) { 
                     unlink($image);
                 }
-            $image = Common::uploadImage($input['image'],env('Book_IMAGE_PATH'));
-            $input['image'] = $image;
-   
+            $image = Common::uploadImage($input['book_image'],env('BOOK_IMAGE_PATH'));
+            $input['book_image'] = $image;
+            dd($input);  
+        }
+
+         if(Input::hasFile('file'))
+        {
+            $image = public_path().'/'.env('BOOK_IMAGE_PATH').$book->file;
+                if (file_exists($image) && $book->file) { 
+                    unlink($image);
+                }
+            $image = Common::uploadImage($input['file'],env('BOOK_IMAGE_PATH'));
+            $input['file'] = $image;
         }
         $book->update($input);
          return $input;

@@ -13,7 +13,19 @@
                         <h4 class=""> <span class="btn btn-white-translucent">
                                 <i class="icon-placeholder mdi mdi-mailbox-open-outline"></i></span>Email Templates
                         </h4>
-
+                        <div class="form-dark">
+                            <div class="input-group input-group-flush mb-3">
+                              <form action="{{route('template.index')}}" method="get">
+                                <input placeholder="Search Templates" type="search" name="search" 
+                                       class="form-control form-control-lg search form-control-prepended">
+                              </form>
+                              <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </div>
+                              </div>  
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -29,10 +41,7 @@
                           <a href="{{route('template.create')}}">
                             <button class="btn btn-success" style="float: right;"> <i class="fa fa-plus"></i> Add New Email Template</button>
                           </a>
-                          <form action="{{route('template.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                          </form>
+                          
                           
                         </div>
                         <div class="card-body">

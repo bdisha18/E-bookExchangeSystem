@@ -15,7 +15,19 @@ use App\Model\Member;
                         <h4 class=""> <span class="btn btn-white-translucent">
                                 <i class="icon-placeholder mdi mdi-cash-multiple  "></i></span> Transactions
                         </h4>
-
+                        <div class="form-dark">
+                            <div class="input-group input-group-flush mb-3">
+                              <form action="{{route('transaction.index')}}" method="get">
+                                <input placeholder="Search Transactions" type="search" name="search" 
+                                       class="form-control form-control-lg search form-control-prepended">
+                              </form>
+                              <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </div>
+                              </div>  
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -31,10 +43,7 @@ use App\Model\Member;
                           @if (session('status'))
                           <p style="color: green;">{{session('status')}}</p>
                           @endif
-                          <form action="{{route('transaction.index')}}" method="get">
-                            <input name="search" type="text" placeholder="Search.." >                   
-                            <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                          </form>
+                          
                           
                         </div>
                         <div class="card-body">

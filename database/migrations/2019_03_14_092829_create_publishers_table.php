@@ -16,10 +16,11 @@ class CreatePublishersTable extends Migration
         Schema::create('publishers', function (Blueprint $table) {
             $table->bigIncrements('publisher_id');
             $table->integer('user_id');
-            $table->string('publisher_name');
-            $table->integer('books_published');
+            $table->string('publisher_name')->nullable();
+            $table->integer('books_published')->nullable();
             $table->text('publish_bookname');
             $table->integer('book_id')->nullable();
+            $table->enum('status',['active','inactive']);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

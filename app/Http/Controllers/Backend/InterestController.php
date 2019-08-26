@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Model\Interest;
+use App\Model\Category;
 use App\Http\Controllers\Controller;
 use App\Repositories\InterestRepository;
 
@@ -46,7 +47,8 @@ class InterestController extends Controller
 
     }
      public function create() {
-        return view('backend.interest.create');
+        $categories = Category::all();
+        return view('backend.interest.create', compact('categories'));
     }
 
 
@@ -65,8 +67,9 @@ class InterestController extends Controller
     public function edit($id)
     {
         $interests = Interest::all();
+        $categories = Category::all();
         $interest = $this->interestRepository->find($id);
-        return view('backend.interest.edit', compact('interest'));
+        return view('backend.interest.edit', compact('interest', 'categories'));
 
     }
     public function view($id)
@@ -83,8 +86,8 @@ class InterestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-                $this->interestRepository->update($request, $id);
+    {   
+        $this->interestRepository->update($request, $id);
         return redirect()->route('interest.index')->with('status', 'Updated Successfully.');
 
     }

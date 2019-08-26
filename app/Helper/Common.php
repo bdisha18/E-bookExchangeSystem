@@ -8,11 +8,12 @@ class Common {
 
 	public static function uploadImage($image, $path) {
         $path = public_path().'/'.$path;
-        $filename = time() . '.' . $image->getClientOriginalExtension();
+        $filename = uniqid() . '.' . $image->getClientOriginalExtension();
         $image->move($path, $filename);
         return $filename;
     }
 
+    
     public static function checkImageExists($image, $path) {
         $path = public_path().'/'.$path.$image;
         if(file_exists($path) && ($image != "")){
@@ -44,5 +45,13 @@ class Common {
             return GenerateReferenceID();
         }
     }
+
+
+    public function downloadFile($file, $path)
+  {
+        $path = public_path().'/'.$path;
+        $file_path = $path . $file;
+        return $file_path;
+  }
 
 }

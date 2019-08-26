@@ -34,60 +34,60 @@ use App\Model\Address;
                         <form role="form">
                     
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Order Id :</label>
                                     <p>{{$order->order_id}}</p>
                                 </div>
                             </div>
 
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Username :</label>
                                     <p>{{ucwords(Member::where('user_id', $order->user_id)->value('fname'))}} 
                     {{ucwords(Member::where('user_id', $order->user_id)->value('lname'))}}</p>
                                 </div>
                             </div>
-                             <div class="col-md-4">
+                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Email :</label>
                                     <p>{{Member::where('user_id', $order->user_id)->value('email')}}</p> 
                                 </div>
                             </div>
                                  
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Order Placed :</label>
                                     <p>{{$order->created_at}}</p> 
                                 </div>
                             </div>
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Total Amount:</label>
                                     <p>{{Transaction::where('transaction_id',$order->transaction_id)->value('amount')}}</p> 
                                 </div>
                             </div>
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Reference Id  :</label>
                                     <p>{{Transaction::where('transaction_id',$order->transaction_id)->value('reference_id')}}</p> 
                                 </div>
                             </div>
-                              <div class="col-md-4">
+                              <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Payment Method:</label>
                                     <p>{{Transaction::where('transaction_id',$order->transaction_id)->value('payment_method')}}</p> 
                                     </div>
                             </div>
                             
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Contact Number :</label>
                           <p>{{Member::where('user_id', $order->user_id)->value('contactno')}}</p> 
 
                                     </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                      <label class="label">Status</label><br>
                                     <label class="radio-inline">Confirmed</label>
                                       <input class="col-md-1" type="radio" name="status" value="confirmed" {{($order->status == 'confirmed')? 'checked' : ''}}>
@@ -97,7 +97,7 @@ use App\Model\Address;
                                       <input class="col-md-1" type="radio" name="status" value="declined" {{($order->status == 'declined')? 'checked' : ''}}>
                                    
                                  </div>
-                                 <div class="col-md-4">
+                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label">Address:</label>
                                     <p>{{Address::where('user_id', $order->user_id)->value('address')}}, {{Address::where('user_id', $order->user_id)->value('city')}}, {{Address::where('user_id', $order->user_id)->value('state')}}</p> 

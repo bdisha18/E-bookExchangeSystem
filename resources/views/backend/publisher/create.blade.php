@@ -27,29 +27,32 @@
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label>Publisher Name</label>
-                                    <input type="text" name="publisher_name" class="form-control" placeholder="Publisher Name">
-                                    <div class="text-danger">{{ $errors->first('publisher_name') }}</div>
+                                 <div class="form-group col-md-6">
+                                    <label>Title</label>
+                                    <input type="text" name="title" class="form-control" placeholder="Title">
+                                    <div class="text-danger">{{ $errors->first('title') }}</div>
                                 </div>
-                    <div class="form-group col-md-4">
-                                    <label>Books Published</label>
-                                    <input type="text" name="book_published" class="form-control" placeholder="How many Books Published">
-                                    <div class="text-danger">{{ $errors->first('book_published') }}</div>
+                                 <div class="form-group col-md-6">
+                                    <label>Category</label>
+                                    <select class="form-control" name="category_id" value="{{old('category_id')}}">
+                                        <option value="">Select Category</option>
+                                        @foreach($categories as $category)
+                                        <option value="{{$category->id}}">
+                                        {{ucwords($category->category_name)}}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                    <div class="text-danger">{{ $errors->first('parent_id') }}</div>
                                 </div>
-                                  <div class="form-group col-md-4">
-                                    <label>Books Category</label>
-                                    <input type="text" name="book_category" class="form-control" placeholder="books category">
-                                    <div class="text-danger">{{ $errors->first('book_category') }}</div>
+                               <div class="form-group col-md-6">
+                                    <div>File</div>
+                                      <div class="upload-btn-wrapper">
+                                        <button class="upload-btn">Upload a file</button>
+                                        <input type="file" name="file" />
+                                      </div>
+                                    <div class="text-danger">{{ $errors->first('file') }}</div>
                                 </div>
-                    
-                                  <div class="form-group col-md-12">
-                                    <label>Publish Books Name</label>
-                                    <textarea name="publish_bookname" class="form-control" 
-                                              placeholder="    Write Published books name here"></textarea>
-                                    <div class="text-danger">{{ $errors->first('publish_bookname') }}</div>
-                                </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                   <label>Status</label><br>
                                     <label class="radio-inline">Active
                                       </label>
@@ -57,8 +60,16 @@
                                       <label class="radio-inline">Inactive</label>
                                       <input class="col-md-2" type="radio" name="status" value="inactive">
                                 </div>
+                                 <div class="form-group col-md-12">
+                                    <label>Description</label>
+                                    <textarea name="description" class="form-control ckeditor" 
+                                              placeholder="Description"></textarea>
+                                    <div class="text-danger">{{ $errors->first('description') }}</div>
+                                </div>
                       
                                </div>
+                             </div>
+                           </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="{{route('publisher.index')}}" class="button

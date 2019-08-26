@@ -27,43 +27,57 @@
                     <div class="card m-b-30">
                         <div class="card-header">
                               <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label>Offer Title</label>
                                     <input type="text" name="offer_title" class="form-control" placeholder="Enter Offer Title">
                                     <div class="text-danger">{{ $errors->first('offer_title') }}</div>
                                 </div>
-                               <div class="form-group col-md-4">
-                                    <label>Offer Description</label>
-                                    <input type="text" name="offer_description" class="form-control" placeholder="Enter Offer Description">
-                                    <div class="text-danger">{{ $errors->first('offer_description') }}</div>
-                                </div> 
-                                  <div class="form-group col-md-4">
+                                
+                                <div class="form-group col-md-6">
                                     <label>Discount</label>
                                     <input type="text" name="discount_amount" class="form-control" placeholder="Enter Discount Amount">
                                     <div class="text-danger">{{ $errors->first('discount_amount') }}</div>
                                 </div>
-                                   <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
+                                    <label>Category</label>
+                                    <input type="text" name="category_id" class="form-control" placeholder="Enter Category">
+                                    <div class="text-danger">{{ $errors->first('category_id') }}</div>
+                                </div>
+                                   <div class="form-group col-md-6">
                                     <label>Start Date</label>
                                     <input type="date" name="start_date" class="form-control" placeholder="start date">
                                     <div class="text-danger">{{ $errors->first('start_date') }}</div>
                                 </div>
                                   
-                                  <div class="form-group col-md-4">
+                                  <div class="form-group col-md-6">
                                     <label>End Date</label>
                                     <input type="date" name="end_date" class="form-control" placeholder="end date">
                                     <div class="text-danger">{{ $errors->first('end_date') }}</div>
                                 </div>
-                                  <div class="form-group col-md-4">
+                                  <div class="form-group col-md-6">
                                     <label>Status</label>
                                     <select name="status" class="form-control" id="" placeholder="enter status">
-                                                        <option>Select</option>
-                                                        <option>Active</option>
-                                                        <option>Inactive</option></select>
+                                        <option>Select</option>
+                                        <option>Active</option>
+                                        <option>Inactive</option></select>
                                     <div class="text-danger">{{ $errors->first('status') }}</div>
                                     </div>
+                                     <div class="form-group col-md-6">
+                                      <div>Image</div>
+                                      <div class="upload-btn-wrapper">
+                                        <button class="upload-btn">Upload a file</button>
+                                        <input type="file" name="offer_image" />
+                                      </div>
+                                      <div class="text-danger">{{ $errors->first('offer_image') }}</div>
+                                  </div>
+                                    <div class="form-group col-md-12">
+                                    <label>Offer Description</label>
+                                    <textarea type="text" name="offer_description" class="form-control" placeholder="Enter Offer Description"></textarea>
+                                    <div class="text-danger">{{ $errors->first('offer_description') }}</div>
+                                </div>
                                   <div class="form-group col-md-12">
                                     <label>Terms&conditions</label>
-                                    <textarea name="termsconditions" class="form-control" 
+                                    <textarea name="termsconditions" class="form-control ckeditor" 
                                               placeholder="    Write  terms & conditions here"></textarea>
                                     <div class="text-danger">{{ $errors->first('termsconditions') }}</div>
                                 </div>
